@@ -1,0 +1,778 @@
+@import "tailwindcss";
+
+/* ── Leaflet dark theme overrides ── */
+.leaflet-container { background: #060b18 !important; }
+.leaflet-popup-content-wrapper {
+  background: rgba(6,11,24,0.96) !important;
+  border: 1px solid rgba(0,229,255,0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,229,255,0.1) !important;
+  color: #fff !important;
+}
+.leaflet-popup-tip { background: rgba(6,11,24,0.96) !important; }
+.leaflet-popup-close-button { color: rgba(255,255,255,0.4) !important; font-size: 16px !important; padding: 4px 8px !important; }
+.leaflet-popup-close-button:hover { color: #fff !important; }
+.leaflet-control-zoom { border: 1px solid rgba(0,229,255,0.2) !important; }
+.leaflet-control-zoom a { background: rgba(6,11,24,0.9) !important; color: #00e5ff !important; border-color: rgba(0,229,255,0.2) !important; }
+.leaflet-control-zoom a:hover { background: rgba(0,229,255,0.1) !important; }
+.leaflet-attribution-flag { display: none !important; }
+.leaflet-control-attribution { background: rgba(0,0,0,0.5) !important; color: rgba(255,255,255,0.3) !important; font-size: 9px !important; }
+.rania-popup { min-width: 170px; }
+.rania-popup-title { color: #00e5ff; font-weight: bold; font-size: 13px; margin-bottom: 6px; font-family: monospace; }
+.rania-popup-row { color: rgba(255,255,255,0.75); font-size: 11px; margin: 2px 0; font-family: monospace; }
+.rania-popup-row b { color: #fff; }
+.rania-popup-dil { color: #00ffd1; font-size: 11px; margin-top: 6px; font-family: monospace; font-weight: bold; }
+
+/* ── IDE 1: Plane marker hover effects ── */
+.rania-plane {
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+  display: block;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.leaflet-marker-icon:hover .rania-plane {
+  transform: scale(1.35) rotate(var(--r, 0deg)) !important;
+  filter: brightness(1.5) !important;
+}
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Inter', system-ui, sans-serif;
+    background: #050812;
+    color: #fff;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: geometricPrecision;
+    letter-spacing: -0.01em;
+  }
+  p, span, div {
+    -webkit-font-smoothing: antialiased;
+  }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.2); border-radius: 4px; }
+}
+
+/* ── FONTS ── */
+.font-orbitron { font-family: 'Orbitron', 'Share Tech Mono', monospace !important; }
+
+/* ── GRADIENT BUTTON ── */
+.rania-gradient-btn {
+  background: linear-gradient(135deg,#00e5ff,#a855f7) !important;
+  box-shadow: 0 4px 20px rgba(0,229,255,0.25);
+}
+
+/* ── RANIA NAME GLOW ── */
+.rania-name-glow {
+  color: #4FD1FF;
+  text-shadow: 0 0 8px rgba(79,209,255,0.9), 0 0 24px rgba(79,209,255,0.55), 0 0 48px rgba(79,209,255,0.22);
+}
+
+/* ── GLASSMORPHISM ── */
+.rania-topnav {
+  background: rgba(5,8,18,0.88);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.rania-glass-premium {
+  background: rgba(3,12,28,0.85);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  border: 1px solid rgba(0,229,255,0.22);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.06) inset, 0 8px 32px rgba(0,0,0,0.5);
+}
+.rania-glass-card {
+  background: linear-gradient(135deg,rgba(5,15,38,0.92),rgba(3,9,24,0.96));
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  border: 1px solid rgba(0,229,255,0.1);
+}
+.rania-modal {
+  background: linear-gradient(135deg,rgba(3,14,32,0.97),rgba(2,8,20,0.99));
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid rgba(0,229,255,0.18);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.04) inset, 0 32px 80px rgba(0,0,0,0.7);
+}
+.rania-chat-glass {
+  background: rgba(3,6,18,0.98);
+  backdrop-filter: blur(32px) saturate(200%);
+  -webkit-backdrop-filter: blur(32px) saturate(200%);
+  border: 1px solid rgba(255,255,255,0.07);
+  box-shadow: 0 -24px 80px rgba(0,0,0,0.7), 0 -4px 20px rgba(0,229,255,0.05);
+}
+.rania-bottom-nav {
+  background: rgba(3,6,18,0.96);
+  backdrop-filter: blur(28px) saturate(200%);
+  -webkit-backdrop-filter: blur(28px) saturate(200%);
+  border-top: 1px solid rgba(0,229,255,0.08);
+  box-shadow: 0 -1px 0 rgba(0,229,255,0.06), 0 -8px 32px rgba(0,0,0,0.5);
+}
+.rania-video-frame {
+  box-shadow: 0 0 0 1px rgba(0,229,255,0.08), 0 24px 80px rgba(0,0,0,0.55);
+  transition: box-shadow 0.4s ease;
+}
+.rania-video-frame:hover {
+  box-shadow: 0 0 0 1px rgba(0,229,255,0.2), 0 28px 96px rgba(0,0,0,0.6), 0 0 100px rgba(0,229,255,0.1);
+}
+
+/* ── CHAT BUBBLES ── */
+.chat-bubble-user {
+  background: linear-gradient(135deg,#00c8f0,#8b3cf7);
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 4px 16px rgba(0,200,240,0.25);
+}
+.chat-bubble-ai {
+  background: rgba(255,255,255,0.055);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.chat-input-glass {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.chat-input-glass:focus-within {
+  border-color: rgba(0,229,255,0.55);
+  background: rgba(0,229,255,0.04);
+  box-shadow: 0 0 0 3px rgba(0,229,255,0.08), 0 4px 20px rgba(0,229,255,0.08);
+}
+.chat-scroll::-webkit-scrollbar { width: 3px; }
+.chat-scroll::-webkit-scrollbar-track { background: transparent; }
+.chat-scroll::-webkit-scrollbar-thumb { background: rgba(0,229,255,0.18); border-radius: 2px; }
+
+/* ── Premium chat header ── */
+.chat-header-premium {
+  background: linear-gradient(180deg, rgba(0,20,50,0.6) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(0,229,255,0.08);
+}
+.chat-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 6px 16px;
+  background: rgba(0,229,255,0.03);
+  border-bottom: 1px solid rgba(0,229,255,0.05);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: rgba(0,229,255,0.55);
+  text-transform: uppercase;
+}
+.chat-status-bar span { display: flex; align-items: center; gap: 4px; }
+
+/* ── Premium quick reply pills ── */
+.quick-reply-premium {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.09);
+  color: rgba(200,220,255,0.7);
+  cursor: pointer;
+  transition: all 0.18s cubic-bezier(0.22,1,0.36,1);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  flex-shrink: 0;
+}
+.quick-reply-premium:hover, .quick-reply-premium:active {
+  background: rgba(0,229,255,0.1);
+  border-color: rgba(0,229,255,0.3);
+  color: rgba(0,229,255,0.9);
+  transform: scale(0.96);
+}
+
+/* ── Message timestamp ── */
+.msg-time { font-size: 9px; color: rgba(255,255,255,0.28); margin-top: 2px; letter-spacing: 0.03em; }
+
+/* ── Input send glow ── */
+.send-btn-active {
+  box-shadow: 0 0 16px rgba(0,229,255,0.4), 0 4px 12px rgba(168,85,247,0.2);
+}
+
+/* ── AURORA BG ── */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.09;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+.grid-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(0,229,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,229,255,0.02) 1px, transparent 1px);
+  background-size: 65px 65px;
+}
+
+/* ── CUSTOM CURSOR ── */
+.custom-cursor {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background: #00e5ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 12px #00e5ff, 0 0 28px rgba(0,245,255,0.4);
+  mix-blend-mode: screen;
+  transition: transform 0.05s;
+}
+.custom-cursor-ring {
+  position: fixed;
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(0,229,255,0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.12s ease;
+  mix-blend-mode: screen;
+}
+
+/* ── SCROLLBAR HIDE ── */
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ── SNAP ── */
+.snap-x { scroll-snap-type: x mandatory; }
+.snap-center { scroll-snap-align: center; }
+
+/* ── ANIMATIONS ── */
+@keyframes drift {
+  0% { transform: translate(0,0) scale(1); }
+  100% { transform: translate(60px,40px) scale(1.15); }
+}
+@keyframes float {
+  0%,100% { transform: translateY(0) translateX(0); }
+  25% { transform: translateY(-20px) translateX(10px); }
+  50% { transform: translateY(0) translateX(-10px); }
+  75% { transform: translateY(-10px) translateX(5px); }
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes chatSlideUp {
+  from { opacity: 0; transform: translateY(60px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes msgIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes typingDot {
+  0%,80%,100% { transform: scale(0.6); opacity: 0.4; }
+  40%          { transform: scale(1);   opacity: 1; }
+}
+@keyframes chatPulse {
+  0%,100% { opacity: 0.6; transform: scale(1); }
+  50%     { opacity: 0;   transform: scale(1.55); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@keyframes blink {
+  0%,100% { opacity: 1; }
+  50%     { opacity: 0.3; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-float      { animation: float 20s ease-in-out infinite; }
+.animate-marquee    { animation: marquee 30s linear infinite; width: max-content; }
+.chat-slide-up      { animation: chatSlideUp 0.42s cubic-bezier(0.22,1,0.36,1); }
+.msg-in             { animation: msgIn 0.22s ease; }
+.typing-dot         { animation: typingDot 1.2s ease-in-out infinite; }
+.blink              { animation: blink 2s infinite; }
+
+/* ═══════════════════════════════════════════════════
+   WORLD-CLASS MOBILE DESIGN
+═══════════════════════════════════════════════════ */
+
+/* ── Safe area support for modern phones ── */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .rania-bottom-nav {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom));
+  }
+  .chat-input-safe {
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+}
+
+/* ── Mobile chat overlay — full screen sheet ── */
+@media (max-width: 768px) {
+  /* Prevent zoom on input focus */
+  input, textarea, select { font-size: 16px !important; }
+
+  /* Chat fills entire screen on mobile like native app */
+  .rania-chat-container-mobile {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  /* Rounded top corners only on mobile bottom sheet */
+  .rania-chat-sheet {
+    border-radius: 1.75rem 1.75rem 0 0 !important;
+  }
+
+  /* Better touch targets */
+  button { min-height: 40px; }
+
+  /* Mobile hero text */
+  .hero-title-mobile { font-size: 2.5rem !important; }
+  .hero-subtitle-mobile { font-size: 0.85rem !important; }
+
+  /* Service cards grid on mobile */
+  .services-mobile { grid-template-columns: repeat(2, 1fr) !important; }
+
+  /* Flight cards max width on mobile */
+  .flight-cards-mobile { max-width: 100% !important; }
+
+  /* Better modal */
+  .rania-modal { width: 96% !important; border-radius: 1.5rem !important; }
+}
+
+/* ── Mobile quick replies pill ── */
+.quick-reply-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.375rem 0.875rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  white-space: nowrap;
+  background: rgba(0,229,255,0.06);
+  border: 1px solid rgba(0,229,255,0.14);
+  color: rgba(0,229,255,0.8);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.quick-reply-pill:active {
+  transform: scale(0.94);
+  background: rgba(0,229,255,0.14);
+}
+
+/* ── Mobile floating RANIA button ── */
+.rania-fab {
+  position: fixed;
+  bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  right: 1.25rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg,#00e5ff,#a855f7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0,229,255,0.4), 0 0 0 3px rgba(0,229,255,0.1);
+  cursor: pointer;
+  z-index: 300;
+  transition: transform 0.2s, box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+.rania-fab:active { transform: scale(0.92); }
+
+/* ── iOS-style input focus ring ── */
+.ios-input {
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(255,255,255,0.1);
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.ios-input:focus {
+  border-color: rgba(0,229,255,0.55);
+  background: rgba(0,229,255,0.05);
+  box-shadow: 0 0 0 3px rgba(0,229,255,0.08);
+}
+
+/* ── Haptic-ready button ── */
+.haptic-btn {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+.haptic-btn:active { transform: scale(0.96); }
+
+/* ── Mobile nav bottom bar ── */
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  flex: 1;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.mobile-nav-item.active { color: #00e5ff; }
+.mobile-nav-item:not(.active) { color: rgba(255,255,255,0.35); }
+
+/* ── Status bar area for mobile ── */
+.mobile-status-bar {
+  height: env(safe-area-inset-top, 0px);
+  background: rgba(3,6,18,0.98);
+  width: 100%;
+}
+
+/* ── Smooth scroll momentum for iOS ── */
+.momentum-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}
+
+/* ── Card hover effect optimized for mobile ── */
+@media (hover: none) {
+  .hover\:scale-105:hover { transform: none; }
+  .group:hover .group-hover\:scale-105 { transform: none; }
+  .group:hover .group-hover\:scale-110 { transform: none; }
+}
+
+/* ── Shimmer loading skeleton ── */
+.skeleton {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* ── Booking form glass ── */
+.booking-form-glass {
+  background: rgba(2,8,24,0.97);
+  border: 1px solid rgba(0,229,255,0.2);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+}
+
+/* ── Price badge ── */
+.price-badge {
+  background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(52,211,153,0.06));
+  border: 1px solid rgba(52,211,153,0.25);
+  color: #34d399;
+  font-family: 'Orbitron', monospace;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ── Success pulse ── */
+.success-pulse {
+  box-shadow: 0 0 0 0 rgba(52,211,153,0.5);
+  animation: successPulse 2s ease-out;
+}
+@keyframes successPulse {
+  0%  { box-shadow: 0 0 0 0 rgba(52,211,153,0.5); }
+  70% { box-shadow: 0 0 0 20px rgba(52,211,153,0); }
+  100%{ box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+}
+
+/* ── Destination card mobile swipe indicator ── */
+.swipe-indicator {
+  display: none;
+}
+@media (max-width: 768px) {
+  .swipe-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.65rem;
+    color: rgba(0,229,255,0.4);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* ── RANIA avatar pulse ring ── */
+.rania-avatar-ring {
+  position: relative;
+}
+.rania-avatar-ring::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,229,255,0.4);
+  animation: chatPulse 2.5s ease-in-out infinite;
+}
+
+/* ── Mobile flight card ── */
+@media (max-width: 480px) {
+  .flight-card-compact .airline-name { display: none; }
+  .flight-card-compact .flight-details { font-size: 0.7rem !important; }
+}
+
+/* ── Input with floating label effect ── */
+.input-field-rania {
+  position: relative;
+}
+.input-field-rania input:focus + label,
+.input-field-rania input:not(:placeholder-shown) + label {
+  transform: translateY(-22px) scale(0.8);
+  color: #00e5ff;
+}
+
+/* ── Glass button ── */
+.glass-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.7);
+  transition: all 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.glass-btn:hover { background: rgba(255,255,255,0.1); color: white; border-color: rgba(255,255,255,0.18); }
+.glass-btn:active { transform: scale(0.96); }
+
+/* ── Voice bar animation ── */
+@keyframes voiceBar {
+  0%   { transform: scaleY(0.3); opacity: 0.6; }
+  100% { transform: scaleY(1.2); opacity: 1; }
+}
+
+/* ── Ixigo-style premium search bar ── */
+.rania-search-premium {
+  background: rgba(255,255,255,0.06);
+  border: 1.5px solid rgba(0,229,255,0.2);
+  border-radius: 20px;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+}
+.rania-search-premium:focus-within {
+  border-color: rgba(0,229,255,0.55);
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 0 0 3px rgba(0,229,255,0.08), 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* ── Premium mic button ── */
+.mic-btn-active {
+  background: radial-gradient(circle, rgba(239,68,68,0.25) 0%, rgba(239,68,68,0.08) 100%);
+  border-color: rgba(239,68,68,0.6) !important;
+  box-shadow: 0 0 16px rgba(239,68,68,0.3), 0 0 32px rgba(239,68,68,0.15);
+}
+
+/* ── Ixigo-style flight card premium ── */
+.flight-card-premium {
+  background: linear-gradient(135deg, rgba(6,18,42,0.95) 0%, rgba(3,10,28,0.98) 100%);
+  border: 1px solid rgba(0,229,255,0.12);
+  transition: all 0.22s cubic-bezier(0.22,1,0.36,1);
+  position: relative;
+  overflow: hidden;
+}
+.flight-card-premium::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0,229,255,0.03) 0%, transparent 60%);
+  pointer-events: none;
+}
+.flight-card-premium:hover {
+  border-color: rgba(0,229,255,0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(0,229,255,0.08);
+}
+
+/* ── Passport scan button ── */
+.passport-scan-btn {
+  background: linear-gradient(135deg, rgba(0,229,255,0.1) 0%, rgba(168,85,247,0.08) 100%);
+  border: 1.5px dashed rgba(0,229,255,0.35);
+  transition: all 0.2s;
+}
+.passport-scan-btn:hover {
+  background: linear-gradient(135deg, rgba(0,229,255,0.16) 0%, rgba(168,85,247,0.12) 100%);
+  border-color: rgba(0,229,255,0.55);
+  box-shadow: 0 0 20px rgba(0,229,255,0.15);
+}
+.passport-scan-btn.scanned {
+  background: rgba(16,185,129,0.1);
+  border: 1.5px solid rgba(16,185,129,0.4);
+  border-style: solid;
+}
+
+/* ── Mobile: safe, targeted fixes (no conflicts with Tailwind or existing rules) ── */
+@media (max-width: 768px) {
+  /* iOS: prevent zoom on input focus */
+  input, textarea, select { font-size: 16px !important; }
+
+  /* Hero text responsive */
+  .hero-title-mobile {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+    line-height: 1.1 !important;
+  }
+  .hero-subtitle-mobile {
+    font-size: clamp(0.78rem, 3vw, 0.92rem) !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Service grid 2 columns */
+  .services-mobile {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+
+  /* Modal responsive */
+  .rania-modal { width: 96% !important; border-radius: 1.5rem !important; }
+
+  /* Flight card full width */
+  .flight-card-premium { width: 100% !important; }
+  .flight-cards-mobile { max-width: 100% !important; }
+
+  /* Chat container mobile (additive only) */
+  .rania-chat-container-mobile {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+  }
+
+  /* Radar map height */
+  .leaflet-container { height: 340px !important; }
+
+  /* Chat bubbles */
+  .chat-bubble-ai, .chat-bubble-user {
+    max-width: 88% !important;
+    font-size: 0.875rem !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Section headings */
+  .section-title-mobile {
+    font-size: clamp(1.1rem, 4.5vw, 1.4rem) !important;
+  }
+
+  /* Bottom nav safe area padding */
+  .content-with-bottom-nav {
+    padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+}
+
+/* ── Extra small phones (iPhone SE ≤375px) ── */
+@media (max-width: 375px) {
+  .hero-title-mobile { font-size: clamp(1.75rem, 7.5vw, 2.25rem) !important; }
+  .services-mobile { gap: 0.5rem !important; }
+}
+
+/* ── Landscape mode ── */
+@media (max-width: 768px) and (orientation: landscape) {
+  .rania-chat-container-mobile { height: 100dvh !important; }
+}
+
+/* ── Nav active indicator (additive to existing .mobile-nav-item) ── */
+.mobile-nav-item.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 2px;
+  background: #00e5ff;
+  border-radius: 0 0 2px 2px;
+}
+.mobile-nav-item.active svg,
+.mobile-nav-item.active span { filter: drop-shadow(0 0 6px rgba(0,229,255,0.6)); }
+
+/* ── Snap scroll utility (new class, no conflict) ── */
+.snap-scroll-mobile {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.snap-scroll-mobile::-webkit-scrollbar { display: none; }
+.snap-scroll-mobile > * { scroll-snap-align: start; flex-shrink: 0; }
+
+/* ── Page fade animation ── */
+.page-fade-in {
+  animation: pageFadeIn 0.35s cubic-bezier(0.22,1,0.36,1) both;
+}
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Nav badge ── */
+.nav-badge {
+  position: absolute;
+  top: 4px;
+  right: 50%;
+  transform: translateX(8px);
+  background: #ef4444;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 800;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+  line-height: 1;
+  border: 1.5px solid rgba(3,6,18,0.95);
+}
+
+/* ── Disable hover scale on touch devices ── */
+@media (hover: none) {
+  .hover\:scale-105:hover { transform: none !important; }
+  .group:hover .group-hover\:scale-105 { transform: none !important; }
+}
