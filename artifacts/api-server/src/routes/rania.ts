@@ -1382,13 +1382,13 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
 
   // ─── COMPLEXITY GUARD ──────────────────────────────────────────────────────
   // Complex/long/multi-topic queries should NOT be caught by simple keyword matching.
-  // Let them fall through to a generic helpful response so the AI can handle them.
-  const isComplex = message.length > 120
+  // Exception: flight route queries with passenger count are still handled by route logic below.
+  const isFlightRouteQuery = /\b(flight|tiket|ticket|penerbangan|voo|aviaun|fly|terbang)\b/i.test(m)
+    && /\b(from|dari|hosi|de)\b/i.test(m);
+  const isComplex = (message.length > 120 && !isFlightRouteQuery)
     || (m.match(/visa|passport/) && m.match(/hotel|flight|price|booking/))  // multi-topic
-    || m.match(/payment|pay.*method|credit.card|bank.transfer|rupiah|currency|xendit|mastercard|amex|alipay|paypal/i)
-    || m.match(/business.class|first.class|economy.class|cabin/i)
-    || m.match(/stopover|layover|multi.city|trip.plan|itinerar/i)
-    || m.match(/\d+ (adult|child|pax|passenger|penumpang)/i)
+    || m.match(/payment|pay.*method|credit.card|bank.transfer|xendit|mastercard|amex|alipay|paypal/i)
+    || (m.match(/stopover|layover|multi.city|trip.plan|itinerar/i) && !isFlightRouteQuery)
     || m.match(/passport.*number|dob|date.of.birth|full.name.*passport/i);
 
   if (isComplex) {
@@ -1501,8 +1501,19 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
     return dilDrw[lang] || dilDrw.en;
   }
 
-  // Singapore route
+  // Singapore route — direction-aware
   if (m.match(/\bsin\b|singapore|singapura|changi/)) {
+    // SIN→DIL: user travelling TO Dili FROM Singapore
+    if ((m.match(/\bsin\b|singapore|singapura/) && (m.includes("dil") || m.includes("dili")))
+        && (m.match(/\b(from|dari|hosi|de)\b.*\b(sin|singapore|singapura)\b/i) || m.match(/\b(sin|singapore|singapura)\b.*\b(to|ke|ba|para)\b.*\b(dil|dili)\b/i))) {
+      const sinDil: Record<string, string> = {
+        en: "Singapore to Dili (SIN→DIL) — 1 stop via Bali:\n\n✈ Scoot (TR) via DPS — from $120\n✈ Singapore Airlines (SQ) via DPS — from $150\n✈ Aero Dili (4W) via DPS — from $150\nDuration: ~4h 00m\n\nShall I book this for you?",
+        id: "Singapore ke Dili (SIN→DIL) — 1 stop via Bali:\n\n✈ Scoot (TR) via DPS — dari $120\n✈ Singapore Airlines (SQ) via DPS — dari $150\nDurasi: ~4j 00m\n\nMau saya bantu booking?",
+        tet: "Singapore ba Dili (SIN→DIL) — 1 paradu via Bali:\n\n✈ Scoot (TR) via DPS — husi $120\n✈ Singapore Airlines (SQ) via DPS — husi $150\n⏱ Durasi: ~4 oras\n\nHakarak ha'u ajuda book?",
+        pt: "Singapura para Dili (SIN→DIL) — 1 escala via Bali:\n\n✈ Scoot (TR) via DPS — a partir de $120\n✈ Singapore Airlines (SQ) — a partir de $150\nDuração: ~4h 00m\n\nDeseja efetuar a reserva?",
+      };
+      return sinDil[lang] || sinDil.en;
+    }
     const sinRoute: Record<string, string> = {
       id: "Rute ke Singapore:\n\n✈ DIL→SIN via Bali (DIL→DPS→SIN)\nDurasi: ~4h 30m | 1 stop\nHarga: dari $150\n\nMaskapai: Scoot, Singapore Airlines, Garuda\nMau pergi tanggal berapa kak?",
       en: "Routes to Singapore:\n\n✈ DIL→SIN via Bali (DIL→DPS→SIN)\nDuration: ~4h 30m | 1 stop\nPrice: from $150\n\nAirlines: Scoot, Singapore Airlines, Garuda\nWhat's your travel date?",
@@ -1510,6 +1521,115 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
       pt: "Rotas para Singapura:\n\n✈ DIL→SIN via Bali (DIL→DPS→SIN)\nDuração: ~4h 30m | 1 escala\nPreço: a partir de $150\n\nCompanhias: Scoot, Singapore Airlines\nQual a data da viagem?",
     };
     return sinRoute[lang] || sinRoute.en;
+  }
+
+  // Dili → Bangkok (BKK)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("bangkok") || m.includes("bkk") || m.includes("thailand") || m.includes("suvarnabhumi"))) {
+    const dilBkk: Record<string, string> = {
+      en: "Dili to Bangkok (DIL→BKK) — 1 stop:\n\n✈ Thai Airways (TG via SIN) — from $280\n✈ AirAsia (QZ via DPS) — from $220\n✈ Singapore Airlines (SQ via SIN) — from $310\nDuration: ~6h 30m\n\nShall I book this for you?",
+      id: "Dili ke Bangkok (DIL→BKK) — 1 stop:\n\n✈ Thai Airways (TG via Singapura) — dari $280\n✈ AirAsia (via Bali) — dari $220\nDurasi: ~6j 30m\n\nMau saya bantu booking?",
+      tet: "Dili ba Bangkok (DIL→BKK) — 1 paradu:\n\n✈ Thai Airways (via Singapore) — husi $280\n✈ AirAsia (via Bali) — husi $220\nDurasi: ~6 oras 30 min\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Banguecoque (DIL→BKK) — 1 escala:\n\n✈ Thai Airways (via Singapura) — a partir de $280\n✈ AirAsia (via Bali) — a partir de $220\nDuração: ~6h 30m\n\nDeseja efetuar a reserva?",
+    };
+    return dilBkk[lang] || dilBkk.en;
+  }
+
+  // Dili → Hong Kong (HKG)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("hong kong") || m.includes("hkg") || m.includes("hongkong"))) {
+    const dilHkg: Record<string, string> = {
+      en: "Dili to Hong Kong (DIL→HKG) — 1 stop:\n\n✈ Cathay Pacific (CX via SIN) — from $400\n✈ Garuda Indonesia (GA via DPS) — from $380\nDuration: ~8h 00m\n\nShall I book this for you?",
+      id: "Dili ke Hong Kong (DIL→HKG) — 1 stop:\n\n✈ Cathay Pacific (via Singapura) — dari $400\n✈ Garuda Indonesia (via Bali) — dari $380\nDurasi: ~8j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Hong Kong (DIL→HKG) — 1 paradu:\n\n✈ Cathay Pacific (via Singapore) — husi $400\n✈ Garuda Indonesia (via Bali) — husi $380\nDurasi: ~8 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Hong Kong (DIL→HKG) — 1 escala:\n\n✈ Cathay Pacific (via Singapura) — a partir de $400\n✈ Garuda Indonesia (via Bali) — a partir de $380\nDuração: ~8h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilHkg[lang] || dilHkg.en;
+  }
+
+  // Dili → Lisbon / Manchester (Europe broad)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("lisbon") || m.includes("lisboa") || m.includes("lis") || m.includes("portugal"))) {
+    const dilLis: Record<string, string> = {
+      en: "Dili to Lisbon (DIL→LIS) — 2 stops via Middle East:\n\n✈ Qatar Airways (QR via DOH) — from $600\n✈ Emirates (EK via DXB) — from $640\n✈ TAP + Emirates combo — from $620\nDuration: ~22h 00m\n\nShall I book this for you?",
+      id: "Dili ke Lisbon (DIL→LIS) — 2 stop:\n\n✈ Qatar Airways (via Doha) — dari $600\n✈ Emirates (via Dubai) — dari $640\nDurasi: ~22j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Lisbon (DIL→LIS) — 2 paradu:\n\n✈ Qatar Airways (via Doha) — husi $600\n✈ Emirates (via Dubai) — husi $640\nDurasi: ~22 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Lisboa (DIL→LIS) — 2 escalas via Médio Oriente:\n\n✈ Qatar Airways (QR via DOH) — a partir de $600\n✈ Emirates (EK via DXB) — a partir de $640\n✈ TAP + Emirates — a partir de $620\nDuração: ~22h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilLis[lang] || dilLis.en;
+  }
+
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("manchester") || m.includes("man") || m.includes("mManchester"))) {
+    const dilMan: Record<string, string> = {
+      en: "Dili to Manchester (DIL→MAN) — 2 stops via Middle East:\n\n✈ Qatar Airways (QR via DOH) — from $580\n✈ Emirates (EK via DXB) — from $600\nDuration: ~21h 00m\n\nShall I book this for you?",
+      id: "Dili ke Manchester (DIL→MAN) — 2 stop:\n\n✈ Qatar Airways (via Doha) — dari $580\n✈ Emirates (via Dubai) — dari $600\nDurasi: ~21j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Manchester (DIL→MAN) — 2 paradu:\n\n✈ Qatar Airways (via Doha) — husi $580\n✈ Emirates (via Dubai) — husi $600\nDurasi: ~21 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Manchester (DIL→MAN) — 2 escalas:\n\n✈ Qatar Airways (via Doha) — a partir de $580\n✈ Emirates (via Dubai) — a partir de $600\nDuração: ~21h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilMan[lang] || dilMan.en;
+  }
+
+  // Dili → London (LHR)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("london") || m.includes("lhr") || m.includes("heathrow"))) {
+    const dilLhr: Record<string, string> = {
+      en: "Dili to London (DIL→LHR) — 2 stops via Middle East:\n\n✈ Qatar Airways (QR via DOH) — from $550\n✈ Emirates (EK via DXB) — from $580\n✈ Turkish Airlines (TK via IST) — from $520\nDuration: ~20h 00m\n\nShall I book this for you?",
+      id: "Dili ke London (DIL→LHR) — 2 stop via Timur Tengah:\n\n✈ Qatar Airways (via Doha) — dari $550\n✈ Emirates (via Dubai) — dari $580\n✈ Turkish Airlines (via Istanbul) — dari $520\nDurasi: ~20j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba London (DIL→LHR) — 2 paradu via Timur Tengah:\n\n✈ Qatar Airways (via Doha) — husi $550\n✈ Emirates (via Dubai) — husi $580\nDurasi: ~20 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Londres (DIL→LHR) — 2 escalas via Médio Oriente:\n\n✈ Qatar Airways (via Doha) — a partir de $550\n✈ Emirates (via Dubai) — a partir de $580\nDuração: ~20h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilLhr[lang] || dilLhr.en;
+  }
+
+  // Dili → Dubai (DXB)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("dubai") || m.includes("dxb"))) {
+    const dilDxb: Record<string, string> = {
+      en: "Dili to Dubai (DIL→DXB) — 2 stops:\n\n✈ Emirates (EK) via SIN+DXB — from $550\n✈ Qatar Airways (QR via DOH) — from $580\n✈ Etihad (EY via AUH) — from $560\nDuration: ~13h 00m\n\nShall I book this for you?",
+      id: "Dili ke Dubai (DIL→DXB) — 2 stop:\n\n✈ Emirates (EK) via Singapura+Dubai — dari $550\n✈ Qatar Airways (via Doha) — dari $580\nDurasi: ~13j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Dubai (DIL→DXB) — 2 paradu:\n\n✈ Emirates (EK) — husi $550\n✈ Qatar Airways (QR) — husi $580\nDurasi: ~13 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Dubai (DIL→DXB) — 2 escalas:\n\n✈ Emirates (EK) via Singapura — a partir de $550\n✈ Qatar Airways (QR via Doha) — a partir de $580\nDuração: ~13h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilDxb[lang] || dilDxb.en;
+  }
+
+  // Bali (DPS) → Sydney (SYD)
+  if ((m.includes("dps") || m.includes("bali") || m.includes("denpasar")) && (m.includes("syd") || m.includes("sydney"))) {
+    const dpsSyd: Record<string, string> = {
+      en: "Bali to Sydney (DPS→SYD) — non-stop available:\n\n✈ Jetstar (JQ) — from $280 (economy)\n✈ Qantas (QF) — from $350\n✈ Virgin Australia (VA) — from $320\nDuration: ~6h 00m | Direct\n\nShall I book this for you?",
+      id: "Bali ke Sydney (DPS→SYD) — ada penerbangan langsung:\n\n✈ Jetstar (JQ) — dari $280 (ekonomi)\n✈ Qantas (QF) — dari $350\nDurasi: ~6j 00m | Langsung\n\nMau saya bantu booking?",
+      tet: "Bali ba Sydney (DPS→SYD) — voo diretu:\n\n✈ Jetstar (JQ) — husi $280\n✈ Qantas (QF) — husi $350\nDurasi: ~6 oras | Diretu\n\nHakarak ha'u ajuda book?",
+      pt: "Bali para Sydney (DPS→SYD) — voo direto:\n\n✈ Jetstar (JQ) — a partir de $280\n✈ Qantas (QF) — a partir de $350\nDuração: ~6h 00m | Direto\n\nDeseja efetuar a reserva?",
+    };
+    return dpsSyd[lang] || dpsSyd.en;
+  }
+
+  // Kuala Lumpur (KUL) → Dili
+  if ((m.includes("kul") || m.includes("kuala lumpur") || m.includes("kuala")) && (m.includes("dil") || m.includes("dili"))) {
+    const kulDil: Record<string, string> = {
+      en: "Kuala Lumpur to Dili (KUL→DIL) — 1 stop via Bali:\n\n✈ AirAsia (QZ) via DPS — from $160\n✈ Malaysia Airlines (MH) via DPS — from $200\n✈ Aero Dili (4W) via DPS — from $180\nDuration: ~5h 00m\n\nShall I book this for you?",
+      id: "Kuala Lumpur ke Dili (KUL→DIL) — 1 stop via Bali:\n\n✈ AirAsia (QZ) via DPS — dari $160\n✈ Malaysia Airlines (MH) via DPS — dari $200\nDurasi: ~5j 00m\n\nMau saya bantu booking?",
+      tet: "Kuala Lumpur ba Dili (KUL→DIL) — 1 paradu via Bali:\n\n✈ AirAsia (QZ) via DPS — husi $160\n✈ Malaysia Airlines (MH) via DPS — husi $200\nDurasi: ~5 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Kuala Lumpur para Dili (KUL→DIL) — 1 escala via Bali:\n\n✈ AirAsia (QZ) via DPS — a partir de $160\n✈ Malaysia Airlines (MH) — a partir de $200\nDuração: ~5h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return kulDil[lang] || kulDil.en;
+  }
+
+  // Dili → Tokyo (NRT/HND)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("tokyo") || m.includes("nrt") || m.includes("hnd") || m.includes("narita") || m.includes("haneda") || m.includes("jepang") || m.includes("japan"))) {
+    const dilNrt: Record<string, string> = {
+      en: "Dili to Tokyo (DIL→NRT) — 2 stops via Middle East or Singapore:\n\n✈ Qatar Airways (QR via DOH) — from $700\n✈ Emirates (EK via DXB) — from $750\n✈ Japan Airlines (JL via SIN) — from $780\n✈ ANA (NH via SIN) — from $760\nDuration: ~14h 00m\n\nShall I book this for you?",
+      id: "Dili ke Tokyo (DIL→NRT) — 2 stop:\n\n✈ Qatar Airways (via Doha) — dari $700\n✈ Emirates (via Dubai) — dari $750\n✈ Japan Airlines (via Singapore) — dari $780\nDurasi: ~14j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Tokyo (DIL→NRT) — 2 paradu:\n\n✈ Qatar Airways (via Doha) — husi $700\n✈ Emirates (via Dubai) — husi $750\n✈ Japan Airlines (via Singapore) — husi $780\nDurasi: ~14 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Tóquio (DIL→NRT) — 2 escalas:\n\n✈ Qatar Airways (via Doha) — a partir de $700\n✈ Emirates (via Dubai) — a partir de $750\n✈ Japan Airlines (via Singapura) — a partir de $780\nDuração: ~14h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilNrt[lang] || dilNrt.en;
+  }
+
+  // Dili → Sydney (SYD)
+  if ((m.includes("dil") || m.includes("dili")) && (m.includes("syd") || m.includes("sydney"))) {
+    const dilSyd: Record<string, string> = {
+      en: "Dili to Sydney (DIL→SYD) — 1 stop:\n\n✈ Jetstar (JQ via DRW) — from $350\n✈ Garuda Indonesia (GA via DPS) — from $380\nDuration: ~7h 00m\n\nShall I book this for you?",
+      id: "Dili ke Sydney (DIL→SYD) — 1 stop:\n\n✈ Jetstar (JQ via Darwin) — dari $350\n✈ Garuda Indonesia (GA via Bali) — dari $380\nDurasi: ~7j 00m\n\nMau saya bantu booking?",
+      tet: "Dili ba Sydney (DIL→SYD) — 1 paradu:\n\n✈ Jetstar (JQ via Darwin) — husi $350\n✈ Garuda Indonesia (GA via Bali) — husi $380\nDurasi: ~7 oras\n\nHakarak ha'u ajuda book?",
+      pt: "Dili para Sydney (DIL→SYD) — 1 escala:\n\n✈ Jetstar (JQ via Darwin) — a partir de $350\n✈ Garuda Indonesia (GA via Bali) — a partir de $380\nDuração: ~7h 00m\n\nDeseja efetuar a reserva?",
+    };
+    return dilSyd[lang] || dilSyd.en;
   }
 
   // Hotel query
@@ -1579,8 +1699,13 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
   }
 
   // Date question (when RANIA asked for travel date)
+  // Only trigger if the message has a Timor-Leste/Dili connection OR no known city pair —
+  // pure global routes (London→NYC etc.) should fall through to AI for SANIMAR contact.
   const dateMatch = message.match(/(\d{1,2})[\/\-\s](\d{1,2})[\/\-\s]?(\d{2,4})?|\b(januari|february|maret|april|mei|june|july|agustus|september|october|november|desember|january|march|may|august|october|dezembro|fevrier|março|fevereiro|junho|julho|setembro|outubro|novembro)\b/i);
-  if (dateMatch) {
+  // hasTLContext = message involves Timor-Leste or its direct regional neighbours
+  // (Dili, Darwin, Bali/Jakarta — NOT generic global hubs like London, NYC alone)
+  const hasTLContext = m.match(/\b(dil|dili|timor|timor.leste)\b/) || m.match(/\b(darwin|drw|bali|dps|denpasar|jakarta|cgk)\b/);
+  if (dateMatch && hasTLContext) {
     const askDate: Record<string, string> = {
       tet: "Di'ak! Ha'u hetan data viajen ita nian. 👍\nHusi ne'ebé ita hakarak lao?\nNo destinu ne'ebé?\n(Ezemplu: DIL ba Bali, DIL ba Jakarta, ka seluk?)",
       id: "Baik! Tanggal perjalanan sudah ada.\nDari mana dan mau ke mana kak?\n(Contoh: dari Dili ke Bali, Jakarta ke Dili, dll)",
@@ -1591,7 +1716,12 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
   }
 
   // Generic flight intent but no route
-  if (m.match(/voo|tiket|flight|aviaun|penerbangan|terbang|fly|ticket|bilhete/)) {
+  // Generic flight intent — only intercept if no city pair detected OR TL-related cities present.
+  // If the message contains two recognized non-TL cities (e.g. London→NYC), let AI handle it.
+  const hasPureGlobalPair = !hasTLContext &&
+    (m.match(/\b(london|new york|paris|berlin|rome|madrid|amsterdam|zurich|moscow|dubai|doha|istanbul)\b/) &&
+     m.match(/\b(new york|london|paris|berlin|rome|madrid|amsterdam|zurich|moscow|dubai|doha|istanbul|los angeles|toronto|chicago)\b/));
+  if (m.match(/voo|tiket|flight|aviaun|penerbangan|terbang|fly|ticket|bilhete/) && !hasPureGlobalPair) {
     const askRoute: Record<string, string> = {
       tet: "Ha'u ksolok atu ajuda ita buka voo! ✈️\nHatete ha'u:\n• Ita lao husi ne'ebé?\n• Ba ne'ebé ita hakarak lao?\n• Loron saida ita bele lao?\n\nHa'u sei buka opsaun di'ak liu ba ita!",
       id: "Siap carikan tiket! ✈️\nMau berangkat dari kota mana?\nDan tujuannya ke mana?\n\nJuga, tanggal keberangkatan berapa kak?",
@@ -1600,6 +1730,10 @@ function smartLocalResponse(message: string, lang: string, conversationContext?:
     };
     return askRoute[lang] || askRoute.en;
   }
+
+  // If message contains an identifiable pure global route pair (two non-TL international cities),
+  // return null so AI can handle it with a SANIMAR contact suggestion.
+  if (hasPureGlobalPair) return null;
 
   // Default helpful response
   const defaults: Record<string, string> = {
@@ -3517,6 +3651,8 @@ function hasDepartureDateMention(msg: string): boolean {
 // ─── Intent detection ─────────────────────────────────────────────────────────
 function detectIntent(msg: string): string {
   const m = msg.toLowerCase();
+  // Radar must be checked BEFORE flight — "live flight radar" contains "flight"
+  if (m.match(/\bradar\b|lihat pesawat|flight radar|peta pesawat|pesawat live|live flight|aircraft map|haree aviaun|show.*radar|see.*radar|live.*aircraft|real.?time.*flight|flight.*map/)) return "radar";
   if (m.match(/voo|tiket|penerbangan|flight|aviaun|biajen|terbang|fly|ticket|bilhete|ke\s+\w+|husi.*ba/)) return "flight";
   if (m.match(/hotél|hotel|inn|lodge|inap|accommodation|resort|penginapan/)) return "hotel";
   if (m.match(/klima|cuaca|weather|temperatura|udan|rain|hujan|panas|dingin/)) return "weather";
@@ -3524,7 +3660,6 @@ function detectIntent(msg: string): string {
   if (m.match(/tour|wisata|paket|destinasaun|vizita|atauro|jaco|ramelau|marobo/)) return "tour";
   if (m.match(/harga|price|presu|custo|berapa|murah|cheap|mahal|barato/)) return "price";
   if (m.match(/book|reserva|pesan|bayar|payment|pay|konfirma|confirm/)) return "booking";
-  if (m.match(/radar|lihat pesawat|flight radar|peta pesawat|pesawat live|live flight|aircraft map|haree aviaun/)) return "radar";
   return "general";
 }
 
