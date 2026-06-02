@@ -4617,7 +4617,7 @@ export default function HomePage() {
   const [lang, setLang] = useState<Language>("tet");
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
-  const [showRadarMobile, setShowRadarMobile] = useState(false);
+
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeNav, setActiveNav] = useState("search");
   const [particles, setParticles] = useState<{ id: number; left: number; top: number; delay: number; dur: number }[]>([]);
@@ -5072,19 +5072,9 @@ export default function HomePage() {
           <span className="text-[9px] text-emerald-400 flex items-center gap-1 ml-1">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block animate-pulse" />REAL-TIME
           </span>
-          {/* Toggle button — only visible on mobile */}
-          <button
-            className="md:hidden ml-auto flex items-center gap-1.5 text-[10px] font-mono px-2.5 py-1 rounded-lg border transition-all"
-            style={showRadarMobile
-              ? { borderColor: "rgba(34,211,238,0.5)", color: "#22d3ee", background: "rgba(34,211,238,0.08)" }
-              : { borderColor: "rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.45)" }}
-            onClick={() => setShowRadarMobile(p => !p)}
-          >
-            🛰️ {showRadarMobile ? "Taka Radar ▲" : "Haree Radar ▼"}
-          </button>
         </div>
-        {/* Desktop: always show. Mobile: only show when toggled */}
-        <div className={`${showRadarMobile ? "block" : "hidden md:block"}`}>
+        {/* Always show radar on all devices — full world view */}
+        <div>
           <LiveFlightRadar />
         </div>
 

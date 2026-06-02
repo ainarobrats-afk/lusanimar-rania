@@ -7518,7 +7518,7 @@ router.get("/rania/radar", async (req: Request, res: Response) => {
     }
 
     const raw = (await osRes.json()) as { time?: number; states?: unknown[][] | null };
-    const states = (raw.states ?? []).slice(0, 200).map((s: unknown[]) => ({
+    const states = (raw.states ?? []).slice(0, 500).map((s: unknown[]) => ({
       icao24: s[0],
       callsign: (s[1] as string)?.trim() || "UNKNOWN",
       originCountry: s[2],

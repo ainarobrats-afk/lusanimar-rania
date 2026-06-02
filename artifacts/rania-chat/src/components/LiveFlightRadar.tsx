@@ -231,9 +231,12 @@ export default function LiveFlightRadar() {
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return;
 
+    // World view by default — user can zoom into any region
     const map = L.map(containerRef.current, {
-      center: [-5, 120], zoom: 5,
+      center: [20, 10], zoom: 2,
       zoomControl: true, preferCanvas: true, attributionControl: false,
+      minZoom: 2, maxZoom: 18,
+      worldCopyJump: true,
     });
     L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
       subdomains: "abcd", maxZoom: 18,
@@ -397,9 +400,9 @@ export default function LiveFlightRadar() {
 
   return (
     <div className="flex flex-col gap-0">
-      {/* ── Main Radar Map ─────────────────────────────────────────────────── */}
+      {/* ── Main Radar Map — full height on mobile, tall on desktop ────────── */}
       <div className="rounded-t-2xl overflow-hidden border border-cyan-500/20 border-b-0 shadow-2xl shadow-cyan-500/10 flex flex-col"
-        style={{ height: "clamp(300px, 55vh, 620px)" }}>
+        style={{ height: "clamp(480px, 75vh, 800px)" }}>
 
         {/* ── IDE 5: Search & Filter Bar ──────────────────────────────────── */}
         <div className="flex items-center gap-1.5 px-2 py-1.5 bg-[#060b18] border-b border-cyan-500/15 flex-shrink-0 overflow-x-auto">
@@ -445,10 +448,10 @@ export default function LiveFlightRadar() {
               <span className="bg-black/80 border border-cyan-500/30 text-cyan-400/70 text-[9px] font-mono px-2 py-0.5 rounded-full">⏳ Connecting...</span>
             )}
             {status === "live" && (
-              <span className="bg-emerald-900/80 border border-emerald-500/40 text-emerald-400 text-[9px] font-mono px-2 py-0.5 rounded-full animate-pulse">🛰 LIVE · OpenSky Network</span>
+              <span className="bg-emerald-900/80 border border-emerald-500/40 text-emerald-400 text-[9px] font-mono px-2 py-0.5 rounded-full animate-pulse">🛰 LIVE · {stats.total} flights worldwide</span>
             )}
             {status === "simulated" && (
-              <span className="bg-yellow-900/60 border border-yellow-500/30 text-yellow-400/70 text-[9px] font-mono px-2 py-0.5 rounded-full">🟡 Simulated · OpenSky offline</span>
+              <span className="bg-yellow-900/60 border border-yellow-500/30 text-yellow-400/70 text-[9px] font-mono px-2 py-0.5 rounded-full">🟡 {stats.total} flights · OpenSky offline</span>
             )}
           </div>
 
@@ -461,20 +464,20 @@ export default function LiveFlightRadar() {
 
           {/* HUD Stats — draggable on all devices */}
           <div
-            className="absolute z-[1000] bg-black/80 border border-cyan-500/30 rounded-xl p-2.5 text-xs font-mono cursor-grab active:cursor-grabbing touch-none select-none"
+            className="absolute z-[1000] bg-black/85 border border-cyan-500/30 rounded-xl p-2.5 text-xs font-mono cursor-grab active:cursor-grabbing touch-none select-none"
             style={{ bottom: hudPos.bottom, left: hudPos.left }}
             onPointerDown={onHudDown}
             onPointerMove={onHudMove}
             onPointerUp={onHudUp}
             onPointerCancel={onHudUp}
           >
-            <div className="text-cyan-400 font-bold mb-1.5 flex items-center gap-1">
-              ✈ RANIA LIVE RADAR
+            <div className="text-cyan-400 font-bold mb-1.5 flex items-center gap-1 text-[10px]">
+              🌍 WORLD LIVE RADAR
               <span className="text-white/20 text-[8px] ml-1">⠿</span>
             </div>
-            <div className="text-white/60">Flights <span className="text-white font-bold ml-1">{stats.total}</span></div>
-            <div className="text-white/60">Airborne <span className="text-white font-bold ml-1">{stats.airborne}</span></div>
-            <div className="text-white/60">Near DIL <span className="text-cyan-400 font-bold ml-1">{stats.dil}</span></div>
+            <div className="text-white/60 text-[10px]">Flights <span className="text-emerald-400 font-bold ml-1 text-[11px]">{stats.total}</span></div>
+            <div className="text-white/60 text-[10px]">Airborne <span className="text-white font-bold ml-1">{stats.airborne}</span></div>
+            <div className="text-white/60 text-[10px]">Near Dili <span className="text-cyan-400 font-bold ml-1">{stats.dil}</span></div>
             {lastUpdate && <div className="text-white/25 text-[9px] mt-1.5 border-t border-white/10 pt-1">{lastUpdate} UTC · 15s</div>}
           </div>
 
