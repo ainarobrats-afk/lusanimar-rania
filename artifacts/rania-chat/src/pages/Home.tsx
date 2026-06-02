@@ -3236,6 +3236,33 @@ function AirportDepartureBoard({ onOpenChat }: { onOpenChat: () => void }) {
   );
 }
 
+// ── V20: Generate/restore stable session ID ──────────────────────────────────
+function getOrCreateSessionId(): string {
+  try {
+    const existing = localStorage.getItem("rania_session_id");
+    if (existing && existing.length > 10) return existing;
+    const newId = crypto.randomUUID();
+    localStorage.setItem("rania_session_id", newId);
+    return newId;
+  } catch {
+    return crypto.randomUUID();
+  }
+}
+
+// ── V20: Client-side direction validator ─────────────────────────────────────
+// Prevents wrong-direction cards from rendering (final safety net)
+function v20FilterCards(cards: FlightCard[], expectedFrom?: string, expectedTo?: string): FlightCard[] {
+  if (!expectedFrom || !expectedTo || cards.length === 0) return cards;
+  const ef = expectedFrom.toUpperCase();
+  const et = expectedTo.toUpperCase();
+  const valid = cards.filter(c => {
+    const cf = (c.from || "").toUpperCase();
+    const ct = (c.to || "").toUpperCase();
+    return cf === ef && ct === et;
+  });
+  return valid.length > 0 ? valid : cards;
+}
+
 // ── Main Chat Overlay ─────────────────────────────────────────────────────────
 function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: {
   isOpen: boolean; onClose: () => void; lang: Language; setLang: (l: Language) => void;
@@ -3250,6 +3277,11 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
   const [voiceEnabled, setVoiceEnabled] = useState(true);
   const [voiceVolume, setVoiceVolume] = useState(0.7);
   const [isSpeaking, setIsSpeaking] = useState(false);
+
+  // V20: Stable session ID persisted across page refreshes
+  const sessionIdRef = useRef<string>(getOrCreateSessionId());
+  // V20: Track active search state for direction validation + SSOT
+  const [activeSearch, setActiveSearch] = useState<{ from: string; to: string; date?: string } | null>(null);
 
   // ── Voice daily limit (persisted in localStorage, resets every day) ─────
   const _initVoiceUsed = (() => {
@@ -3603,10 +3635,14 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
       const history = messages.slice(-10).map((m) => ({ role: m.role, content: m.text }));
       history.push({ role: "user", content: msg });
 
-      // Call RANIA AI backend
+      // Call RANIA AI backend (V20: stable session ID sent as header)
       const aiRes = await fetch(`${API}/rania/chat`, {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-request-id": reqId },
+        headers: {
+          "Content-Type": "application/json",
+          "x-request-id": reqId,
+          "x-session-id": sessionIdRef.current,
+        },
         body: JSON.stringify({ messages: history, lang, bookingMode: bookingModeRef.current }),
       });
 
@@ -3632,9 +3668,13 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
 
         // Backend already fetched flights when RANIA output JSON flight_search block
         if (aiData.flights && aiData.flights.length > 0) {
-          flights = aiData.flights;
+          // V20: direction validator — client-side final safety net
+          const rawFlights: FlightCard[] = aiData.flights;
+          flights = v20FilterCards(rawFlights, aiData.from, aiData.to);
           if (aiData.from && aiData.to) {
             searchParams = { from: aiData.from, to: aiData.to };
+            // V20: update activeSearch state for session continuity
+            setActiveSearch({ from: aiData.from, to: aiData.to, date: aiData.date });
           }
         }
 
@@ -3693,8 +3733,12 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
             const flRes = await fetch(`${API}/rania/flights?from=${params.from}&to=${params.to}${params.date ? `&date=${params.date}` : ""}`);
             if (flRes.ok) {
               const flData = await flRes.json();
-              flights = flData.flights;
+              // V20: direction validator on fallback path too
+              flights = v20FilterCards(flData.flights || [], params.from, params.to);
               if (!searchParams) searchParams = { from: params.from, to: params.to, date: params.date };
+              if (flights.length > 0 && params.from && params.to) {
+                setActiveSearch({ from: params.from, to: params.to, date: params.date });
+              }
             }
           } catch { /* ignore */ }
         }

@@ -1065,10 +1065,20 @@ interface UserProfile {
 const userProfiles = new Map<string, UserProfile>();
 
 // ─── P0-B/C/H: SessionState — conversation mode + active search ──────────────
+interface ActiveSearch {
+  origin: string;
+  destination: string;
+  date: string;
+  lowestPrice?: number;
+  highestPrice?: number;
+  airlines?: string[];
+  flights?: any[];        // V20: full flight cards as SSOT — prevents AI hallucination
+  requestId?: string;     // V20: ties search to specific request for dedup
+}
 interface SessionState {
   sessionId: string;
   mode: "WELCOME" | "SEARCHING" | "DISCUSSING" | "BOOKING" | "PAYMENT";
-  activeSearch: { origin: string; destination: string; date: string; lowestPrice?: number; highestPrice?: number; airlines?: string[] } | null;
+  activeSearch: ActiveSearch | null;
   lastUserMsg: string;
   updatedAt: number;
 }
@@ -3534,6 +3544,74 @@ function stripJsonBlock(reply: string): string {
   return reply.replace(/```json[\s\S]*?```\s*/g, "").trim();
 }
 
+// ─── V20: Anti-Hallucination Text Validator ──────────────────────────────────
+// Post-processes AI reply text to strip hallucinated prices / airlines
+// that contradict the activeSearch SSOT (what the flight cards actually show).
+function v20ValidateReplyText(reply: string, as: ActiveSearch): string {
+  if (!reply || !as) return reply;
+  let result = reply;
+
+  // 1. Price validator: strip any "$NNN" that falls outside the real range ±15%
+  if (as.lowestPrice && as.highestPrice) {
+    const lo = Math.floor(as.lowestPrice * 0.85);
+    const hi = Math.ceil(as.highestPrice * 1.15);
+    result = result.replace(/\$\s*(\d+(?:[.,]\d+)?)/g, (_match, numStr) => {
+      const n = parseFloat(numStr.replace(",", "."));
+      if (isNaN(n)) return _match;
+      // Allow prices that are within 15% of the real range
+      if (n >= lo && n <= hi) return _match;
+      // Hallucinated price — replace with the real low price
+      return `$${as.lowestPrice}`;
+    });
+  }
+
+  // 2. Airline validator: warn if reply mentions an airline not in the active search
+  if (as.airlines && as.airlines.length > 0) {
+    const knownAirlines = as.airlines.map(a => a.toLowerCase());
+    // Only flag explicit airline name mentions that are clearly wrong
+    // (e.g. "Garuda" when only AirAsia & Batik are on the cards)
+    const KNOWN_AIRLINE_NAMES: Record<string, string[]> = {
+      "garuda": ["garuda", "garuda indonesia"],
+      "airasia": ["airasia", "air asia"],
+      "batik": ["batik", "batik air"],
+      "lion": ["lion", "lion air"],
+      "citilink": ["citilink"],
+      "sriwijaya": ["sriwijaya"],
+      "wings": ["wings air"],
+      "aero dili": ["aero dili", "4w"],
+      "qantas": ["qantas"],
+      "jetstar": ["jetstar"],
+      "virgin": ["virgin"],
+      "singapore airlines": ["singapore airlines", "sia"],
+      "malaysia airlines": ["malaysia airlines", "mas"],
+      "thai airways": ["thai airways"],
+      "emirates": ["emirates"],
+      "qatar": ["qatar airways"],
+      "cathay": ["cathay pacific"],
+      "lufthansa": ["lufthansa"],
+      "united": ["united airlines"],
+      "delta": ["delta"],
+      "american": ["american airlines"],
+    };
+    // Check if reply mentions an airline NOT in the active search
+    for (const [canonical, aliases] of Object.entries(KNOWN_AIRLINE_NAMES)) {
+      const isInSearch = knownAirlines.some(ka =>
+        aliases.some(a => ka.includes(a)) || aliases.some(a => a.includes(ka))
+      );
+      if (!isInSearch) {
+        // This airline is NOT in the search results — check if reply mentions it
+        const mentionPattern = new RegExp(`\\b(${aliases.join("|")})\\b`, "gi");
+        if (mentionPattern.test(result)) {
+          // Replace hallucinated airline name with "the airline on your card" style
+          result = result.replace(mentionPattern, as.airlines[0] || canonical);
+        }
+      }
+    }
+  }
+
+  return result;
+}
+
 // P0-E: JSON Leak Protection — block internal JSON from reaching user
 function sanitizeResponse(reply: string): string {
   let clean = reply.replace(/```json[\s\S]*?```\s*/g, "").trim();
@@ -4176,6 +4254,7 @@ router.post("/rania/chat", async (req: Request, res: Response) => {
     return;
   }
   const sessionId = (req.headers["x-session-id"] as string) || ip;
+  const reqId = (req.headers["x-request-id"] as string) || crypto.randomUUID(); // V20: dedup + SSOT tying
   const bookingMode = req.body?.bookingMode === true;
   const tierCheck = isCqapInternal ? { allowed: true, remaining: -1, tier: "cqap" } : checkDailyLimit(sessionId);
   if (!tierCheck.allowed && !bookingMode) {
@@ -4456,7 +4535,7 @@ router.post("/rania/chat", async (req: Request, res: Response) => {
     }
 
     // P0-A/B/F: Update session state with activeSearch after flight results found
-    // This is the Single Source of Truth for prices — AI reads from here, not from hallucination
+    // V20: flights[] included for complete SSOT — AI reads from here, not from hallucination
     if (from && to && flights && flights.length > 0) {
       const prices = flights.map((f: any) => f.price).filter((p: any) => typeof p === "number" && p > 0);
       const lowestPrice = prices.length > 0 ? Math.min(...prices) : undefined;
@@ -4465,7 +4544,16 @@ router.post("/rania/chat", async (req: Request, res: Response) => {
       const searchDate = flightSearch?.date || new Date().toISOString().substring(0, 10);
       updateSessionState(sessionId, {
         mode: "DISCUSSING",
-        activeSearch: { origin: from, destination: to, date: searchDate, lowestPrice, highestPrice, airlines },
+        activeSearch: {
+          origin: from,
+          destination: to,
+          date: searchDate,
+          lowestPrice,
+          highestPrice,
+          airlines,
+          flights: flights.slice(0, 6), // store up to 6 cards in SSOT
+          requestId: reqId,             // tie to this specific request
+        },
       });
     } else if (intent === "booking") {
       updateSessionState(sessionId, { mode: "BOOKING" });
@@ -4497,7 +4585,13 @@ router.post("/rania/chat", async (req: Request, res: Response) => {
     // Detect group booking intent
     const groupIntent = detectGroupIntent(lastUserMsg);
 
-    res.json({ reply: finalReply, intent, provider: aiProvider, flights, from, to, detectedLang: lang, tier: tierCheck.tier, remaining: tierCheck.remaining, groupBookingIntent: groupIntent.detected ? groupIntent : undefined, budgetAnalysis, countryComparison, waHandoff, noFlightsMessage });
+    // V20: Anti-hallucination text validator for follow-up replies
+    // Applies ONLY when answering a follow-up about an existing search (SSOT correction)
+    const v20Reply = (isFollowUp && sessionState.activeSearch)
+      ? v20ValidateReplyText(finalReply, sessionState.activeSearch)
+      : finalReply;
+
+    res.json({ reply: v20Reply, intent, provider: aiProvider, flights, from, to, detectedLang: lang, tier: tierCheck.tier, remaining: tierCheck.remaining, groupBookingIntent: groupIntent.detected ? groupIntent : undefined, budgetAnalysis, countryComparison, waHandoff, noFlightsMessage });
   } catch (err: any) {
     req.log.error({ err }, "Chat error");
     const lastMsg = req.body?.messages?.[req.body.messages.length - 1]?.content || "";

@@ -1,0 +1,1 @@
+- [RANIA V20 stabilization](rania-v20.md) — V20 implementation complete; key architecture decisions for anti-hallucination, session SSOT, and direction validation.
