@@ -1,0 +1,8 @@
+name = "rania-hunter"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# All sensitive keys stored as secrets via:
+# wrangler secret put TRAVELPAYOUTS_TOKEN --name rania-hunter
+# wrangler secret put TRAVELPAYOUTS_MARKER --name rania-hunter
+# wrangler secret put AVIATIONSTACK_KEY --name rania-hunter

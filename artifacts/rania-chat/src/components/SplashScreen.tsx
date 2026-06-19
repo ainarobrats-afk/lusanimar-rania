@@ -97,11 +97,11 @@ function speakWelcome() {
   try {
     if (!window.speechSynthesis) return;
     const msg = new SpeechSynthesisUtterance(
-      "Bondia! Bem-vindo ba Lu Sanimar — RANIA, ita nia asistente viajen. Mai hau lori ita ba mundu!"
+      "Selamat datang di Lu Sanimar — saya RANIA, asisten perjalanan Anda. Mari saya bawa Anda ke dunia!"
     );
     const voices = window.speechSynthesis.getVoices();
     const preferred = voices.find(v =>
-      v.lang.startsWith("pt") || v.lang.startsWith("id") || v.name.includes("Siri") || v.name.includes("Google")
+      v.lang.startsWith("id") || v.name.includes("Siri") || v.name.includes("Google")
     );
     if (preferred) msg.voice = preferred;
     msg.rate = 0.88; msg.pitch = 1.05; msg.volume = 0.75;
@@ -131,7 +131,7 @@ export default function SplashScreen({ onDone }: { onDone: () => void }) {
     fetch("/api/rania/tts", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: "Bondia! Bem-vindo ba Lu Sanimar — hau RANIA, ita nia asistente viajen. Mai hau lori ita ba mundu!", lang: "tet" }),
+      body: JSON.stringify({ text: "Selamat datang di Lu Sanimar — saya RANIA, asisten perjalanan Anda. Mari saya bawa Anda ke dunia!", lang: "id" }),
     })
       .then(r => r.ok ? r.blob() : Promise.reject("fail"))
       .then(blob => {

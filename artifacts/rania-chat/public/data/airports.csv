@@ -1,0 +1,17 @@
+icao,iata,name,city,subd,country,elevation,lat,lon,tz,lid
+WPDL,DIL,Presidente Nicolau Lobato International Airport,Dili,Dili,TL,8,-8.5586,125.5282,Asia/Dili,DILI
+WADD,DPS,Ngurah Rai International Airport,Denpasar,Bali,ID,4,-8.7482,115.1672,Asia/Makassar,DPS
+WIII,CGK,Soekarno-Hatta International Airport,Jakarta,Jakarta,ID,10,-6.1256,106.6558,Asia/Jakarta,CGK
+WARR,SUB,Juanda International Airport,Surabaya,East Java,ID,3,-7.3798,112.7869,Asia/Jakarta,SUB
+WATC,KOE,El Tari Airport,Kupang,East Nusa Tenggara,ID,103,-10.1678,123.6675,Asia/Makassar,KOE
+WSSS,SIN,Singapore Changi Airport,Singapore,Singapore,SG,7,1.3644,103.9915,Asia/Singapore,SIN
+WMKK,KUL,Kuala Lumpur International Airport,Kuala Lumpur,Selangor,MY,21,2.7456,101.7072,Asia/Kuala_Lumpur,KUL
+VTBS,BKK,Suvarnabhumi Airport,Bangkok,Samut Prakan,TH,2,13.6900,100.7501,Asia/Bangkok,BKK
+VVTS,SGN,Tan Son Nhat International Airport,Ho Chi Minh City,Ho Chi Minh City,VN,10,10.8188,106.6510,Asia/Ho_Chi_Minh,SGN
+RPLL,MNL,Ninoy Aquino International Airport,Manila,Metro Manila,PH,23,14.5086,121.0194,Asia/Manila,MNL
+RKSI,ICN,Incheon International Airport,Incheon,Incheon,KR,7,37.4631,126.4406,Asia/Seoul,ICN
+RJAA,NRT,Narita International Airport,Narita,Chiba,JP,41,35.7653,140.3864,Asia/Tokyo,NRT
+YSSY,SYD,Sydney Kingsford Smith Airport,Sydney,New South Wales,AU,21,-33.9399,151.1753,Australia/Sydney,SYD
+EGLL,LHR,London Heathrow Airport,London,London,GB,25,51.4700,-0.4543,Europe/London,LHR
+LPPT,LIS,Lisbon Portela Airport,Lisbon,Lisbon,PT,114,38.7813,-9.1359,Europe/Lisbon,LIS
+KJFK,JFK,John F. Kennedy International Airport,New York,New York,US,13,40.6413,-73.7781,America/New_York,JFK

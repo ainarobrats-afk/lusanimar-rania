@@ -1,0 +1,32 @@
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "dist/public",
+  "installCommand": "pnpm install",
+  "framework": null,
+  "rewrites": [
+    { "source": "/chat",         "destination": "https://rania-parser.lusanimar.workers.dev/api/chat" },
+    { "source": "/api/chat",     "destination": "https://rania-parser.lusanimar.workers.dev/api/chat" },
+    { "source": "/api/health",   "destination": "https://rania-parser.lusanimar.workers.dev/api/health" },
+    { "source": "/api/ads/:path*", "destination": "https://rania-parser.lusanimar.workers.dev/api/ads/:path*" },
+    { "source": "/rania/chat",   "destination": "https://rania-parser.lusanimar.workers.dev/api/chat" },
+    { "source": "/rania/flights","destination": "https://rania-hunter.lusanimar.workers.dev/api/search" },
+    { "source": "/api/search",   "destination": "https://rania-hunter.lusanimar.workers.dev/api/search" },
+    { "source": "/api/validate", "destination": "https://rania-validator.lusanimar.workers.dev/api/validate" },
+    { "source": "/api/checkout", "destination": "https://rania-cashier.lusanimar.workers.dev/api/checkout" },
+    { "source": "/api/webhook/:path*", "destination": "https://rania-webhook.lusanimar.workers.dev/api/webhook/:path*" },
+    { "source": "/api/admin/:path*",   "destination": "https://rania-admin.lusanimar.workers.dev/api/admin/:path*" },
+    { "source": "/api/book",     "destination": "https://rania-pilot.lusanimar.workers.dev/api/book" },
+    { "source": "/admin/:path*", "destination": "https://rania-admin.lusanimar.workers.dev/api/admin/:path*" },
+    { "source": "/(.*)",         "destination": "/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "GET, POST, PUT, DELETE, OPTIONS" },
+        { "key": "Access-Control-Allow-Headers", "value": "Content-Type, Authorization, x-request-id, x-session-id, x-admin-token" }
+      ]
+    }
+  ]
+}

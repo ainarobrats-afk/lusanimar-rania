@@ -1,0 +1,9 @@
+name = "rania-cashier"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# Xendit API key stored as secret
+# Set via: wrangler secret put XENDIT_API_KEY --name rania-cashier
+
+[vars]
+XENDIT_MODE = "sandbox"

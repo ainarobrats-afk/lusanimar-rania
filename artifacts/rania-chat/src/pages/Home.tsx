@@ -1,17 +1,21 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { createPortal } from "react-dom";
+import { useLocation } from "wouter";
 import LiveFlightRadar from "@/components/LiveFlightRadar";
 import PriceHistoryChart from "@/components/PriceHistoryChart";
 import PassportCamera from "@/components/PassportCamera";
 import { jsPDF } from "jspdf";
+import { validateFlights } from "@/lib/flightValidator";
 import { hybridSpeak, isCriticalEvent, speakTier1, getVoiceStats, stopSpeaking, triggerWelcomeVoice } from "@/components/VoiceEngine";
 import { WelcomeCard } from "@/components/WelcomeCard";
 import { RequestDedup } from "@/components/SessionManager";
 import WhatsAppHandoff from "@/components/WhatsAppHandoff";
 import BookingProgressBar from "@/components/BookingProgressBar";
+import BookingFlow from "@/components/BookingFlow";
+import type { FlightOption as V21FlightOption } from "@/components/FlightCard";
 
-const GH = "https://raw.githubusercontent.com/ainarobrats-afk/SANIMAR-TRAVEL/main/Rania%20Ai/public";
-const API = "/api";
+const GH = "/image";
+const API = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000";
 
 // ─── Airport autocomplete data — 160+ global airports ──────────────────────────
 const AIRPORTS_LIST = [
@@ -323,7 +327,13 @@ function FlightSearchWidget({ lang, onResults }: {
     try {
       const res = await fetch(`${API}/rania/flights?from=${fromAirport.iata}&to=${toAirport.iata}&date=${depDate}`);
       const data = await res.json();
-      onResults(data.flights || [], fromAirport.iata, toAirport.iata, depDate);
+      const raw = data.flights || [];
+      const { validFlights, issues } = validateFlights(raw, fromAirport.iata, toAirport.iata, depDate);
+      if (issues.length > 0) {
+        // surface a concise warning to the UI and still show only validated flights
+        setError("Warning: some results failed validation and were filtered out.");
+      }
+      onResults(validFlights, fromAirport.iata, toAirport.iata, depDate);
     } catch {
       setError(lang === "id" ? "Gagal mencari penerbangan" : "Search failed. Please try again.");
     } finally { setLoading(false); }
@@ -732,6 +742,8 @@ type ChatMsg = {
   budgetAnalysis?: BudgetAnalysis;
   countryComparison?: string;
   waHandoff?: string;
+  v21Flights?: V21FlightOption[];
+  v21SearchLoading?: boolean;
 };
 
 const T: Record<Language, Record<string, string>> = {
@@ -3036,7 +3048,7 @@ function RegisterModal({ onDone, lang }: { onDone: () => void; lang: Language })
             <div className="w-20 h-20 rounded-[22px] p-[2.5px] shadow-[0_0_40px_rgba(99,102,241,0.6)]"
               style={{ background: "linear-gradient(135deg,#6366f1,#a855f7,#06b6d4)" }}>
               <div className="w-full h-full rounded-[19px] overflow-hidden bg-[#0a1525]">
-                <img src={`${GH}/image/rania_avatar.png.webp`} alt="RANIA"
+                <img src={`${GH}/rania_avatar.png.webp`} alt="RANIA"
                   className="w-full h-full object-cover"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
               </div>
@@ -3339,41 +3351,16 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
   const FREE_VOICE_LIMIT = 15;
   const isPremium = typeof window !== "undefined" && localStorage.getItem("rania_premium") === "true";
 
-  // P1-A: Init greeting — restore from sessionStorage first, then localStorage (survives tab close)
-  useEffect(() => {
-    const storageKey = `rania_chat_history_${lang}`;
-    try {
-      // Try sessionStorage first (fastest, current tab)
-      const sessionSaved = sessionStorage.getItem(storageKey);
-      if (sessionSaved) {
-        const parsed = JSON.parse(sessionSaved) as ChatMsg[];
-        if (parsed.length > 0) { setMessages(parsed); return; }
-      }
-      // Fallback to localStorage (survives tab close / browser refresh)
-      const lsSaved = localStorage.getItem(`rania_draft_${lang}`);
-      if (lsSaved) {
-        const { messages: savedMsgs, savedAt } = JSON.parse(lsSaved) as { messages: ChatMsg[]; savedAt: number };
-        // Only restore if saved within last 2 hours
-        if (savedMsgs && savedMsgs.length > 0 && Date.now() - (savedAt || 0) < 2 * 60 * 60 * 1000) {
-          setMessages(savedMsgs);
-          return;
-        }
-      }
-    } catch { /* ignore parse errors */ }
-    setMessages([{
-      role: "assistant",
-      text: t.chatGreeting,
-      time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
-      intent: "general",
-    }]);
-  }, [lang]);
+  // ── Chat persistence helpers (language-independent keys) ──────────────────
+  // Single universal key so language switching NEVER wipes the chat.
+  const CHAT_LS_KEY = "rania_chat_v3";       // localStorage  — survives tab close, 7-day TTL
+  const CHAT_SS_KEY = "rania_chat_session";  // sessionStorage — fastest restore on same tab
+  const CHAT_TTL_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
-  // Persist chat to sessionStorage + localStorage (draft auto-save) on every message
-  useEffect(() => {
-    if (messages.length <= 1) return;
-    const storageKey = `rania_chat_history_${lang}`;
+  const persistMessages = useCallback((msgs: ChatMsg[]) => {
+    if (msgs.length <= 1) return;
     try {
-      const slim = messages.slice(-60).map(m => ({
+      const slim = msgs.slice(-100).map(m => ({
         role: m.role, text: m.text, time: m.time, intent: m.intent,
         flights: m.flights ? m.flights.slice(0, 3) : undefined,
         bookingSuccess: m.bookingSuccess,
@@ -3384,11 +3371,71 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
           to: m.groupBookingSuccess.to,
         } : undefined,
       }));
-      sessionStorage.setItem(storageKey, JSON.stringify(slim));
-      // Also persist to localStorage so draft survives tab close
-      localStorage.setItem(`rania_draft_${lang}`, JSON.stringify({ messages: slim, savedAt: Date.now() }));
+      const payload = JSON.stringify({ messages: slim, savedAt: Date.now(), lang });
+      sessionStorage.setItem(CHAT_SS_KEY, payload);
+      localStorage.setItem(CHAT_LS_KEY, payload);
     } catch { /* storage full — ignore */ }
-  }, [messages, lang]);
+  }, [lang]);
+
+  // P1-A: Init — restore chat history on mount (runs ONCE, not on lang change)
+  useEffect(() => {
+    const tryRestore = (): boolean => {
+      // 1. sessionStorage first (fastest, same tab, no TTL needed)
+      const ss = sessionStorage.getItem(CHAT_SS_KEY);
+      if (ss) {
+        try {
+          const { messages: saved } = JSON.parse(ss) as { messages: ChatMsg[]; savedAt: number };
+          if (saved && saved.length > 0) { setMessages(saved); return true; }
+        } catch { /* corrupt — ignore */ }
+      }
+      // 2. localStorage fallback (survives tab close, 7-day TTL)
+      const ls = localStorage.getItem(CHAT_LS_KEY);
+      if (ls) {
+        try {
+          const { messages: saved, savedAt } = JSON.parse(ls) as { messages: ChatMsg[]; savedAt: number };
+          if (saved && saved.length > 0 && Date.now() - (savedAt || 0) < CHAT_TTL_MS) {
+            setMessages(saved);
+            // Rehydrate sessionStorage so next restore is instant
+            sessionStorage.setItem(CHAT_SS_KEY, ls);
+            return true;
+          }
+        } catch { /* corrupt — ignore */ }
+      }
+      // 3. Also try legacy keys from older code versions (migration)
+      for (const legacyLang of ["id", "tet", "en", "pt"]) {
+        try {
+          const legacyLs = localStorage.getItem(`rania_draft_${legacyLang}`);
+          if (legacyLs) {
+            const { messages: saved, savedAt } = JSON.parse(legacyLs) as { messages: ChatMsg[]; savedAt: number };
+            if (saved && saved.length > 0 && Date.now() - (savedAt || 0) < CHAT_TTL_MS) {
+              setMessages(saved);
+              // Migrate to new key and remove legacy
+              persistMessages(saved);
+              localStorage.removeItem(`rania_draft_${legacyLang}`);
+              return true;
+            }
+          }
+        } catch { /* ignore */ }
+      }
+      return false;
+    };
+
+    const restored = tryRestore();
+    if (!restored) {
+      setMessages([{
+        role: "assistant",
+        text: t.chatGreeting,
+        time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }),
+        intent: "general",
+      }]);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // ← intentionally empty — runs ONCE on mount, never on lang change
+
+  // Persist chat on every message change (language-independent)
+  useEffect(() => {
+    persistMessages(messages);
+  }, [messages, persistMessages]);
 
   useEffect(() => {
     endRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -3635,7 +3682,134 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
       const history = messages.slice(-10).map((m) => ({ role: m.role, content: m.text }));
       history.push({ role: "user", content: msg });
 
-      // Call RANIA AI backend (V20: stable session ID sent as header)
+      // ─── V2.1: Try worker-parser first (function calling + real search) ──
+      let v21Flights: V21FlightOption[] | undefined;
+      let v21Reply: string | undefined;
+      let v21Used = false;
+
+      try {
+        const v21Res = await fetch(`${API}/chat`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-request-id": reqId, "x-session-id": sessionIdRef.current },
+          body: JSON.stringify({ pesan: msg, tipe_chat: "travel", session_id: sessionIdRef.current }),
+        });
+        if (v21Res.ok) {
+          const v21Data = await v21Res.json();
+          // Handle SWITCH_TO_MARKET — show a suggestion to switch
+          if (v21Data.action === "SWITCH_TO_MARKET") {
+            v21Reply = v21Data.jawaban || v21Data.reply || "Hmm, sepertinya ini pertanyaan tentang jual-beli. Mau pindah ke RANIA Market? 🛒";
+            v21Used = true;
+          } else if (v21Data.functionCalled === "search_flights" && v21Data.functionResult?.results?.length > 0) {
+            // Ensure departure dates align with the user's requested search date (fix date drift bug)
+            const dateRegex = /(\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4})|(\d{4}-\d{2}-\d{2})/;
+            const lastDateRaw = history.slice().reverse().map(m => m.content || "").find(c => dateRegex.test(String(c)));
+            let requestedDateISO: string | undefined = undefined;
+            if (lastDateRaw) {
+              const m = String(lastDateRaw).match(dateRegex)?.[0];
+              if (m) {
+                // normalize dd/mm/yyyy to YYYY-MM-DD
+                if (/\d{1,2}[\/\-]\d{1,2}[\/\-]\d{2,4}/.test(m)) {
+                  const parts = m.split(/[\/\-]/).map(p => p.padStart(2, '0'));
+                  // assume DD/MM/YYYY
+                  const [d, mo, y] = parts;
+                  const yyyy = y.length === 2 ? ('20' + y) : y;
+                  requestedDateISO = `${yyyy}-${mo}-${d}`;
+                } else if (/\d{4}-\d{2}-\d{2}/.test(m)) {
+                  requestedDateISO = m;
+                }
+              }
+            }
+            // Map worker-hunter results to FlightOption format (never expose source to user)
+            v21Flights = v21Data.functionResult.results.map((f: Record<string, unknown>) => ({
+              id: String(f.id),
+              airline: String(f.airline || "Unknown"),
+              airlineCode: String(f.airlineCode || "XX"),
+              flightNumber: String(f.flightNumber || ""),
+              from: String(f.from || ""),
+              to: String(f.to || ""),
+              departureTime: ((): string => {
+                const raw = String(f.departureTime || "");
+                if (!raw) return "";
+                try {
+                  // If requestedDateISO provided, keep the time portion but apply requested date
+                  if (requestedDateISO) {
+                    const t = raw.match(/(\d{2}:\d{2}:?\d{0,2})/)?.[0] || raw.match(/(\d{2}:\d{2})/)?.[0] || raw;
+                    // If time missing, return raw
+                    if (!t) return raw;
+                    // Build ISO datetime using requested date and time (assume local timezone not required here)
+                    return `${requestedDateISO}T${t.length === 5 ? t + ':00' : t}`;
+                  }
+                } catch (e) {
+                  return raw;
+                }
+                return raw;
+              })(),
+              arrivalTime: ((): string => {
+                const raw = String(f.arrivalTime || "");
+                if (!raw) return "";
+                try {
+                  if (requestedDateISO) {
+                    const t = raw.match(/(\d{2}:\d{2}:?\d{0,2})/)?.[0] || raw.match(/(\d{2}:\d{2})/)?.[0] || raw;
+                    if (!t) return raw;
+                    return `${requestedDateISO}T${t.length === 5 ? t + ':00' : t}`;
+                  }
+                } catch (e) {
+                  return raw;
+                }
+                return raw;
+              })(),
+              duration: String(f.duration || ""),
+              price: Number(f.price) || 0,
+              currency: String(f.currency || "IDR"),
+              taxes: Number(f.taxes) || 0,
+              fees: Number(f.fees) || 0,
+              totalPrice: Number(f.totalPrice) || 0,
+              available: f.available !== false,
+              source: String(f.source || ""), // internal only, never shown
+              stops: Number(f.stops) || 0,
+              stopCity: f.stopCity ? String(f.stopCity) : undefined,
+              baggage: f.baggage ? String(f.baggage) : undefined,
+              cabinClass: f.cabinClass ? String(f.cabinClass) : undefined,
+            }));
+            v21Reply = v21Data.reply;
+            v21Used = true;
+          } else if (v21Data.reply || v21Data.jawaban) {
+            // AI replied without function call (general chat via worker-parser)
+            v21Reply = v21Data.reply || v21Data.jawaban;
+            v21Used = true;
+          }
+          // Auto-switch language from V2.1 parser
+          if (v21Data.detectedLang && ["tet","id","en","pt"].includes(v21Data.detectedLang) && v21Data.detectedLang !== lang) {
+            setLang(v21Data.detectedLang as Language);
+          }
+        }
+      } catch { /* V2.1 worker not deployed yet — fall through to legacy */ }
+
+      // Discard response if a newer request has been made
+      if (latestRequestIdRef.current !== reqId) return;
+
+      // If V2.1 worker handled it, add message with v21Flights and skip legacy
+      if (v21Used && (v21Reply || v21Flights)) {
+        const replyTime = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        // Fallback text when AI reply is empty but flights exist — per language
+        const flightFoundFallback: Record<string, string> = {
+          tet: `Ha'u hetan ${v21Flights?.length ?? 0} voo! Hili ne'ebé di'ak liu ba ita ✈️`,
+          id: `Ditemukan ${v21Flights?.length ?? 0} penerbangan! Pilih yang terbaik di bawah ini ✈️`,
+          en: `Found ${v21Flights?.length ?? 0} flights! Choose the best one below ✈️`,
+          pt: `Encontrei ${v21Flights?.length ?? 0} voos! Escolha o melhor abaixo ✈️`,
+        };
+        addMessage({
+          role: "assistant",
+          text: v21Reply || (v21Flights ? (flightFoundFallback[lang] || flightFoundFallback.id) : ""),
+          time: replyTime,
+          intent: v21Flights ? "flight" : "general",
+          v21Flights,
+        });
+        setIsTyping(false);
+        return;
+      }
+
+      // ─── Legacy fallback: Call RANIA AI backend (V20) ─────────────────
       const aiRes = await fetch(`${API}/rania/chat`, {
         method: "POST",
         headers: {
@@ -3672,7 +3846,7 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
           const rawFlights: FlightCard[] = aiData.flights;
           flights = v20FilterCards(rawFlights, aiData.from, aiData.to);
           if (aiData.from && aiData.to) {
-            searchParams = { from: aiData.from, to: aiData.to };
+            searchParams = { from: aiData.from, to: aiData.to, date: aiData.date };
             // V20: update activeSearch state for session continuity
             setActiveSearch({ from: aiData.from, to: aiData.to, date: aiData.date });
           }
@@ -3854,7 +4028,7 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
               <div className="flex items-center gap-3">
                 <div className="relative flex-shrink-0">
                   <div className="w-11 h-11 rounded-2xl p-[2px] bg-gradient-to-tr from-cyan-400 to-purple-600 shadow-lg shadow-cyan-500/20">
-                    <img src={`${GH}/image/rania_avatar.png.webp`} alt="RANIA"
+                    <img src={`${GH}/rania_avatar.png.webp`} alt="RANIA"
                       className="w-full h-full rounded-[12px] object-cover bg-black"
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                   </div>
@@ -3899,7 +4073,7 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
               <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"} msg-in`}>
                 {msg.role === "assistant" && (
                   <div className="w-7 h-7 rounded-xl bg-gradient-to-tr from-cyan-400 to-purple-600 p-[1.5px] mr-2 flex-shrink-0 mt-1 overflow-hidden">
-                    <img src={`${GH}/image/rania_avatar.png.webp`} alt="R"
+                    <img src={`${GH}/rania_avatar.png.webp`} alt="R"
                       className="w-full h-full rounded-[9px] object-cover bg-black"
                       onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
                   </div>
@@ -3912,7 +4086,7 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
                   {msg.flights && msg.flights.filter(fl => {
                     const reqFrom = msg.searchParams?.from?.toUpperCase();
                     const reqTo = msg.searchParams?.to?.toUpperCase();
-                    if (!reqFrom || !reqTo) return true;
+                    if (!reqFrom || !reqTo) return true; // no filter if no searchParams
                     const cf = (fl.from || "").toUpperCase();
                     const ct = (fl.to || "").toUpperCase();
                     return (cf === reqFrom && ct === reqTo) || (cf === reqTo && ct === reqFrom);
@@ -3944,6 +4118,51 @@ function RaniaChatOverlay({ isOpen, onClose, lang, setLang, onBookingSuccess }: 
                         setMessages(prev => [...prev, bookMsg, formMsg]);
                       }}
                     />
+                  )}
+                  {/* V2.1 Booking Flow — Worker-driven flight search + booking pipeline */}
+                  {msg.v21Flights && msg.v21Flights.length > 0 && (
+                    <div className="mt-2">
+                      <BookingFlow
+                        flights={msg.v21Flights}
+                        lang={lang}
+                        onComplete={(result) => {
+                          const t = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                          const successMsg = {
+                            tet: `Reserva ${result.passenger.fullName} kompletu! ID: ${result.bookingId}. E-ticket sei haruka ba WhatsApp ita.`,
+                            id: `Selamat! Booking ${result.passenger.fullName} berhasil! ID: ${result.bookingId}. E-ticket akan dikirim via WhatsApp.`,
+                            en: `Booking confirmed for ${result.passenger.fullName}! ID: ${result.bookingId}. E-ticket will be sent via WhatsApp.`,
+                            pt: `Reserva de ${result.passenger.fullName} confirmada! ID: ${result.bookingId}. E-ticket será enviado via WhatsApp.`,
+                          };
+                          addMessage({
+                            role: "assistant",
+                            text: successMsg[lang] || successMsg.id,
+                            time: t,
+                            intent: "flight",
+                            bookingSuccess: { bookingId: result.bookingId, passengerName: result.passenger.fullName, from: result.flight.from, to: result.flight.to },
+                          });
+                        }}
+                        onError={(err) => {
+                          const t = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                          const errMsg = {
+                            tet: `Iha problema: ${err}. Admin sei verifika.`,
+                            id: `Terjadi kesalahan: ${err}. Tim admin akan memeriksa.`,
+                            en: `An error occurred: ${err}. Admin team will check.`,
+                            pt: `Ocorreu um erro: ${err}. A equipa de administração irá verificar.`,
+                          };
+                          addMessage({ role: "assistant", text: errMsg[lang] || errMsg.id, time: t, intent: "flight" });
+                        }}
+                        onCancel={() => {
+                          const t = new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+                          const cancelMsg = {
+                            tet: "Reserva kanseladu. Ha'u bele ajuda saida tan?",
+                            id: "Booking dibatalkan. Ada yang bisa saya bantu lagi?",
+                            en: "Booking cancelled. How else can I help?",
+                            pt: "Reserva cancelada. Posso ajudar em mais alguma coisa?",
+                          };
+                          addMessage({ role: "assistant", text: cancelMsg[lang] || cancelMsg.id, time: t });
+                        }}
+                      />
+                    </div>
                   )}
                   {/* Booking form in chat */}
                   {msg.bookingForm && (
@@ -4356,22 +4575,22 @@ const DESTINATIONS = [
   { city: "Tokyo", country: "Japan · NRT", badge: "💥 -15%", iata: "NRT", image: "https://cdn.prod.website-files.com/60a267ddf8769efc052be8bf/6719dc54690283674918b131_Rainbow-Bridge.jpeg" },
   { city: "Marobo", country: "Timor-Leste", badge: "♨️ HOT SPRING", iata: null, image: "https://thumbs.dreamstime.com/b/eau-de-source-chaude-naturelle-marobo-vue-sur-les-bains-thermaux-naturels-bobonaro-timor-leste-162487685.jpg?w=992" },
   { city: "Cristo Rei", country: "Timor-Leste · DIL", badge: "⛪ ICONIC", iata: null, image: "https://www.visitsoutheastasia.travel/wp-content/uploads/2025/11/Landmarks-Sights1_Cristo-Rei-Statue_TL-690x400.jpg" },
-  { city: "Jaco Island", country: "Timor-Leste", badge: "🏝️ PARADISE", iata: null, image: `${GH}/images/destinations/jaco.jpg` },
-  { city: "Atauro", country: "Timor-Leste", badge: "🤿 DIVE SPOT", iata: null, image: `${GH}/images/destinations/atauro.jpg` },
+  { city: "Jaco Island", country: "Timor-Leste", badge: "🏝️ PARADISE", iata: null, image: `${GH}/destinations/jaco.jpg` },
+  { city: "Atauro", country: "Timor-Leste", badge: "🤿 DIVE SPOT", iata: null, image: `${GH}/destinations/atauro.jpg` },
   { city: "Darwin", country: "Australia · DRW", badge: "🦘 GATEWAY", iata: "DRW", image: "https://images.unsplash.com/photo-1529108190281-9a4f620bc2d8?q=80&w=800" },
   { city: "Kupang", country: "Indonesia · KOE", badge: "🌺 NTT", iata: "KOE", image: "https://images.unsplash.com/photo-1596422846543-75c6fc197f07?q=80&w=800" },
   { city: "Labuan Bajo", country: "Indonesia · LBJ", badge: "🐉 KOMODO", iata: "LBJ", image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=800" },
   { city: "Sydney", country: "Australia · SYD", badge: "🌊 BEACH", iata: "SYD", image: "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=800" },
-  { city: "Oecusse", country: "Timor-Leste", badge: "🌿 ENIGMATIC", iata: null, image: `${GH}/images/destinations/oecusse.jpg` },
+  { city: "Oecusse", country: "Timor-Leste", badge: "🌿 ENIGMATIC", iata: null, image: `${GH}/destinations/oecusse.jpg` },
 ];
 
 const SERVICES = [
-  { id: "flights", icon: `${GH}/images/Flights.webp`, title: "Flights", desc: "Global routes · 1,400+ airports" },
-  { id: "hotels", icon: `${GH}/images/Hotels.webp`, title: "Hotels", desc: "Best prices guaranteed", badge: "HOT" },
-  { id: "car-rental", icon: `${GH}/images/Car%20Rental.webp`, title: "Car Rental", desc: "Airport → Hotel · WhatsApp ready", badge: "INSTANT" },
-  { id: "deals", icon: `${GH}/images/Deals.webp`, title: "Deals", desc: "Exclusive limited offers" },
-  { id: "insurance", icon: `${GH}/images/Travel-Insurance.webp`, title: "Insurance", desc: "Full travel protection", badge: "SAFE" },
-  { id: "weather", icon: `${GH}/images/Weather.webp`, title: "Weather", desc: "Real-time destination weather" },
+  { id: "flights", icon: `${GH}/Flights.webp`, title: "Flights", desc: "Global routes · 1,400+ airports" },
+  { id: "hotels", icon: `${GH}/Hotels.webp`, title: "Hotels", desc: "Best prices guaranteed", badge: "HOT" },
+  { id: "car-rental", icon: `${GH}/Car%20Rental.webp`, title: "Car Rental", desc: "Airport → Hotel · WhatsApp ready", badge: "INSTANT" },
+  { id: "deals", icon: `${GH}/Deals.webp`, title: "Deals", desc: "Exclusive limited offers" },
+  { id: "insurance", icon: `${GH}/Travel-Insurance.webp`, title: "Insurance", desc: "Full travel protection", badge: "SAFE" },
+  { id: "weather", icon: `${GH}/Weather.webp`, title: "Weather", desc: "Real-time destination weather" },
 ];
 
 // ── Live Weather Widget (replaces static) ────────────────────────────────────
@@ -4617,6 +4836,7 @@ export default function HomePage() {
   const [lang, setLang] = useState<Language>("tet");
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [showRegister, setShowRegister] = useState(false);
+  const [, navigate] = useLocation();
 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [activeNav, setActiveNav] = useState("search");
@@ -4676,6 +4896,7 @@ export default function HomePage() {
   const bottomNavItems = [
     { id: "search", icon: "🔍", label: t.navSearch },
     { id: "explore", icon: "🌍", label: "Explore" },
+    { id: "market", icon: "🛍️", label: "Market" },
     { id: "history", icon: "🕐", label: t.navHistory },
     { id: "profile", icon: "👤", label: t.navProfile },
   ];
@@ -4706,7 +4927,7 @@ export default function HomePage() {
       <nav className="fixed top-0 w-full z-[200] rania-topnav">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between" style={{ height: "60px" }}>
           <div className="flex items-center gap-2.5">
-            <img src={`${GH}/image/logo-sanimar-3d.png.webp`} alt="LU SANIMAR Travel"
+            <img src={`${GH}/logo-sanimar-3d.png.webp`} alt="LU SANIMAR Travel"
               className="h-10 w-auto rounded-xl border border-white/20 shadow-[0_0_20px_rgba(0,229,255,0.4)]"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             <div>
@@ -4719,18 +4940,22 @@ export default function HomePage() {
               className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-cyan-400/25 bg-cyan-400/6 text-cyan-300 hover:bg-cyan-400/15 transition-all text-[10px] font-bold tracking-wide">
               🛫 Trip Mode
             </button>
-            <a href="/explore"
+            <button onClick={() => navigate("/explore")}
               className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-cyan-400/20 bg-cyan-400/5 text-cyan-300 hover:bg-cyan-400/12 transition-all text-[10px] font-bold tracking-wide">
               🌍 Explore
-            </a>
-            <a href="/flight-routes"
+            </button>
+            <button onClick={() => navigate("/sanimar-market")}
+              className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-pink-400/25 bg-pink-400/6 text-pink-300 hover:bg-pink-400/15 transition-all text-[10px] font-bold tracking-wide">
+              🛍️ Sanimar Market
+            </button>
+            <button onClick={() => navigate("/flight-routes")}
               className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-orange-400/25 bg-orange-400/6 text-orange-300 hover:bg-orange-400/15 transition-all text-[10px] font-bold tracking-wide">
               🗺 Route Map
-            </a>
-            <a href="/admin"
+            </button>
+            <button onClick={() => navigate("/admin")}
               className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-white/12 bg-white/4 text-white/60 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-400/6 transition-all text-[10px] font-bold tracking-wide">
               🔐 Admin
-            </a>
+            </button>
             <div className="flex gap-0.5 bg-white/5 border border-white/8 rounded-full px-1 py-1">
               {(["tet", "id", "en", "pt"] as Language[]).map((l) => (
                 <button key={l} onClick={() => setLang(l)}
@@ -4747,7 +4972,7 @@ export default function HomePage() {
       <section className="relative flex flex-col px-5 md:px-10 pt-20 pb-8 overflow-hidden">
         {/* Hero background */}
         <div className="absolute inset-0 z-0">
-          <img src={`${GH}/image/rania.png.webp`} alt="RANIA AI"
+          <img src={`${GH}/rania.png.webp`} alt="RANIA AI"
             className="w-full h-full object-cover"
             style={{ objectPosition: "center 25%", filter: "brightness(1.2) contrast(1.1) saturate(1.1)" }}
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
@@ -4795,7 +5020,7 @@ export default function HomePage() {
           <div className="flex items-center gap-3">
             <div className="flex-1 flex items-center gap-2 bg-white/4 border border-white/10 rounded-xl px-3 py-2.5 hover:border-cyan-400/25 transition-all cursor-pointer" onClick={() => openChat()}>
               <div className="w-7 h-7 rounded-lg rania-gradient-btn flex items-center justify-center flex-shrink-0">
-                <img src={`${GH}/image/rania_avatar.png.webp`} alt="R" className="w-5 h-5 rounded-full object-cover"
+                <img src={`${GH}/rania_avatar.png.webp`} alt="R" className="w-5 h-5 rounded-full object-cover"
                   onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; (e.currentTarget.parentElement as HTMLElement).innerHTML = "🤖"; }} />
               </div>
               <span className="text-sm text-gray-500 flex-1">
@@ -4897,7 +5122,7 @@ export default function HomePage() {
         <div className="flex gap-10 animate-marquee whitespace-nowrap">
           {[1, 2, 3].map((n) => (
             <div key={`asean-${n}`} className="flex items-center gap-2.5 px-8">
-              <img src={`${GH}/images/asean%20png.webp`} alt="ASEAN" className="h-6 w-auto rounded-sm border border-white/20" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+              <img src={`${GH}/asean%20png.webp`} alt="ASEAN" className="h-6 w-auto rounded-sm border border-white/20" onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
               <span className="font-orbitron text-sm text-cyan-400 ml-2">ASEAN</span>
               <span className="text-xs text-gray-500 ml-2">11 Countries</span>
             </div>
@@ -5134,7 +5359,7 @@ export default function HomePage() {
           className="fixed bottom-24 md:bottom-8 right-5 z-[300] rounded-2xl rania-gradient-btn hover:scale-105 hover:shadow-[0_0_40px_rgba(0,229,255,0.65)] transition-all duration-300 active:scale-95 flex items-center gap-2.5 px-3 overflow-hidden"
           style={{ height: "56px", boxShadow: "0 0 28px rgba(0,229,255,0.45)" }}>
           <div className="w-9 h-9 rounded-xl overflow-hidden flex-shrink-0 bg-black/20">
-            <img src={`${GH}/image/rania_avatar.png.webp`} alt="RANIA" className="w-full h-full object-cover rounded-xl"
+            <img src={`${GH}/rania_avatar.png.webp`} alt="RANIA" className="w-full h-full object-cover rounded-xl"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; (e.currentTarget.parentElement as HTMLElement).innerHTML = '<span style="font-size:22px;display:flex;align-items:center;justify-content:center;width:100%;height:100%">💬</span>'; }} />
           </div>
           <div className="flex flex-col items-start text-left pr-1">
@@ -5151,12 +5376,13 @@ export default function HomePage() {
         <div className="flex items-end justify-around px-2 pt-2 pb-4">
           {bottomNavItems.map((item) => {
             const isExplore = item.id === "explore";
+            const isMarket = item.id === "market";
             const isActive = activeNav === item.id;
             if (isExplore) {
               return (
                 <button
                   key={item.id}
-                  onClick={() => { setActiveNav(item.id); window.location.href = "/explore"; }}
+                  onClick={() => { setActiveNav(item.id); navigate("/explore"); }}
                   style={{
                     background: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #6366f1 100%)",
                     boxShadow: "0 0 28px rgba(6,182,212,0.55), 0 0 60px rgba(99,102,241,0.25), 0 -4px 20px rgba(6,182,212,0.2)",
@@ -5170,6 +5396,30 @@ export default function HomePage() {
                     style={{ boxShadow: "0 0 0 2px rgba(6,182,212,0.4)", animationDuration: "2s" }}
                   />
                   <span className="text-2xl leading-none">🌍</span>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-white" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
+                    Explore
+                  </span>
+                </button>
+              );
+            }
+            if (isMarket) {
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => { setActiveNav(item.id); navigate("/sanimar-market"); }}
+                  style={{
+                    background: "linear-gradient(135deg, #ec4899 0%, #f472b6 50%, #f59e0b 100%)",
+                    boxShadow: "0 0 28px rgba(236,72,153,0.55), 0 0 60px rgba(245,158,11,0.25), 0 -4px 20px rgba(236,72,153,0.2)",
+                    transform: "translateY(-10px)",
+                  }}
+                  className="flex flex-col items-center gap-1 py-3 px-5 rounded-2xl transition-all duration-200 active:scale-95 relative"
+                >
+                  {/* Glow ring */}
+                  <span
+                    className="absolute inset-0 rounded-2xl animate-pulse pointer-events-none"
+                    style={{ boxShadow: "0 0 0 2px rgba(236,72,153,0.4)", animationDuration: "2s" }}
+                  />
+                  <span className="text-2xl leading-none">🛍️</span>
                   <span className="text-[10px] font-black uppercase tracking-widest text-white" style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}>
                     Market
                   </span>

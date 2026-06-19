@@ -1,0 +1,2184 @@
+{
+  "airports": [
+    {
+      "iata": "DIL",
+      "icao": "WPDL",
+      "name": "Presidente Nicolau Lobato International Airport",
+      "city": "Dili",
+      "country": "Timor-Leste",
+      "latitude": -8.5666,
+      "longitude": 125.5297,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "BCH",
+      "icao": "WPEC",
+      "name": "Baucau Airport",
+      "city": "Baucau",
+      "country": "Timor-Leste",
+      "latitude": -8.2500,
+      "longitude": 126.3833,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "DPS",
+      "icao": "WADD",
+      "name": "Ngurah Rai International Airport",
+      "city": "Denpasar",
+      "country": "Indonesia",
+      "latitude": -8.7482,
+      "longitude": 115.1667,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "CGK",
+      "icao": "WIII",
+      "name": "Soekarno-Hatta International Airport",
+      "city": "Jakarta",
+      "country": "Indonesia",
+      "latitude": -6.1256,
+      "longitude": 106.6558,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "SUB",
+      "icao": "WARR",
+      "name": "Juanda International Airport",
+      "city": "Surabaya",
+      "country": "Indonesia",
+      "latitude": -7.3794,
+      "longitude": 112.7869,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "KNO",
+      "icao": "WIMM",
+      "name": "Kualanamu International Airport",
+      "city": "Medan",
+      "country": "Indonesia",
+      "latitude": 3.6422,
+      "longitude": 98.8852,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "JOG",
+      "icao": "WAHH",
+      "name": "Adisutjipto International Airport",
+      "city": "Yogyakarta",
+      "country": "Indonesia",
+      "latitude": -7.7882,
+      "longitude": 110.4317,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "UPG",
+      "icao": "WAAA",
+      "name": "Sultan Hasanuddin International Airport",
+      "city": "Makassar",
+      "country": "Indonesia",
+      "latitude": -5.0617,
+      "longitude": 119.5540,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "BPN",
+      "icao": "WALL",
+      "name": "Sultan Aji Muhammad Sulaiman Airport",
+      "city": "Balikpapan",
+      "country": "Indonesia",
+      "latitude": -1.2683,
+      "longitude": 116.8944,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "SIN",
+      "icao": "WSSS",
+      "name": "Singapore Changi Airport",
+      "city": "Singapore",
+      "country": "Singapore",
+      "latitude": 1.3644,
+      "longitude": 103.9915,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "KUL",
+      "icao": "WMKK",
+      "name": "Kuala Lumpur International Airport",
+      "city": "Kuala Lumpur",
+      "country": "Malaysia",
+      "latitude": 2.7456,
+      "longitude": 101.7072,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "PEN",
+      "icao": "WMKP",
+      "name": "Penang International Airport",
+      "city": "Penang",
+      "country": "Malaysia",
+      "latitude": 5.2953,
+      "longitude": 100.2731,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "BKI",
+      "icao": "WBKK",
+      "name": "Kota Kinabalu International Airport",
+      "city": "Kota Kinabalu",
+      "country": "Malaysia",
+      "latitude": 5.9372,
+      "longitude": 116.0517,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "LGK",
+      "icao": "WMKL",
+      "name": "Langkawi International Airport",
+      "city": "Langkawi",
+      "country": "Malaysia",
+      "latitude": 6.3229,
+      "longitude": 99.7278,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "BKK",
+      "icao": "VTBS",
+      "name": "Suvarnabhumi Airport",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "latitude": 13.6900,
+      "longitude": 100.7501,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "DMK",
+      "icao": "VTBD",
+      "name": "Don Mueang International Airport",
+      "city": "Bangkok",
+      "country": "Thailand",
+      "latitude": 13.9126,
+      "longitude": 100.6068,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "HKT",
+      "icao": "VTSP",
+      "name": "Phuket International Airport",
+      "city": "Phuket",
+      "country": "Thailand",
+      "latitude": 8.1132,
+      "longitude": 98.3169,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "CNX",
+      "icao": "VTCC",
+      "name": "Chiang Mai International Airport",
+      "city": "Chiang Mai",
+      "country": "Thailand",
+      "latitude": 18.7668,
+      "longitude": 98.9625,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "SGN",
+      "icao": "VVTS",
+      "name": "Tan Son Nhat International Airport",
+      "city": "Ho Chi Minh City",
+      "country": "Vietnam",
+      "latitude": 10.8191,
+      "longitude": 106.6513,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "HAN",
+      "icao": "VVNB",
+      "name": "Noi Bai International Airport",
+      "city": "Hanoi",
+      "country": "Vietnam",
+      "latitude": 21.2187,
+      "longitude": 105.8045,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "DAD",
+      "icao": "VVDN",
+      "name": "Da Nang International Airport",
+      "city": "Da Nang",
+      "country": "Vietnam",
+      "latitude": 16.0439,
+      "longitude": 108.1994,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "CXR",
+      "icao": "VVCR",
+      "name": "Cam Ranh International Airport",
+      "city": "Nha Trang",
+      "country": "Vietnam",
+      "latitude": 11.9984,
+      "longitude": 109.2191,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "MNL",
+      "icao": "RPLL",
+      "name": "Ninoy Aquino International Airport",
+      "city": "Manila",
+      "country": "Philippines",
+      "latitude": 14.5086,
+      "longitude": 121.0195,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "CEB",
+      "icao": "RPVM",
+      "name": "Mactan-Cebu International Airport",
+      "city": "Cebu",
+      "country": "Philippines",
+      "latitude": 10.3075,
+      "longitude": 123.9789,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "CRK",
+      "icao": "RORC",
+      "name": "Clark International Airport",
+      "city": "Clark",
+      "country": "Philippines",
+      "latitude": 15.1859,
+      "longitude": 120.5596,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "DVO",
+      "icao": "RPMD",
+      "name": "Francisco Bangoy International Airport",
+      "city": "Davao",
+      "country": "Philippines",
+      "latitude": 7.1255,
+      "longitude": 125.6459,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "PNH",
+      "icao": "VDPP",
+      "name": "Phnom Penh International Airport",
+      "city": "Phnom Penh",
+      "country": "Cambodia",
+      "latitude": 11.5467,
+      "longitude": 104.8444,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "REP",
+      "icao": "VDSR",
+      "name": "Siem Reap International Airport",
+      "city": "Siem Reap",
+      "country": "Cambodia",
+      "latitude": 13.4107,
+      "longitude": 103.8128,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "VTE",
+      "icao": "VLVT",
+      "name": "Wattay International Airport",
+      "city": "Vientiane",
+      "country": "Laos",
+      "latitude": 17.9889,
+      "longitude": 102.5630,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "RGN",
+      "icao": "VYYY",
+      "name": "Yangon International Airport",
+      "city": "Yangon",
+      "country": "Myanmar",
+      "latitude": 16.9073,
+      "longitude": 96.1337,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "BWN",
+      "icao": "WBSB",
+      "name": "Brunei International Airport",
+      "city": "Bandar Seri Begawan",
+      "country": "Brunei",
+      "latitude": 4.9403,
+      "longitude": 114.9281,
+      "region": "Southeast Asia"
+    },
+    {
+      "iata": "HKG",
+      "icao": "VHHH",
+      "name": "Hong Kong International Airport",
+      "city": "Hong Kong",
+      "country": "Hong Kong",
+      "latitude": 22.3080,
+      "longitude": 113.9185,
+      "region": "East Asia"
+    },
+    {
+      "iata": "MFM",
+      "icao": "VMMC",
+      "name": "Macau International Airport",
+      "city": "Macau",
+      "country": "Macau",
+      "latitude": 22.1496,
+      "longitude": 113.5914,
+      "region": "East Asia"
+    },
+    {
+      "iata": "PEK",
+      "icao": "ZBAA",
+      "name": "Beijing Capital International Airport",
+      "city": "Beijing",
+      "country": "China",
+      "latitude": 40.0799,
+      "longitude": 116.6031,
+      "region": "East Asia"
+    },
+    {
+      "iata": "PKX",
+      "icao": "ZBAD",
+      "name": "Beijing Daxing International Airport",
+      "city": "Beijing",
+      "country": "China",
+      "latitude": 39.5098,
+      "longitude": 116.4107,
+      "region": "East Asia"
+    },
+    {
+      "iata": "PVG",
+      "icao": "ZSPD",
+      "name": "Shanghai Pudong International Airport",
+      "city": "Shanghai",
+      "country": "China",
+      "latitude": 31.1443,
+      "longitude": 121.8082,
+      "region": "East Asia"
+    },
+    {
+      "iata": "SHA",
+      "icao": "ZSSS",
+      "name": "Shanghai Hongqiao International Airport",
+      "city": "Shanghai",
+      "country": "China",
+      "latitude": 31.1979,
+      "longitude": 121.3363,
+      "region": "East Asia"
+    },
+    {
+      "iata": "CAN",
+      "icao": "ZGGG",
+      "name": "Guangzhou Baiyun International Airport",
+      "city": "Guangzhou",
+      "country": "China",
+      "latitude": 23.3924,
+      "longitude": 113.2988,
+      "region": "East Asia"
+    },
+    {
+      "iata": "SZX",
+      "icao": "ZGSZ",
+      "name": "Shenzhen Baoan International Airport",
+      "city": "Shenzhen",
+      "country": "China",
+      "latitude": 22.6393,
+      "longitude": 113.8107,
+      "region": "East Asia"
+    },
+    {
+      "iata": "CTU",
+      "icao": "ZUUU",
+      "name": "Chengdu Shuangliu International Airport",
+      "city": "Chengdu",
+      "country": "China",
+      "latitude": 30.5785,
+      "longitude": 103.9471,
+      "region": "East Asia"
+    },
+    {
+      "iata": "CKG",
+      "icao": "ZUCK",
+      "name": "Chongqing Jiangbei International Airport",
+      "city": "Chongqing",
+      "country": "China",
+      "latitude": 29.7192,
+      "longitude": 106.6417,
+      "region": "East Asia"
+    },
+    {
+      "iata": "XIY",
+      "icao": "ZLXY",
+      "name": "Xi'an Xianyang International Airport",
+      "city": "Xi'an",
+      "country": "China",
+      "latitude": 34.4471,
+      "longitude": 108.7516,
+      "region": "East Asia"
+    },
+    {
+      "iata": "HGH",
+      "icao": "ZSHC",
+      "name": "Hangzhou Xiaoshan International Airport",
+      "city": "Hangzhou",
+      "country": "China",
+      "latitude": 30.2295,
+      "longitude": 120.4344,
+      "region": "East Asia"
+    },
+    {
+      "iata": "NKG",
+      "icao": "ZSNJ",
+      "name": "Nanjing Lukou International Airport",
+      "city": "Nanjing",
+      "country": "China",
+      "latitude": 31.7420,
+      "longitude": 118.8620,
+      "region": "East Asia"
+    },
+    {
+      "iata": "WUH",
+      "icao": "ZHHH",
+      "name": "Wuhan Tianhe International Airport",
+      "city": "Wuhan",
+      "country": "China",
+      "latitude": 30.7838,
+      "longitude": 114.2081,
+      "region": "East Asia"
+    },
+    {
+      "iata": "TAO",
+      "icao": "ZSQD",
+      "name": "Qingdao Jiaodong International Airport",
+      "city": "Qingdao",
+      "country": "China",
+      "latitude": 36.2661,
+      "longitude": 120.3744,
+      "region": "East Asia"
+    },
+    {
+      "iata": "TSN",
+      "icao": "ZBTJ",
+      "name": "Tianjin Binhai International Airport",
+      "city": "Tianjin",
+      "country": "China",
+      "latitude": 39.1244,
+      "longitude": 117.3463,
+      "region": "East Asia"
+    },
+    {
+      "iata": "NRT",
+      "icao": "RJAA",
+      "name": "Narita International Airport",
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.7653,
+      "longitude": 140.3864,
+      "region": "East Asia"
+    },
+    {
+      "iata": "HND",
+      "icao": "RJTT",
+      "name": "Tokyo Haneda Airport",
+      "city": "Tokyo",
+      "country": "Japan",
+      "latitude": 35.5494,
+      "longitude": 139.7798,
+      "region": "East Asia"
+    },
+    {
+      "iata": "KIX",
+      "icao": "RJBB",
+      "name": "Kansai International Airport",
+      "city": "Osaka",
+      "country": "Japan",
+      "latitude": 34.4347,
+      "longitude": 135.2441,
+      "region": "East Asia"
+    },
+    {
+      "iata": "ITM",
+      "icao": "RJOO",
+      "name": "Osaka Itami Airport",
+      "city": "Osaka",
+      "country": "Japan",
+      "latitude": 34.7855,
+      "longitude": 135.4380,
+      "region": "East Asia"
+    },
+    {
+      "iata": "NGO",
+      "icao": "RJGG",
+      "name": "Chubu Centrair International Airport",
+      "city": "Nagoya",
+      "country": "Japan",
+      "latitude": 34.8584,
+      "longitude": 136.8124,
+      "region": "East Asia"
+    },
+    {
+      "iata": "FUK",
+      "icao": "RJFF",
+      "name": "Fukuoka Airport",
+      "city": "Fukuoka",
+      "country": "Japan",
+      "latitude": 33.5859,
+      "longitude": 130.4511,
+      "region": "East Asia"
+    },
+    {
+      "iata": "CTS",
+      "icao": "RJCC",
+      "name": "New Chitose Airport",
+      "city": "Sapporo",
+      "country": "Japan",
+      "latitude": 42.7752,
+      "longitude": 141.6924,
+      "region": "East Asia"
+    },
+    {
+      "iata": "OKA",
+      "icao": "ROAH",
+      "name": "Naha Airport",
+      "city": "Okinawa",
+      "country": "Japan",
+      "latitude": 26.1958,
+      "longitude": 127.6459,
+      "region": "East Asia"
+    },
+    {
+      "iata": "ICN",
+      "icao": "RKSI",
+      "name": "Incheon International Airport",
+      "city": "Seoul",
+      "country": "South Korea",
+      "latitude": 37.4602,
+      "longitude": 126.4407,
+      "region": "East Asia"
+    },
+    {
+      "iata": "GMP",
+      "icao": "RKSS",
+      "name": "Gimpo International Airport",
+      "city": "Seoul",
+      "country": "South Korea",
+      "latitude": 37.5583,
+      "longitude": 126.7906,
+      "region": "East Asia"
+    },
+    {
+      "iata": "PUS",
+      "icao": "RKPP",
+      "name": "Gimhae International Airport",
+      "city": "Busan",
+      "country": "South Korea",
+      "latitude": 35.1795,
+      "longitude": 128.8226,
+      "region": "East Asia"
+    },
+    {
+      "iata": "CJU",
+      "icao": "RKPC",
+      "name": "Jeju International Airport",
+      "city": "Jeju",
+      "country": "South Korea",
+      "latitude": 33.5113,
+      "longitude": 126.4929,
+      "region": "East Asia"
+    },
+    {
+      "iata": "TPE",
+      "icao": "RCTP",
+      "name": "Taiwan Taoyuan International Airport",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "latitude": 25.0777,
+      "longitude": 121.2328,
+      "region": "East Asia"
+    },
+    {
+      "iata": "TSA",
+      "icao": "RCSS",
+      "name": "Taipei Songshan Airport",
+      "city": "Taipei",
+      "country": "Taiwan",
+      "latitude": 25.0694,
+      "longitude": 121.5525,
+      "region": "East Asia"
+    },
+    {
+      "iata": "KHH",
+      "icao": "RCKH",
+      "name": "Kaohsiung International Airport",
+      "city": "Kaohsiung",
+      "country": "Taiwan",
+      "latitude": 22.5771,
+      "longitude": 120.3500,
+      "region": "East Asia"
+    },
+    {
+      "iata": "DRW",
+      "icao": "YPDN",
+      "name": "Darwin International Airport",
+      "city": "Darwin",
+      "country": "Australia",
+      "latitude": -12.4208,
+      "longitude": 130.8750,
+      "region": "Australia"
+    },
+    {
+      "iata": "SYD",
+      "icao": "YSSY",
+      "name": "Sydney Kingsford Smith Airport",
+      "city": "Sydney",
+      "country": "Australia",
+      "latitude": -33.9461,
+      "longitude": 151.1772,
+      "region": "Australia"
+    },
+    {
+      "iata": "MEL",
+      "icao": "YMML",
+      "name": "Melbourne Airport",
+      "city": "Melbourne",
+      "country": "Australia",
+      "latitude": -37.6730,
+      "longitude": 144.8430,
+      "region": "Australia"
+    },
+    {
+      "iata": "BNE",
+      "icao": "YBBN",
+      "name": "Brisbane Airport",
+      "city": "Brisbane",
+      "country": "Australia",
+      "latitude": -27.3842,
+      "longitude": 151.1755,
+      "region": "Australia"
+    },
+    {
+      "iata": "PER",
+      "icao": "YPPH",
+      "name": "Perth Airport",
+      "city": "Perth",
+      "country": "Australia",
+      "latitude": -31.9403,
+      "longitude": 115.9669,
+      "region": "Australia"
+    },
+    {
+      "iata": "ADL",
+      "icao": "YPAD",
+      "name": "Adelaide Airport",
+      "city": "Adelaide",
+      "country": "Australia",
+      "latitude": -34.9450,
+      "longitude": 138.5306,
+      "region": "Australia"
+    },
+    {
+      "iata": "CBR",
+      "icao": "YSCB",
+      "name": "Canberra Airport",
+      "city": "Canberra",
+      "country": "Australia",
+      "latitude": -35.3069,
+      "longitude": 149.1951,
+      "region": "Australia"
+    },
+    {
+      "iata": "OOL",
+      "icao": "YBCG",
+      "name": "Gold Coast Airport",
+      "city": "Gold Coast",
+      "country": "Australia",
+      "latitude": -28.1644,
+      "longitude": 153.5047,
+      "region": "Australia"
+    },
+    {
+      "iata": "CNS",
+      "icao": "YBCS",
+      "name": "Cairns Airport",
+      "city": "Cairns",
+      "country": "Australia",
+      "latitude": -16.8858,
+      "longitude": 145.7554,
+      "region": "Australia"
+    },
+    {
+      "iata": "AKL",
+      "icao": "NZAA",
+      "name": "Auckland Airport",
+      "city": "Auckland",
+      "country": "New Zealand",
+      "latitude": -37.0082,
+      "longitude": 174.7850,
+      "region": "Oceania"
+    },
+    {
+      "iata": "WLG",
+      "icao": "NZWN",
+      "name": "Wellington International Airport",
+      "city": "Wellington",
+      "country": "New Zealand",
+      "latitude": -41.3272,
+      "longitude": 174.8053,
+      "region": "Oceania"
+    },
+    {
+      "iata": "CHC",
+      "icao": "NZCH",
+      "name": "Christchurch International Airport",
+      "city": "Christchurch",
+      "country": "New Zealand",
+      "latitude": -43.4864,
+      "longitude": 172.5369,
+      "region": "Oceania"
+    },
+    {
+      "iata": "ZQN",
+      "icao": "NZQN",
+      "name": "Queenstown Airport",
+      "city": "Queenstown",
+      "country": "New Zealand",
+      "latitude": -45.0211,
+      "longitude": 168.7392,
+      "region": "Oceania"
+    },
+    {
+      "iata": "DEL",
+      "icao": "VIDP",
+      "name": "Indira Gandhi International Airport",
+      "city": "New Delhi",
+      "country": "India",
+      "latitude": 28.5562,
+      "longitude": 77.1000,
+      "region": "South Asia"
+    },
+    {
+      "iata": "BOM",
+      "icao": "VABB",
+      "name": "Chhatrapati Shivaji Maharaj International Airport",
+      "city": "Mumbai",
+      "country": "India",
+      "latitude": 19.0896,
+      "longitude": 72.8656,
+      "region": "South Asia"
+    },
+    {
+      "iata": "BLR",
+      "icao": "VOBL",
+      "name": "Kempegowda International Airport",
+      "city": "Bangalore",
+      "country": "India",
+      "latitude": 13.1986,
+      "longitude": 77.7066,
+      "region": "South Asia"
+    },
+    {
+      "iata": "MAA",
+      "icao": "VOMM",
+      "name": "Chennai International Airport",
+      "city": "Chennai",
+      "country": "India",
+      "latitude": 12.9941,
+      "longitude": 80.1709,
+      "region": "South Asia"
+    },
+    {
+      "iata": "CCU",
+      "icao": "VECC",
+      "name": "Netaji Subhas Chandra Bose International Airport",
+      "city": "Kolkata",
+      "country": "India",
+      "latitude": 22.6547,
+      "longitude": 88.4467,
+      "region": "South Asia"
+    },
+    {
+      "iata": "HYD",
+      "icao": "VOHS",
+      "name": "Rajiv Gandhi International Airport",
+      "city": "Hyderabad",
+      "country": "India",
+      "latitude": 17.2403,
+      "longitude": 78.4294,
+      "region": "South Asia"
+    },
+    {
+      "iata": "COK",
+      "icao": "VOCI",
+      "name": "Cochin International Airport",
+      "city": "Kochi",
+      "country": "India",
+      "latitude": 10.1520,
+      "longitude": 76.4019,
+      "region": "South Asia"
+    },
+    {
+      "iata": "AMD",
+      "icao": "VAAH",
+      "name": "Sardar Vallabhbhai Patel International Airport",
+      "city": "Ahmedabad",
+      "country": "India",
+      "latitude": 23.0772,
+      "longitude": 72.6347,
+      "region": "South Asia"
+    },
+    {
+      "iata": "GOI",
+      "icao": "VAGO",
+      "name": "Goa International Airport",
+      "city": "Goa",
+      "country": "India",
+      "latitude": 15.3808,
+      "longitude": 73.8314,
+      "region": "South Asia"
+    },
+    {
+      "iata": "CMB",
+      "icao": "VCBI",
+      "name": "Bandaranaike International Airport",
+      "city": "Colombo",
+      "country": "Sri Lanka",
+      "latitude": 7.1808,
+      "longitude": 79.8841,
+      "region": "South Asia"
+    },
+    {
+      "iata": "MLE",
+      "icao": "VRMM",
+      "name": "Velana International Airport",
+      "city": "Malé",
+      "country": "Maldives",
+      "latitude": 4.1918,
+      "longitude": 73.5290,
+      "region": "South Asia"
+    },
+    {
+      "iata": "DAC",
+      "icao": "VGHS",
+      "name": "Hazrat Shahjalal International Airport",
+      "city": "Dhaka",
+      "country": "Bangladesh",
+      "latitude": 23.8433,
+      "longitude": 90.3978,
+      "region": "South Asia"
+    },
+    {
+      "iata": "KTM",
+      "icao": "VNKT",
+      "name": "Tribhuvan International Airport",
+      "city": "Kathmandu",
+      "country": "Nepal",
+      "latitude": 27.6966,
+      "longitude": 85.3591,
+      "region": "South Asia"
+    },
+    {
+      "iata": "ISB",
+      "icao": "OPRN",
+      "name": "Islamabad International Airport",
+      "city": "Islamabad",
+      "country": "Pakistan",
+      "latitude": 33.5605,
+      "longitude": 72.8526,
+      "region": "South Asia"
+    },
+    {
+      "iata": "KHI",
+      "icao": "OPKC",
+      "name": "Jinnah International Airport",
+      "city": "Karachi",
+      "country": "Pakistan",
+      "latitude": 24.9065,
+      "longitude": 67.1609,
+      "region": "South Asia"
+    },
+    {
+      "iata": "LHE",
+      "icao": "OPLA",
+      "name": "Allama Iqbal International Airport",
+      "city": "Lahore",
+      "country": "Pakistan",
+      "latitude": 31.5216,
+      "longitude": 74.4036,
+      "region": "South Asia"
+    },
+    {
+      "iata": "DXB",
+      "icao": "OMDB",
+      "name": "Dubai International Airport",
+      "city": "Dubai",
+      "country": "UAE",
+      "latitude": 25.2532,
+      "longitude": 55.3657,
+      "region": "Middle East"
+    },
+    {
+      "iata": "AUH",
+      "icao": "OMAD",
+      "name": "Abu Dhabi International Airport",
+      "city": "Abu Dhabi",
+      "country": "UAE",
+      "latitude": 24.4330,
+      "longitude": 54.6511,
+      "region": "Middle East"
+    },
+    {
+      "iata": "DOH",
+      "icao": "OTHH",
+      "name": "Hamad International Airport",
+      "city": "Doha",
+      "country": "Qatar",
+      "latitude": 25.2609,
+      "longitude": 51.6138,
+      "region": "Middle East"
+    },
+    {
+      "iata": "KWI",
+      "icao": "OKBK",
+      "name": "Kuwait International Airport",
+      "city": "Kuwait City",
+      "country": "Kuwait",
+      "latitude": 29.2266,
+      "longitude": 47.9689,
+      "region": "Middle East"
+    },
+    {
+      "iata": "BAH",
+      "icao": "OBBI",
+      "name": "Bahrain International Airport",
+      "city": "Manama",
+      "country": "Bahrain",
+      "latitude": 26.2708,
+      "longitude": 50.6336,
+      "region": "Middle East"
+    },
+    {
+      "iata": "MCT",
+      "icao": "OOMS",
+      "name": "Muscat International Airport",
+      "city": "Muscat",
+      "country": "Oman",
+      "latitude": 23.5933,
+      "longitude": 58.2844,
+      "region": "Middle East"
+    },
+    {
+      "iata": "JED",
+      "icao": "OEJN",
+      "name": "King Abdulaziz International Airport",
+      "city": "Jeddah",
+      "country": "Saudi Arabia",
+      "latitude": 21.6796,
+      "longitude": 39.1565,
+      "region": "Middle East"
+    },
+    {
+      "iata": "RUH",
+      "icao": "OERY",
+      "name": "King Khalid International Airport",
+      "city": "Riyadh",
+      "country": "Saudi Arabia",
+      "latitude": 24.9576,
+      "longitude": 46.6988,
+      "region": "Middle East"
+    },
+    {
+      "iata": "DMM",
+      "icao": "OEDF",
+      "name": "King Fahd International Airport",
+      "city": "Dammam",
+      "country": "Saudi Arabia",
+      "latitude": 26.4712,
+      "longitude": 49.7979,
+      "region": "Middle East"
+    },
+    {
+      "iata": "AMM",
+      "icao": "OJAI",
+      "name": "Queen Alia International Airport",
+      "city": "Amman",
+      "country": "Jordan",
+      "latitude": 31.7226,
+      "longitude": 35.9932,
+      "region": "Middle East"
+    },
+    {
+      "iata": "BEY",
+      "icao": "OLBA",
+      "name": "Beirut Rafic Hariri International Airport",
+      "city": "Beirut",
+      "country": "Lebanon",
+      "latitude": 33.8209,
+      "longitude": 35.4884,
+      "region": "Middle East"
+    },
+    {
+      "iata": "TLV",
+      "icao": "LLBG",
+      "name": "Ben Gurion International Airport",
+      "city": "Tel Aviv",
+      "country": "Israel",
+      "latitude": 32.0055,
+      "longitude": 34.8854,
+      "region": "Middle East"
+    },
+    {
+      "iata": "IST",
+      "icao": "LTBA",
+      "name": "Istanbul Airport",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "latitude": 41.2753,
+      "longitude": 28.7519,
+      "region": "Europe"
+    },
+    {
+      "iata": "SAW",
+      "icao": "LTFJ",
+      "name": "Istanbul Sabiha Gokcen Airport",
+      "city": "Istanbul",
+      "country": "Turkey",
+      "latitude": 40.8986,
+      "longitude": 29.3092,
+      "region": "Europe"
+    },
+    {
+      "iata": "LHR",
+      "icao": "EGLL",
+      "name": "Heathrow Airport",
+      "city": "London",
+      "country": "United Kingdom",
+      "latitude": 51.4700,
+      "longitude": -0.4543,
+      "region": "Europe"
+    },
+    {
+      "iata": "LGW",
+      "icao": "EGKK",
+      "name": "London Gatwick Airport",
+      "city": "London",
+      "country": "United Kingdom",
+      "latitude": 51.1537,
+      "longitude": -0.1821,
+      "region": "Europe"
+    },
+    {
+      "iata": "STN",
+      "icao": "EGSS",
+      "name": "London Stansted Airport",
+      "city": "London",
+      "country": "United Kingdom",
+      "latitude": 51.8860,
+      "longitude": 0.2389,
+      "region": "Europe"
+    },
+    {
+      "iata": "CDG",
+      "icao": "LFPG",
+      "name": "Charles de Gaulle Airport",
+      "city": "Paris",
+      "country": "France",
+      "latitude": 49.0097,
+      "longitude": 2.5479,
+      "region": "Europe"
+    },
+    {
+      "iata": "ORY",
+      "icao": "LFPO",
+      "name": "Paris Orly Airport",
+      "city": "Paris",
+      "country": "France",
+      "latitude": 48.7262,
+      "longitude": 2.3652,
+      "region": "Europe"
+    },
+    {
+      "iata": "FRA",
+      "icao": "EDDF",
+      "name": "Frankfurt Airport",
+      "city": "Frankfurt",
+      "country": "Germany",
+      "latitude": 50.0379,
+      "longitude": 8.5622,
+      "region": "Europe"
+    },
+    {
+      "iata": "MUC",
+      "icao": "EDDM",
+      "name": "Munich Airport",
+      "city": "Munich",
+      "country": "Germany",
+      "latitude": 48.3537,
+      "longitude": 11.7750,
+      "region": "Europe"
+    },
+    {
+      "iata": "AMS",
+      "icao": "EHAM",
+      "name": "Amsterdam Schiphol Airport",
+      "city": "Amsterdam",
+      "country": "Netherlands",
+      "latitude": 52.3105,
+      "longitude": 4.7683,
+      "region": "Europe"
+    },
+    {
+      "iata": "MAD",
+      "icao": "LEMD",
+      "name": "Adolfo Suárez Madrid-Barajas Airport",
+      "city": "Madrid",
+      "country": "Spain",
+      "latitude": 40.4983,
+      "longitude": -3.5676,
+      "region": "Europe"
+    },
+    {
+      "iata": "BCN",
+      "icao": "LEBL",
+      "name": "Barcelona-El Prat Airport",
+      "city": "Barcelona",
+      "country": "Spain",
+      "latitude": 41.2974,
+      "longitude": 2.0833,
+      "region": "Europe"
+    },
+    {
+      "iata": "FCO",
+      "icao": "LIRF",
+      "name": "Leonardo da Vinci–Fiumicino Airport",
+      "city": "Rome",
+      "country": "Italy",
+      "latitude": 41.8003,
+      "longitude": 12.2389,
+      "region": "Europe"
+    },
+    {
+      "iata": "MXP",
+      "icao": "LIMC",
+      "name": "Milan Malpensa Airport",
+      "city": "Milan",
+      "country": "Italy",
+      "latitude": 45.6306,
+      "longitude": 8.7281,
+      "region": "Europe"
+    },
+    {
+      "iata": "VCE",
+      "icao": "LIPZ",
+      "name": "Venice Marco Polo Airport",
+      "city": "Venice",
+      "country": "Italy",
+      "latitude": 45.5053,
+      "longitude": 12.3519,
+      "region": "Europe"
+    },
+    {
+      "iata": "ZRH",
+      "icao": "LSZH",
+      "name": "Zurich Airport",
+      "city": "Zurich",
+      "country": "Switzerland",
+      "latitude": 47.4647,
+      "longitude": 8.5492,
+      "region": "Europe"
+    },
+    {
+      "iata": "GVA",
+      "icao": "LSGG",
+      "name": "Geneva Airport",
+      "city": "Geneva",
+      "country": "Switzerland",
+      "latitude": 46.2380,
+      "longitude": 6.1089,
+      "region": "Europe"
+    },
+    {
+      "iata": "VIE",
+      "icao": "LOWW",
+      "name": "Vienna International Airport",
+      "city": "Vienna",
+      "country": "Austria",
+      "latitude": 48.1103,
+      "longitude": 16.5697,
+      "region": "Europe"
+    },
+    {
+      "iata": "BRU",
+      "icao": "EBBR",
+      "name": "Brussels Airport",
+      "city": "Brussels",
+      "country": "Belgium",
+      "latitude": 50.9014,
+      "longitude": 4.4844,
+      "region": "Europe"
+    },
+    {
+      "iata": "CPH",
+      "icao": "EKCH",
+      "name": "Copenhagen Airport",
+      "city": "Copenhagen",
+      "country": "Denmark",
+      "latitude": 55.6180,
+      "longitude": 12.6508,
+      "region": "Europe"
+    },
+    {
+      "iata": "OSL",
+      "icao": "ENGM",
+      "name": "Oslo Gardermoen Airport",
+      "city": "Oslo",
+      "country": "Norway",
+      "latitude": 60.1976,
+      "longitude": 11.1004,
+      "region": "Europe"
+    },
+    {
+      "iata": "ARN",
+      "icao": "ESSA",
+      "name": "Stockholm Arlanda Airport",
+      "city": "Stockholm",
+      "country": "Sweden",
+      "latitude": 59.6519,
+      "longitude": 17.9186,
+      "region": "Europe"
+    },
+    {
+      "iata": "HEL",
+      "icao": "EFHK",
+      "name": "Helsinki-Vantaa Airport",
+      "city": "Helsinki",
+      "country": "Finland",
+      "latitude": 60.3172,
+      "longitude": 24.9633,
+      "region": "Europe"
+    },
+    {
+      "iata": "WAW",
+      "icao": "EPWA",
+      "name": "Warsaw Chopin Airport",
+      "city": "Warsaw",
+      "country": "Poland",
+      "latitude": 52.1657,
+      "longitude": 20.9671,
+      "region": "Europe"
+    },
+    {
+      "iata": "PRG",
+      "icao": "LKPR",
+      "name": "Václav Havel Airport Prague",
+      "city": "Prague",
+      "country": "Czech Republic",
+      "latitude": 50.1008,
+      "longitude": 14.2632,
+      "region": "Europe"
+    },
+    {
+      "iata": "BUD",
+      "icao": "LHBP",
+      "name": "Budapest Ferenc Liszt International Airport",
+      "city": "Budapest",
+      "country": "Hungary",
+      "latitude": 47.4298,
+      "longitude": 19.2611,
+      "region": "Europe"
+    },
+    {
+      "iata": "OTP",
+      "icao": "LROP",
+      "name": "Henri Coandă International Airport",
+      "city": "Bucharest",
+      "country": "Romania",
+      "latitude": 44.5711,
+      "longitude": 26.0850,
+      "region": "Europe"
+    },
+    {
+      "iata": "ATH",
+      "icao": "LGAV",
+      "name": "Athens International Airport",
+      "city": "Athens",
+      "country": "Greece",
+      "latitude": 37.9364,
+      "longitude": 23.9445,
+      "region": "Europe"
+    },
+    {
+      "iata": "LIS",
+      "icao": "LPPT",
+      "name": "Humberto Delgado Airport",
+      "city": "Lisbon",
+      "country": "Portugal",
+      "latitude": 38.7813,
+      "longitude": -9.1357,
+      "region": "Europe"
+    },
+    {
+      "iata": "OPO",
+      "icao": "LPPR",
+      "name": "Porto Airport",
+      "city": "Porto",
+      "country": "Portugal",
+      "latitude": 41.2481,
+      "longitude": -8.6814,
+      "region": "Europe"
+    },
+    {
+      "iata": "DUB",
+      "icao": "EIDW",
+      "name": "Dublin Airport",
+      "city": "Dublin",
+      "country": "Ireland",
+      "latitude": 53.4264,
+      "longitude": -6.2499,
+      "region": "Europe"
+    },
+    {
+      "iata": "JFK",
+      "icao": "KJFK",
+      "name": "John F. Kennedy International Airport",
+      "city": "New York",
+      "country": "USA",
+      "latitude": 40.6413,
+      "longitude": -73.7781,
+      "region": "North America"
+    },
+    {
+      "iata": "LGA",
+      "icao": "KLGA",
+      "name": "LaGuardia Airport",
+      "city": "New York",
+      "country": "USA",
+      "latitude": 40.7769,
+      "longitude": -73.8740,
+      "region": "North America"
+    },
+    {
+      "iata": "EWR",
+      "icao": "KEWR",
+      "name": "Newark Liberty International Airport",
+      "city": "Newark",
+      "country": "USA",
+      "latitude": 40.6895,
+      "longitude": -74.1745,
+      "region": "North America"
+    },
+    {
+      "iata": "LAX",
+      "icao": "KLAX",
+      "name": "Los Angeles International Airport",
+      "city": "Los Angeles",
+      "country": "USA",
+      "latitude": 33.9416,
+      "longitude": -118.4085,
+      "region": "North America"
+    },
+    {
+      "iata": "SFO",
+      "icao": "KSFO",
+      "name": "San Francisco International Airport",
+      "city": "San Francisco",
+      "country": "USA",
+      "latitude": 37.6213,
+      "longitude": -122.379,
+      "region": "North America"
+    },
+    {
+      "iata": "ORD",
+      "icao": "KORD",
+      "name": "O'Hare International Airport",
+      "city": "Chicago",
+      "country": "USA",
+      "latitude": 41.9742,
+      "longitude": -87.9073,
+      "region": "North America"
+    },
+    {
+      "iata": "ATL",
+      "icao": "KATL",
+      "name": "Hartsfield-Jackson Atlanta International Airport",
+      "city": "Atlanta",
+      "country": "USA",
+      "latitude": 33.6407,
+      "longitude": -84.4277,
+      "region": "North America"
+    },
+    {
+      "iata": "MIA",
+      "icao": "KMIA",
+      "name": "Miami International Airport",
+      "city": "Miami",
+      "country": "USA",
+      "latitude": 25.7959,
+      "longitude": -80.2870,
+      "region": "North America"
+    },
+    {
+      "iata": "DFW",
+      "icao": "KDFW",
+      "name": "Dallas/Fort Worth International Airport",
+      "city": "Dallas",
+      "country": "USA",
+      "latitude": 32.8998,
+      "longitude": -97.0403,
+      "region": "North America"
+    },
+    {
+      "iata": "DEN",
+      "icao": "KDEN",
+      "name": "Denver International Airport",
+      "city": "Denver",
+      "country": "USA",
+      "latitude": 39.8561,
+      "longitude": -104.6737,
+      "region": "North America"
+    },
+    {
+      "iata": "SEA",
+      "icao": "KSEA",
+      "name": "Seattle-Tacoma International Airport",
+      "city": "Seattle",
+      "country": "USA",
+      "latitude": 47.4502,
+      "longitude": -122.3088,
+      "region": "North America"
+    },
+    {
+      "iata": "BOS",
+      "icao": "KBOS",
+      "name": "Boston Logan International Airport",
+      "city": "Boston",
+      "country": "USA",
+      "latitude": 42.3656,
+      "longitude": -71.0098,
+      "region": "North America"
+    },
+    {
+      "iata": "PHL",
+      "icao": "KPHL",
+      "name": "Philadelphia International Airport",
+      "city": "Philadelphia",
+      "country": "USA",
+      "latitude": 39.8729,
+      "longitude": -75.2437,
+      "region": "North America"
+    },
+    {
+      "iata": "PHX",
+      "icao": "KPHX",
+      "name": "Phoenix Sky Harbor International Airport",
+      "city": "Phoenix",
+      "country": "USA",
+      "latitude": 33.4373,
+      "longitude": -112.0078,
+      "region": "North America"
+    },
+    {
+      "iata": "IAH",
+      "icao": "KIAH",
+      "name": "George Bush Intercontinental Airport",
+      "city": "Houston",
+      "country": "USA",
+      "latitude": 29.9902,
+      "longitude": -95.3368,
+      "region": "North America"
+    },
+    {
+      "iata": "LAS",
+      "icao": "KLAS",
+      "name": "Harry Reid International Airport",
+      "city": "Las Vegas",
+      "country": "USA",
+      "latitude": 36.0840,
+      "longitude": -115.1537,
+      "region": "North America"
+    },
+    {
+      "iata": "MCO",
+      "icao": "KMCO",
+      "name": "Orlando International Airport",
+      "city": "Orlando",
+      "country": "USA",
+      "latitude": 28.4312,
+      "longitude": -81.3081,
+      "region": "North America"
+    },
+    {
+      "iata": "TPA",
+      "icao": "KTPA",
+      "name": "Tampa International Airport",
+      "city": "Tampa",
+      "country": "USA",
+      "latitude": 27.9756,
+      "longitude": -82.5333,
+      "region": "North America"
+    },
+    {
+      "iata": "YYZ",
+      "icao": "CYYZ",
+      "name": "Toronto Pearson International Airport",
+      "city": "Toronto",
+      "country": "Canada",
+      "latitude": 43.6777,
+      "longitude": -79.6248,
+      "region": "North America"
+    },
+    {
+      "iata": "YVR",
+      "icao": "CYVR",
+      "name": "Vancouver International Airport",
+      "city": "Vancouver",
+      "country": "Canada",
+      "latitude": 49.1967,
+      "longitude": -123.1815,
+      "region": "North America"
+    },
+    {
+      "iata": "YUL",
+      "icao": "CYUL",
+      "name": "Montréal-Pierre Elliott Trudeau International Airport",
+      "city": "Montreal",
+      "country": "Canada",
+      "latitude": 45.4706,
+      "longitude": -73.7408,
+      "region": "North America"
+    },
+    {
+      "iata": "YEG",
+      "icao": "CYEG",
+      "name": "Edmonton International Airport",
+      "city": "Edmonton",
+      "country": "Canada",
+      "latitude": 53.3097,
+      "longitude": -113.5800,
+      "region": "North America"
+    },
+    {
+      "iata": "YOW",
+      "icao": "CYOW",
+      "name": "Ottawa Macdonald–Cartier International Airport",
+      "city": "Ottawa",
+      "country": "Canada",
+      "latitude": 45.3208,
+      "longitude": -75.6692,
+      "region": "North America"
+    },
+    {
+      "iata": "YWG",
+      "icao": "CYWG",
+      "name": "Winnipeg James Armstrong Richardson International Airport",
+      "city": "Winnipeg",
+      "country": "Canada",
+      "latitude": 49.9100,
+      "longitude": -97.2399,
+      "region": "North America"
+    },
+    {
+      "iata": "MEX",
+      "icao": "MMMX",
+      "name": "Mexico City International Airport",
+      "city": "Mexico City",
+      "country": "Mexico",
+      "latitude": 19.4363,
+      "longitude": -99.0721,
+      "region": "North America"
+    },
+    {
+      "iata": "CUN",
+      "icao": "MMUN",
+      "name": "Cancún International Airport",
+      "city": "Cancún",
+      "country": "Mexico",
+      "latitude": 21.0365,
+      "longitude": -86.8771,
+      "region": "North America"
+    },
+    {
+      "iata": "GRU",
+      "icao": "SBGR",
+      "name": "São Paulo/Guarulhos International Airport",
+      "city": "São Paulo",
+      "country": "Brazil",
+      "latitude": -23.4356,
+      "longitude": -46.4731,
+      "region": "South America"
+    },
+    {
+      "iata": "GIG",
+      "icao": "SBGL",
+      "name": "Rio de Janeiro/Galeão International Airport",
+      "city": "Rio de Janeiro",
+      "country": "Brazil",
+      "latitude": -22.8090,
+      "longitude": -43.2506,
+      "region": "South America"
+    },
+    {
+      "iata": "EZE",
+      "icao": "SAEZ",
+      "name": "Ministro Pistarini International Airport",
+      "city": "Buenos Aires",
+      "country": "Argentina",
+      "latitude": -34.8222,
+      "longitude": -58.5358,
+      "region": "South America"
+    },
+    {
+      "iata": "SCL",
+      "icao": "SCEL",
+      "name": "Arturo Merino Benítez International Airport",
+      "city": "Santiago",
+      "country": "Chile",
+      "latitude": -33.3930,
+      "longitude": -70.7858,
+      "region": "South America"
+    },
+    {
+      "iata": "BOG",
+      "icao": "SKBO",
+      "name": "El Dorado International Airport",
+      "city": "Bogotá",
+      "country": "Colombia",
+      "latitude": 4.7016,
+      "longitude": -74.1469,
+      "region": "South America"
+    },
+    {
+      "iata": "LIM",
+      "icao": "SPIM",
+      "name": "Jorge Chávez International Airport",
+      "city": "Lima",
+      "country": "Peru",
+      "latitude": -12.0219,
+      "longitude": -77.1143,
+      "region": "South America"
+    },
+    {
+      "iata": "UIO",
+      "icao": "SEQU",
+      "name": "Mariscal Sucre International Airport",
+      "city": "Quito",
+      "country": "Ecuador",
+      "latitude": -0.1292,
+      "longitude": -78.3575,
+      "region": "South America"
+    },
+    {
+      "iata": "CCS",
+      "icao": "SVMI",
+      "name": "Simón Bolívar International Airport",
+      "city": "Caracas",
+      "country": "Venezuela",
+      "latitude": 10.6012,
+      "longitude": -66.9913,
+      "region": "South America"
+    },
+    {
+      "iata": "MVD",
+      "icao": "SUMU",
+      "name": "Carrasco International Airport",
+      "city": "Montevideo",
+      "country": "Uruguay",
+      "latitude": -34.8384,
+      "longitude": -56.0308,
+      "region": "South America"
+    },
+    {
+      "iata": "PTY",
+      "icao": "MPTO",
+      "name": "Tocumen International Airport",
+      "city": "Panama City",
+      "country": "Panama",
+      "latitude": 9.0714,
+      "longitude": -79.3835,
+      "region": "Central America"
+    },
+    {
+      "iata": "SJO",
+      "icao": "MROC",
+      "name": "Juan Santamaría International Airport",
+      "city": "San José",
+      "country": "Costa Rica",
+      "latitude": 9.9939,
+      "longitude": -84.2088,
+      "region": "Central America"
+    },
+    {
+      "iata": "PTY",
+      "icao": "MPTO",
+      "name": "Tocumen International Airport",
+      "city": "Panama City",
+      "country": "Panama",
+      "latitude": 9.0714,
+      "longitude": -79.3835,
+      "region": "Central America"
+    },
+    {
+      "iata": "SJO",
+      "icao": "MROC",
+      "name": "Juan Santamaría International Airport",
+      "city": "San José",
+      "country": "Costa Rica",
+      "latitude": 9.9939,
+      "longitude": -84.2088,
+      "region": "Central America"
+    },
+    {
+      "iata": "GUA",
+      "icao": "MGGT",
+      "name": "La Aurora International Airport",
+      "city": "Guatemala City",
+      "country": "Guatemala",
+      "latitude": 14.5833,
+      "longitude": -90.5275,
+      "region": "Central America"
+    },
+    {
+      "iata": "SAL",
+      "icao": "MSLP",
+      "name": "Monseñor Óscar Arnulfo Romero International Airport",
+      "city": "San Salvador",
+      "country": "El Salvador",
+      "latitude": 13.4409,
+      "longitude": -89.0557,
+      "region": "Central America"
+    },
+    {
+      "iata": "TGU",
+      "icao": "MHTG",
+      "name": "Toncontín International Airport",
+      "city": "Tegucigalpa",
+      "country": "Honduras",
+      "latitude": 14.0609,
+      "longitude": -87.2172,
+      "region": "Central America"
+    },
+    {
+      "iata": "MGA",
+      "icao": "MNMG",
+      "name": "Augusto C. Sandino International Airport",
+      "city": "Managua",
+      "country": "Nicaragua",
+      "latitude": 12.1415,
+      "longitude": -86.1682,
+      "region": "Central America"
+    },
+    {
+      "iata": "BZE",
+      "icao": "MZBZ",
+      "name": "Philip S.W. Goldson International Airport",
+      "city": "Belize City",
+      "country": "Belize",
+      "latitude": 17.5391,
+      "longitude": -88.3082,
+      "region": "Central America"
+    },
+    {
+      "iata": "KIN",
+      "icao": "MKJP",
+      "name": "Norman Manley International Airport",
+      "city": "Kingston",
+      "country": "Jamaica",
+      "latitude": 17.9357,
+      "longitude": -76.7875,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "NAS",
+      "icao": "MYNN",
+      "name": "Lynden Pindling International Airport",
+      "city": "Nassau",
+      "country": "Bahamas",
+      "latitude": 25.0390,
+      "longitude": -77.4662,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "PUJ",
+      "icao": "MDJB",
+      "name": "Punta Cana International Airport",
+      "city": "Punta Cana",
+      "country": "Dominican Republic",
+      "latitude": 18.5674,
+      "longitude": -68.3634,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "SDQ",
+      "icao": "MDSD",
+      "name": "Las Américas International Airport",
+      "city": "Santo Domingo",
+      "country": "Dominican Republic",
+      "latitude": 18.4297,
+      "longitude": -69.6689,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "AUA",
+      "icao": "TNCA",
+      "name": "Queen Beatrix International Airport",
+      "city": "Oranjestad",
+      "country": "Aruba",
+      "latitude": 12.5014,
+      "longitude": -70.0152,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "CUR",
+      "icao": "TNCC",
+      "name": "Curaçao International Airport",
+      "city": "Willemstad",
+      "country": "Curaçao",
+      "latitude": 12.1889,
+      "longitude": -68.9598,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "SXM",
+      "icao": "TNCM",
+      "name": "Princess Juliana International Airport",
+      "city": "Philipsburg",
+      "country": "Sint Maarten",
+      "latitude": 18.0410,
+      "longitude": -63.1089,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "POS",
+      "icao": "TTPP",
+      "name": "Piarco International Airport",
+      "city": "Port of Spain",
+      "country": "Trinidad and Tobago",
+      "latitude": 10.5954,
+      "longitude": -61.3382,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "BGI",
+      "icao": "TBPB",
+      "name": "Grantley Adams International Airport",
+      "city": "Bridgetown",
+      "country": "Barbados",
+      "latitude": 13.0746,
+      "longitude": -59.4925,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "ANU",
+      "icao": "TAPA",
+      "name": "V.C. Bird International Airport",
+      "city": "St. John's",
+      "country": "Antigua and Barbuda",
+      "latitude": 17.1364,
+      "longitude": -61.7931,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "GND",
+      "icao": "TGPY",
+      "name": "Maurice Bishop International Airport",
+      "city": "St. George's",
+      "country": "Grenada",
+      "latitude": 12.0065,
+      "longitude": -61.7467,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "UVF",
+      "icao": "TLPL",
+      "name": "George F.L. Charles Airport",
+      "city": "Castries",
+      "country": "Saint Lucia",
+      "latitude": 14.0135,
+      "longitude": -60.9938,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "SLU",
+      "icao": "TLPL",
+      "name": "George F.L. Charles Airport",
+      "city": "Castries",
+      "country": "Saint Lucia",
+      "latitude": 14.0135,
+      "longitude": -60.9938,
+      "region": "Caribbean"
+    },
+    {
+      "iata": "JNB",
+      "icao": "FAOR",
+      "name": "O.R. Tambo International Airport",
+      "city": "Johannesburg",
+      "country": "South Africa",
+      "latitude": -26.1367,
+      "longitude": 28.2411,
+      "region": "Africa"
+    },
+    {
+      "iata": "CPT",
+      "icao": "FACT",
+      "name": "Cape Town International Airport",
+      "city": "Cape Town",
+      "country": "South Africa",
+      "latitude": -33.9715,
+      "longitude": 18.6021,
+      "region": "Africa"
+    },
+    {
+      "iata": "DUR",
+      "icao": "FALE",
+      "name": "King Shaka International Airport",
+      "city": "Durban",
+      "country": "South Africa",
+      "latitude": -29.6144,
+      "longitude": 31.1197,
+      "region": "Africa"
+    },
+    {
+      "iata": "NBO",
+      "icao": "HKJK",
+      "name": "Jomo Kenyatta International Airport",
+      "city": "Nairobi",
+      "country": "Kenya",
+      "latitude": -1.3192,
+      "longitude": 36.9278,
+      "region": "Africa"
+    },
+    {
+      "iata": "ADD",
+      "icao": "HAAB",
+      "name": "Addis Ababa Bole International Airport",
+      "city": "Addis Ababa",
+      "country": "Ethiopia",
+      "latitude": 8.9779,
+      "longitude": 38.7993,
+      "region": "Africa"
+    },
+    {
+      "iata": "CAI",
+      "icao": "HECA",
+      "name": "Cairo International Airport",
+      "city": "Cairo",
+      "country": "Egypt",
+      "latitude": 30.1219,
+      "longitude": 31.4056,
+      "region": "Africa"
+    },
+    {
+      "iata": "CMN",
+      "icao": "GMMX",
+      "name": "Mohammed V International Airport",
+      "city": "Casablanca",
+      "country": "Morocco",
+      "latitude": 33.3675,
+      "longitude": -7.5900,
+      "region": "Africa"
+    },
+    {
+      "iata": "LOS",
+      "icao": "DNMM",
+      "name": "Murtala Muhammed International Airport",
+      "city": "Lagos",
+      "country": "Nigeria",
+      "latitude": 6.5774,
+      "longitude": 3.3212,
+      "region": "Africa"
+    },
+    {
+      "iata": "ABV",
+      "icao": "DNAA",
+      "name": "Nnamdi Azikiwe International Airport",
+      "city": "Abuja",
+      "country": "Nigeria",
+      "latitude": 9.0065,
+      "longitude": 7.2632,
+      "region": "Africa"
+    },
+    {
+      "iata": "ACC",
+      "icao": "DGAA",
+      "name": "Kotoka International Airport",
+      "city": "Accra",
+      "country": "Ghana",
+      "latitude": 5.6052,
+      "longitude": -0.1668,
+      "region": "Africa"
+    },
+    {
+      "iata": "DAR",
+      "icao": "HTDA",
+      "name": "Julius Nyerere International Airport",
+      "city": "Dar es Salaam",
+      "country": "Tanzania",
+      "latitude": -6.8781,
+      "longitude": 39.2026,
+      "region": "Africa"
+    },
+    {
+      "iata": "EBB",
+      "icao": "HUEN",
+      "name": "Entebbe International Airport",
+      "city": "Entebbe",
+      "country": "Uganda",
+      "latitude": 0.0424,
+      "longitude": 32.4435,
+      "region": "Africa"
+    },
+    {
+      "iata": "ZNZ",
+      "icao": "HTZA",
+      "name": "Abeid Amani Karume International Airport",
+      "city": "Zanzibar",
+      "country": "Tanzania",
+      "latitude": -6.2220,
+      "longitude": 39.2249,
+      "region": "Africa"
+    },
+    {
+      "iata": "MRU",
+      "icao": "FIMP",
+      "name": "Sir Seewoosagur Ramgoolam International Airport",
+      "city": "Mauritius",
+      "country": "Mauritius",
+      "latitude": -20.4302,
+      "longitude": 57.6836,
+      "region": "Africa"
+    },
+    {
+      "iata": "SEZ",
+      "icao": "FSIA",
+      "name": "Seychelles International Airport",
+      "city": "Mahé",
+      "country": "Seychelles",
+      "latitude": -4.6743,
+      "longitude": 55.5218,
+      "region": "Africa"
+    },
+    {
+      "iata": "TNR",
+      "icao": "FMMI",
+      "name": "Ivato International Airport",
+      "city": "Antananarivo",
+      "country": "Madagascar",
+      "latitude": -18.7969,
+      "longitude": 47.4788,
+      "region": "Africa"
+    },
+    {
+      "iata": "REU",
+      "icao": "FMEE",
+      "name": "Roland Garros Airport",
+      "city": "Saint-Denis",
+      "country": "Réunion",
+      "latitude": -20.8828,
+      "longitude": 55.2575,
+      "region": "Africa"
+    },
+    {
+      "iata": "SSG",
+      "icao": "FGSL",
+      "name": "Malabo International Airport",
+      "city": "Malabo",
+      "country": "Equatorial Guinea",
+      "latitude": 3.7547,
+      "longitude": 8.7069,
+      "region": "Africa"
+    },
+    {
+      "iata": "ABV",
+      "icao": "DNAA",
+      "name": "Nnamdi Azikiwe International Airport",
+      "city": "Abuja",
+      "country": "Nigeria",
+      "latitude": 9.0065,
+      "longitude": 7.2632,
+      "region": "Africa"
+    },
+    {
+      "iata": "YAO",
+      "icao": "FQYA",
+      "name": "Yamoussoukro International Airport",
+      "city": "Yamoussoukro",
+      "country": "Ivory Coast",
+      "latitude": 6.9044,
+      "longitude": -5.4236,
+      "region": "Africa"
+    },
+    {
+      "iata": "DKR",
+      "icao": "GOOY",
+      "name": "Blaise Diagne International Airport",
+      "city": "Dakar",
+      "country": "Senegal",
+      "latitude": 14.6710,
+      "longitude": -17.0729,
+      "region": "Africa"
+    },
+    {
+      "iata": "MPM",
+      "icao": "FQMA",
+      "name": "Maputo International Airport",
+      "city": "Maputo",
+      "country": "Mozambique",
+      "latitude": -25.9208,
+      "longitude": 32.5726,
+      "region": "Africa"
+    },
+    {
+      "iata": "HRE",
+      "icao": "FVHA",
+      "name": "Robert Gabriel Mugabe International Airport",
+      "city": "Harare",
+      "country": "Zimbabwe",
+      "latitude": -17.9318,
+      "longitude": 31.0928,
+      "region": "Africa"
+    },
+    {
+      "iata": "LUN",
+      "icao": "FLKK",
+      "name": "Kenneth Kaunda International Airport",
+      "city": "Lusaka",
+      "country": "Zambia",
+      "latitude": -15.3308,
+      "longitude": 28.4526,
+      "region": "Africa"
+    },
+    {
+      "iata": "GBE",
+      "icao": "FQBE",
+      "name": "Sir Seretse Khama International Airport",
+      "city": "Gaborone",
+      "country": "Botswana",
+      "latitude": -24.5552,
+      "longitude": 25.9182,
+      "region": "Africa"
+    },
+    {
+      "iata": "WDH",
+      "icao": "FYWH",
+      "name": "Hosea Kutako International Airport",
+      "city": "Windhoek",
+      "country": "Namibia",
+      "latitude": -22.4799,
+      "longitude": 17.4709,
+      "region": "Africa"
+    },
+    {
+      "iata": "KGL",
+      "icao": "HRYR",
+      "name": "Kigali International Airport",
+      "city": "Kigali",
+      "country": "Rwanda",
+      "latitude": -1.9686,
+      "longitude": 30.1395,
+      "region": "Africa"
+    }
+  ]
+}

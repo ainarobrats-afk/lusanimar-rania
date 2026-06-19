@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useLocation } from "wouter";
+import HotelMap from "../components/HotelMap";
 
 const API = "/api";
-const GH = "https://raw.githubusercontent.com/ainarobrats-afk/SANIMAR-TRAVEL/main/Rania%20Ai/public";
+const GH = "/image";
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 interface Partner {
@@ -666,6 +667,17 @@ function PartnerCard({ p, onWAClick, trendingRank }: { p: Partner; onWAClick: (p
         {p.description && (
           <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 mb-3">{p.description}</p>
         )}
+        {/* Google Maps for accommodation partners */}
+        {["hotel", "resort", "homestay", "guesthouse", "villa"].includes(p.category) && (
+          <div className="mb-3">
+            <HotelMap
+              hotelName={p.businessName}
+              city={p.city}
+              country={p.country}
+              compact
+            />
+          </div>
+        )}
         {p.amenities.length > 0 && (
           <div className="flex flex-wrap gap-1 mb-3">
             {p.amenities.slice(0, 3).map(a => (
@@ -812,7 +824,7 @@ export default function Explore() {
           </button>
           <div className="w-px h-5 bg-white/10" />
           <div className="flex items-center gap-2 flex-1">
-            <img src={`${GH}/image/logo-sanimar-3d.png.webp`} alt="SANIMAR" className="h-8 w-auto rounded-lg"
+            <img src={`${GH}/logo-sanimar-3d.png.webp`} alt="SANIMAR" className="h-8 w-auto rounded-lg"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             <div>
               <div className="font-orbitron text-sm font-black text-white leading-none">Explore</div>

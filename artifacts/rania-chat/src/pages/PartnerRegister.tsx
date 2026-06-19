@@ -152,7 +152,7 @@ export default function PartnerRegister() {
           </button>
           <div className="w-px h-5 bg-white/10" />
           <div className="flex items-center gap-2 flex-1">
-            <img src={`${GH}/image/logo-sanimar-3d.png.webp`} alt="SANIMAR" className="h-7 w-auto rounded-lg"
+            <img src={`${GH}/logo-sanimar-3d.png.webp`} alt="SANIMAR" className="h-7 w-auto rounded-lg"
               onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
             <div>
               <div className="font-orbitron text-sm font-black text-white leading-none">Partner Registration</div>

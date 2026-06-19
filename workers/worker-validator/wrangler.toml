@@ -1,0 +1,12 @@
+name = "rania-validator"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# Enable Cloudflare Workers AI binding
+[ai]
+binding = "AI"
+
+# Gemini API key for vision/OCR (stored as secret)
+# Set via: wrangler secret put GEMINI_API_KEY --name rania-validator
+
+[vars]

@@ -1,0 +1,14 @@
+/* Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) */
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;src:url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2) format("woff2")}
+.fa,.fas{font-family:"Font Awesome 6 Free";font-weight:900}
+.fa-plane-departure:before{content:"\f5b0"}
+.fa-plane-arrival:before{content:"\f5cd"}
+.fa-calendar:before{content:"\f133"}
+.fa-globe:before{content:"\f0ac"}
+.fa-shield-alt:before{content:"\f3ed"}
+.fa-robot:before{content:"\f544"}
+.fa-fire-flame-curved:before{content:"\f7e4"}
+.fa-camera-retro:before{content:"\f083"}
+.fa-clock:before{content:"\f017"}
+.fa-sun:before{content:"\f185"}
+.fa-chart-line:before{content:"\f201"}

@@ -169,7 +169,7 @@ export function WelcomeCard({ onAction, lang: propLang, voiceEnabled }: Props) {
               }}
             >
               <img
-                src="https://raw.githubusercontent.com/ainarobrats-afk/SANIMAR-TRAVEL/main/Rania%20Ai/public/image/rania_avatar.png.webp"
+                src="/image/rania_avatar.png.webp"
                 alt="RANIA"
                 style={{ width: "100%", height: "100%", objectFit: "cover" }}
                 onError={(e) => {

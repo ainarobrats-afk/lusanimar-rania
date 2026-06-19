@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { useRoute, useLocation } from "wouter";
+import HotelMap from "../components/HotelMap";
 
-const GH = "https://raw.githubusercontent.com/ainarobrats-afk/SANIMAR-TRAVEL/main/Rania%20Ai/public";
+const GH = "/image";
 
 // ─── Destination data ─────────────────────────────────────────────────────────
 interface DestinationInfo {
@@ -629,6 +630,16 @@ export default function DestinationDetail() {
                       </span>
                     </div>
                     <div className="text-[11px] text-gray-500 mb-2">📍 {h.area}</div>
+                    {/* Google Maps Embed — hotel location + airport route */}
+                    <div className="mb-3">
+                      <HotelMap
+                        hotelName={h.name}
+                        city={info.city}
+                        country={info.country}
+                        airportIata={info.iata}
+                        compact
+                      />
+                    </div>
                     <div className="text-lg font-black text-orange-400">{h.price}</div>
                     <a href={`/?chat=hotel+${info.city}+${h.name}`}
                       className="mt-3 w-full flex items-center justify-center gap-1.5 py-2 rounded-xl text-xs font-bold text-white transition-all hover:scale-105"

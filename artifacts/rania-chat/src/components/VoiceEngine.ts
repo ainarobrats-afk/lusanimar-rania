@@ -1,12 +1,8 @@
 /**
- * RANIA Voice Engine — ElevenLabs Primary
+ * RANIA Voice Engine — Piper Custom Voice Primary
  * ─────────────────────────────────────────
- * Tier 1 (Primary) → ElevenLabs TTS  · RANIA New Custom Voice (Natural Tetum Dili)
- * Tier 2 (Fallback) → Web Speech API · jika ElevenLabs tidak tersedia
- *
- * Voice ID: EXAVITQu4vr4xnSDxMaL  ← Bella (ElevenLabs Premium Default)
- * Base URL: https://api.elevenlabs.io/v1/text-to-speech/EXAVITQu4vr4xnSDxMaL
- * Model: eleven_multilingual_v2 — optimized for Tetum Dili + Indonesia natural speech
+ * Tier 1 (Primary) → Piper TTS · RANIA Custom Voice (Natural Indonesian & Tetum)
+ * Tier 2 (Fallback) → Web Speech API · jika Piper tidak tersedia
  */
 
 const API = "/api";
@@ -115,13 +111,17 @@ export function stopSpeaking(): void {
   }
 }
 
-// ─── Tier 1: ElevenLabs via backend proxy (primary) ──────────────────────────
-async function playElevenLabs(
+// ─── Tier 1: Piper via backend proxy (primary) ──────────────────────────
+async function playPiper(
   text: string,
   lang: string,
   volume = 0.85,
-  voiceSettings?: { stability: number; similarity_boost: number; style?: number },
+  voiceSettings?: { speed?: number },
 ): Promise<boolean> {
+  // Skip speaking for English and Portuguese entirely
+  if (lang === "en" || lang === "pt") {
+    return false;
+  }
   const clean = truncateForTts(cleanForTts(text));
   if (!clean) return false;
 
@@ -165,29 +165,37 @@ async function playElevenLabs(
 }
 
 // ─── Tier 2: Web Speech API fallback ─────────────────────────────────────────
-// Voice priority: prefer local device TTS (Siri/Samsung) > Microsoft > Google (robotic)
+// Voice priority: ONLY Indonesian female voices
 const VOICE_PREF_ID = [
-  // Premium device voices (Apple, Samsung — sound natural)
-  "Siri", "Damayanti", "Kyoko", "Yuna",
-  // Microsoft voices (good quality)
-  "Microsoft Gadis",  "Microsoft Andika", "Microsoft Zira", "Microsoft Aria",
-  // Last resort: Google (still robotic but functional)
-  "Google Bahasa Indonesia", "Google Indonesian",
+  "Damayanti",
+  "Microsoft Gadis",
+  "Siri Indonesia",
+  "Google Bahasa Indonesia",
+  "Google Indonesian",
 ];
-const VOICE_PREF_EN = [
-  "Siri", "Samantha", "Karen", "Tessa",
-  "Microsoft Aria", "Microsoft Zira", "Microsoft David",
-  "Google US English", "Google UK English Female",
-];
+const VOICE_PREF_EN = []; // No English voices allowed
+const VOICE_PREF_PT = []; // No Portuguese voices allowed
 
 function pickVoice(voices: SpeechSynthesisVoice[], locale: string): SpeechSynthesisVoice | undefined {
+  // First filter out male voices (Microsoft Andika, David, etc.)
+  const femaleVoicesOnly = voices.filter(v => 
+    !v.name.includes("Andika") && 
+    !v.name.includes("David") && 
+    !v.name.includes("Google Indonesia") // Usually male
+  );
+  
   const prefs = locale.startsWith("en") ? VOICE_PREF_EN : VOICE_PREF_ID;
   for (const name of prefs) {
-    const v = voices.find(v => v.name.includes(name));
+    const v = femaleVoicesOnly.find(v => v.name.includes(name));
     if (v) return v;
   }
-  // Fallback: any voice matching locale
-  return voices.find(v => v.lang === locale || v.lang.startsWith(locale.slice(0, 2)));
+  // Fallback: any female voice matching Indonesian locale
+  return femaleVoicesOnly.find(v => 
+    v.lang === "id-ID" || 
+    v.lang.startsWith("id") || 
+    v.name.includes("Microsoft Gadis") || 
+    v.name.includes("Damayanti")
+  );
 }
 
 async function loadVoices(): Promise<SpeechSynthesisVoice[]> {
@@ -207,15 +215,18 @@ function speakWebSpeechFallback(
   volume = 0.85,
   onEnd?: () => void,
 ): void {
+  // Skip speaking for English and Portuguese entirely
+  if (lang === "en" || lang === "pt") {
+    onEnd?.();
+    return;
+  }
   if (typeof window === "undefined" || !window.speechSynthesis) { onEnd?.(); return; }
   const synth = window.speechSynthesis;
   synth.cancel();
 
   const locale =
     lang === "id"  ? "id-ID" :
-    lang === "pt"  ? "pt-PT" :
-    lang === "tet" ? "id-ID" :
-    lang === "en"  ? "en-US" : "id-ID";
+    lang === "tet" ? "id-ID" : "id-ID";
 
   const speak = (voice?: SpeechSynthesisVoice) => {
     const utterance = new SpeechSynthesisUtterance(text);
@@ -233,7 +244,7 @@ function speakWebSpeechFallback(
   loadVoices().then(voices => speak(pickVoice(voices, locale)));
 }
 
-// ─── Tier 1 (legacy export) — now delegates to ElevenLabs primary ─────────────
+// ─── Tier 1 (legacy export) — now delegates to Piper primary ─────────────
 export async function speakTier1(
   text: string,
   lang: string,
@@ -242,7 +253,7 @@ export async function speakTier1(
 ): Promise<void> {
   const clean = cleanForTts(text);
   if (!clean) { onEnd?.(); return; }
-  const played = await playElevenLabs(clean, lang, volume);
+  const played = await playPiper(clean, lang, volume);
   if (!played) {
     speakWebSpeechFallback(clean, lang, volume, onEnd);
   } else {
@@ -276,27 +287,27 @@ function buildWelcomeMessage(lang: "tetum" | "indonesia" | "english"): string {
 }
 
 const WELCOME_VOICE_SETTINGS = {
-  stability: 0.45,
-  similarity_boost: 0.80,
-  style: 0.2,
+  speed: 0.85,
 };
 
 function langToWelcomeKey(lang: string): "tetum" | "indonesia" | "english" {
   if (lang === "tet") return "tetum";
   if (lang === "id") return "indonesia";
   if (lang === "en") return "english";
-  return "tetum";
+  return "indonesia";
 }
 
 export async function triggerWelcomeVoice(lang: string): Promise<void> {
+  // Skip welcome voice for English and Portuguese entirely
+  if (lang === "en" || lang === "pt") return;
   if (sessionStorage.getItem(LS_WELCOME_SESSION)) return;
   sessionStorage.setItem(LS_WELCOME_SESSION, "1");
 
   const key = langToWelcomeKey(lang);
   const text = buildWelcomeMessage(key);
 
-  // ElevenLabs primary — RANIA New Custom Voice (Natural Tetum Dili)
-  const played = await playElevenLabs(text, lang, 0.9, WELCOME_VOICE_SETTINGS);
+  // Piper primary — RANIA Custom Voice (Natural Indonesian & Tetum)
+  const played = await playPiper(text, lang, 0.9, WELCOME_VOICE_SETTINGS);
 
   // Fallback: Web Speech API
   if (!played) {
@@ -315,6 +326,12 @@ export async function hybridSpeak(
     onSpeakEnd?: () => void;
   } = {},
 ): Promise<void> {
+  // Skip speaking for English and Portuguese entirely
+  if (lang === "en" || lang === "pt") {
+    opts.onSpeakStart?.();
+    opts.onSpeakEnd?.();
+    return;
+  }
   const { volume = 0.85, onSpeakStart, onSpeakEnd } = opts;
 
   onSpeakStart?.();
@@ -322,15 +339,15 @@ export async function hybridSpeak(
   const clean = cleanForTts(text);
   if (!clean) { onSpeakEnd?.(); return; }
 
-  // Skip cached text (already spoken today) to save ElevenLabs quota
+  // Skip cached text (already spoken today) to save Piper quota
   if (isCachedToday(text)) {
     // Still speak via Web Speech API for user feedback
     speakWebSpeechFallback(clean, lang, volume, onSpeakEnd);
     return;
   }
 
-  // ElevenLabs primary (natural Indonesian & Tetum)
-  const played = await playElevenLabs(clean, lang, volume);
+  // Piper primary (natural Indonesian & Tetum)
+  const played = await playPiper(clean, lang, volume);
   if (played) {
     onSpeakEnd?.();
     return;
@@ -347,8 +364,8 @@ export interface VoiceStats {
   monthlyBudgetPct: number;
   isOverBudget: boolean;
   estimatedCostUsd: number;
-  voiceEngine: "ElevenLabs";
-  voiceId: string;
+  voiceEngine: "Piper";
+  voiceName: "Rania";
 }
 
 export function getVoiceStats(): VoiceStats {
@@ -360,7 +377,7 @@ export function getVoiceStats(): VoiceStats {
     monthlyBudgetPct,
     isOverBudget: isOverBudget(),
     estimatedCostUsd: parseFloat(((monthlyCharsUsed / 1000) * 0.3).toFixed(3)),
-    voiceEngine: "ElevenLabs",
-    voiceId: "EXAVITQu4vr4xnSDxMaL", // Bella — ElevenLabs Premium Default
+    voiceEngine: "Piper",
+    voiceName: "Rania",
   };
 }

@@ -2,54 +2,32 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import path from "path";
-import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
-const rawPort = process.env.PORT;
+const rawPort = process.env.PORT || "3000";
+const port    = Number(rawPort);
+if (Number.isNaN(port) || port <= 0) throw new Error(`Invalid PORT: "${rawPort}"`);
 
-if (!rawPort) {
-  throw new Error(
-    "PORT environment variable is required but was not provided.",
-  );
-}
+const basePath = process.env.BASE_PATH || "/";
 
-const port = Number(rawPort);
-
-if (Number.isNaN(port) || port <= 0) {
-  throw new Error(`Invalid PORT value: "${rawPort}"`);
-}
-
-const basePath = process.env.BASE_PATH;
-
-if (!basePath) {
-  throw new Error(
-    "BASE_PATH environment variable is required but was not provided.",
-  );
-}
+// Cloudflare Worker URLs (used in Vite dev proxy only — production uses vercel.json rewrites)
+const PARSER_URL    = "https://rania-parser.lusanimar.workers.dev";
+const HUNTER_URL    = "https://rania-hunter.lusanimar.workers.dev";
+const VALIDATOR_URL = "https://rania-validator.lusanimar.workers.dev";
+const CASHIER_URL   = "https://rania-cashier.lusanimar.workers.dev";
+const WEBHOOK_URL   = "https://rania-webhook.lusanimar.workers.dev";
+const ADMIN_URL     = "https://rania-admin.lusanimar.workers.dev";
+const PILOT_URL     = "https://rania-pilot.lusanimar.workers.dev";
 
 export default defineConfig({
   base: basePath,
   plugins: [
     react(),
     tailwindcss(),
-    runtimeErrorOverlay(),
-    ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
-      ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer({
-              root: path.resolve(import.meta.dirname, ".."),
-            }),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
-      : []),
   ],
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "src"),
-      "@assets": path.resolve(import.meta.dirname, "..", "..", "attached_assets"),
+      "@assets": path.resolve(import.meta.dirname, "public"),
     },
     dedupe: ["react", "react-dom"],
   },
@@ -57,14 +35,39 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "vendor-react":   ["react", "react-dom"],
+          "vendor-ui":      ["framer-motion", "lucide-react"],
+          "vendor-charts":  ["recharts"],
+          "vendor-routing": ["wouter"],
+        },
+      },
+    },
   },
   server: {
     port,
-    strictPort: true,
+    strictPort: false,
     host: "0.0.0.0",
     allowedHosts: true,
-    fs: {
-      strict: true,
+    fs: { strict: false },
+    proxy: {
+      // Dev proxy → Cloudflare Workers (mirrors vercel.json rewrites)
+      "/chat":         { target: PARSER_URL,    changeOrigin: true, rewrite: (p) => p.replace("/chat", "/api/chat") },
+      "/api/chat":     { target: PARSER_URL,    changeOrigin: true },
+      "/api/health":   { target: PARSER_URL,    changeOrigin: true },
+      "/api/ads":      { target: PARSER_URL,    changeOrigin: true },
+      "/api/search":   { target: HUNTER_URL,    changeOrigin: true },
+      "/rania/flights":{ target: HUNTER_URL,    changeOrigin: true, rewrite: (p) => "/api/search" + p.replace("/rania/flights", "") },
+      "/rania/chat":   { target: PARSER_URL,    changeOrigin: true, rewrite: () => "/api/chat" },
+      "/rania":        { target: PARSER_URL,    changeOrigin: true },
+      "/api/validate": { target: VALIDATOR_URL, changeOrigin: true },
+      "/api/checkout": { target: CASHIER_URL,   changeOrigin: true },
+      "/api/webhook":  { target: WEBHOOK_URL,   changeOrigin: true },
+      "/api/admin":    { target: ADMIN_URL,      changeOrigin: true },
+      "/admin":        { target: ADMIN_URL,      changeOrigin: true },
+      "/api/book":     { target: PILOT_URL,      changeOrigin: true },
     },
   },
   preview: {

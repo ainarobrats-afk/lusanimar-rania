@@ -1,49 +1,73 @@
-# See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+# Dependencies
+node_modules/
+.pnpm-store/
 
-# compiled output
-dist
-tmp
-out-tsc
+# Build output
+dist/
+tmp/
+out-tsc/
 *.tsbuildinfo
-.expo
-.expo-shared
+.expo/
+.expo-shared/
 
-# dependencies
-node_modules
+# Environment — JANGAN push secrets ke GitHub
+.env
+.env.local
+.env.*.local
+**/.dev.vars
+**/wrangler.toml.local
 
-# IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+# Cloudflare
+.wrangler/
+**/.wrangler/
 
-# IDE - VSCode
+# IDE
+.idea/
 .vscode/*
 !.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
 !.vscode/extensions.json
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
-
-# System Files
+# OS
 .DS_Store
 Thumbs.db
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Cache
+.cache/
+.parcel-cache/
 
 # Replit
-.cache/
 .local/
+.replit
+.replitignore
+
+# Kiro
+.kiro/
+
+# Large assets (bisa ditambah ke LFS nanti)
+*.zip
+RANIA*.zip
+
+# Test output
+*.json.bak
+shim.log
+audit_search_output.txt
+RANIA_FLIGHT_AUDIT_LOG.jsonl
+cashier_health.json
+hunter_health.json
+parser_health.json
+validator_health.json
+health.json
+response.json
+response2.json
+
+# Screenshots
+*.png
+*.jpg
+
+# Wrangler secrets (sudah ada di Cloudflare dashboard)
+check-token.ps1

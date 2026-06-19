@@ -1,0 +1,14 @@
+name = "rania-pilot"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+# R2 bucket untuk ticket PDF
+# CATATAN: Aktifkan setelah buat bucket via Cloudflare Dashboard:
+# https://dash.cloudflare.com → R2 → Create Bucket → "rania-tickets"
+# Lalu uncomment baris di bawah dan deploy ulang:
+# [[r2_buckets]]
+# binding = "TICKETS"
+# bucket_name = "rania-tickets"
+
+[vars]
+WORKER_ADMIN_URL = "https://rania-admin.lusanimar.workers.dev"

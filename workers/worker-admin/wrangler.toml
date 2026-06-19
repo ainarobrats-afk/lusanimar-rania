@@ -1,0 +1,7 @@
+name = "rania-admin"
+main = "src/index.ts"
+compatibility_date = "2024-12-01"
+
+[vars]
+WORKER_PILOT_URL = "https://rania-pilot.lusanimar.workers.dev"
+WORKER_CASHIER_URL = "https://rania-cashier.lusanimar.workers.dev"

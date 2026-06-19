@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RANIA Flight Search - Date Validation Test</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .header p {
+      opacity: 0.9;
+    }
+    .content {
+      padding: 30px;
+    }
+    .test-section {
+      margin-bottom: 30px;
+      border: 2px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 20px;
+      background: #f9f9f9;
+    }
+    .test-section h2 {
+      color: #667eea;
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    .test-input {
+      margin-bottom: 15px;
+    }
+    .test-input label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    .test-input input, .test-input select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+    .test-input input:focus, .test-input select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    }
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 4px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    .response-box {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 4px;
+      background: white;
+      border-left: 5px solid #667eea;
+    }
+    .response-box h3 {
+      margiin-bottom: 10px;
+      color: #667eea;
+    }
+    .response-content {
+      padding: 15px;
+      background: #f0f4ff;
+      border-radius: 4px;
+      font-family: 'Monaco', 'Courier New', monospace;
+      font-size: 0.95em;
+      line-height: 1.5;
+      white-space: pre-wrap;
+      word-break: break-word;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .status {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.85em;
+      font-weight: 600;
+      margin-top: 10px;
+    }
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+    }
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .status.loading {
+      background: #fff3cd;
+      color: #856404;
+    }
+    .test-cases {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .test-case-btn {
+      padding: 10px 15px;
+      font-size: 0.9em;
+      text-align: left;
+      background: #f0f4ff;
+      border: 2px solid #667eea;
+      color: #667eea;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .test-case-btn:hover {
+      background: #667eea;
+      color: white;
+      transform: none;
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✈️ RANIA Date Validation Test</h1>
+      <p>Testing the new flight search flow with date confirmation</p>
+    </div>
+    
+    <div class="content">
+      <div class="test-section">
+        <h2>Quick Test Cases</h2>
+        <div class="test-cases">
+          <button class="test-case-btn" onclick="runTest('Dili ba Bali', 'tetun')">
+            ❌ No Date: "Dili ba Bali" (Tetun)
+          </button>
+          <button class="test-case-btn" onclick="runTest('Dili ba Bali 29 Maio', 'tetun')">
+            ✅ With Date: "Dili ba Bali 29 Maio" (Tetun)
+          </button>
+          <button class="test-case-btn" onclick="runTest('Dili ke Bali tanpa tanggal', 'indonesian')">
+            ❌ No Date: Indonesian variant
+          </button>
+          <button class="test-case-btn" onclick="runTest('Dili to Bali tomorrow', 'english')">
+            ✅ With Date: English + tomorrow
+          </button>
+        </div>
+      </div>
+
+      <div class="test-section">
+        <h2>Custom Test</h2>
+        <div class="test-input">
+          <label for="message">Message:</label>
+          <input type="text" id="message" placeholder="e.g., Dili ba Bali or Dili ba Bali 29 Maio">
+        </div>
+        <div class="test-input">
+          <label for="language">Language:</label>
+          <select id="language">
+            <option value="unknown">Auto Detect</option>
+            <option value="tetun">Tetun</option>
+            <option value="indonesian">Indonesian</option>
+            <option value="english">English</option>
+            <option value="portuguese">Portuguese</option>
+          </select>
+        </div>
+        <button onclick="runCustomTest()">Send Test Request</button>
+      </div>
+
+      <div id="responseContainer"></div>
+    </div>
+  </div>
+
+  <script>
+    async function runTest(message, language) {
+      const element = document.getElementById('responseContainer');
+      element.innerHTML = '<div class="response-box"><div class="status loading">⏳ Loading...</div></div>';
+      
+      try {
+        const payload = {
+          message: message,
+          sessionId: 'test-session-' + Date.now(),
+          language: language || 'unknown'
+        };
+
+        const response = await fetch('http://localhost:8787/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        
+        const hasDate = message.match(/\b(\d{1,2})\b|mai|juni|july|besok|aban|tomorrow|amanhã|mei/i);
+        const expectedBehavior = hasDate ? 'Should SEARCH for flights' : 'Should REQUEST DATE';
+        
+        element.innerHTML = `
+          <div class="response-box">
+            <h3>Test Result</h3>
+            <div style="margin-bottom: 15px;">
+              <strong>Input:</strong> "${message}"<br>
+              <strong>Language:</strong> ${language}<br>
+              <strong>Expected:</strong> ${expectedBehavior}<br>
+            </div>
+            <div style="margin-bottom: 15px;">
+              <strong>Response from RANIA:</strong>
+              <div class="response-content">${JSON.stringify(result, null, 2)}</div>
+            </div>
+            <div class="status ${hasDate ? 'success' : 'success'}">
+              ${hasDate ? '✅ Has Date - Should search' : '✅ No Date - Should ask for date'}
+            </div>
+          </div>
+        `;
+      } catch (err) {
+        element.innerHTML = `
+          <div class="response-box">
+            <h3>Error</h3>
+            <div class="response-content">${err.message}</div>
+            <div class="status error">❌ Error: ${err.message}</div>
+          </div>
+        `;
+      }
+    }
+
+    function runCustomTest() {
+      const message = document.getElementById('message').value;
+      const language = document.getElementById('language').value;
+      
+      if (!message.trim()) {
+        alert('Please enter a message');
+        return;
+      }
+      
+      runTest(message, language);
+    }
+
+    // Run initial test on page load
+    window.addEventListener('load', () => {
+      // Don't auto-run on load to avoid 404 when worker doesn't serve static files.
+    });
+  </script>
+</body>
+</html>
