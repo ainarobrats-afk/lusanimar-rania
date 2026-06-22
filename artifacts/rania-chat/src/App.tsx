@@ -29,6 +29,11 @@ import ProfilePage from "@/pages/ProfilePage";
 import AdsDashboard from "@/pages/AdsDashboard";
 import MarketTabBar from "@/components/Layout/MarketTabBar";
 import SplashScreen, { hasSplashBeenShown } from "@/components/SplashScreen";
+import AgentDashboard from "@/components/Dashboard/AgentDashboard";
+import RegistrationModal from "@/components/Auth/RegistrationModal";
+import WalletDashboard from "@/components/Wallet/WalletDashboard";
+import AdCreditModal from "@/components/Wallet/AdCreditModal";
+import SanimarMarketApp from "@/components/SanimarMarketApp";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +62,11 @@ function Router() {
         <Route path="/sanimar-market/jual" component={SanimarMarketJual} />
         <Route path="/sanimar-market/product/:id" component={SanimarMarketDetail} />
         <Route path="/sanimar-market/ads/dashboard" component={AdsDashboard} />
+        <Route path="/agent-dashboard" component={AgentDashboard} />
+        <Route path="/register" component={RegistrationModal} />
+        <Route path="/wallet" component={WalletDashboard} />
+        <Route path="/ad-credit" component={AdCreditModal} />
+        <Route path="/sanimar-market-app" component={SanimarMarketApp} />
         <Route path="/explore" component={Explore} />
         <Route path="/partner/register" component={PartnerRegister} />
         <Route path="/staff" component={StaffMonitor} />
