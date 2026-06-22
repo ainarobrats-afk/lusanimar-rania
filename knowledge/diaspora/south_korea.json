@@ -1,0 +1,48 @@
+[
+  {
+    "id": "south_korea_overview",
+    "country": "South Korea",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 2500,
+    "primary_cities": ["Seoul", "Incheon", "Busan"],
+    "population_centers": {
+      "Seoul": { "estimate": 1500, "notes": "Capital and business hub" },
+      "Incheon": { "estimate": 600, "notes": "Manufacturing zone" },
+      "Busan": { "estimate": 400, "notes": "Port city" }
+    },
+    "employment_sectors": ["manufacturing", "healthcare", "hospitality", "education", "domestic_work"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "D-10 (Job Seekers) or D-2 (Student)",
+      "processing_time": "5-10 days",
+      "requirements": ["passport", "employment_letter", "medical_exam"],
+      "notes": "Growing number of Timorese nurses and healthcare workers"
+    },
+    "embassy_contact": {
+      "location": "Seoul",
+      "address": "Jongno-gu, Seoul (Consulate)",
+      "phone": "+82 2 730-6969",
+      "email": "timorembassy.seoul@gmail.com"
+    },
+    "work_sectors": {
+      "healthcare": {
+        "opportunities": ["Nurses (RN/LPN)", "Healthcare Assistants", "Caregivers"],
+        "pathway": "IELTS/TOPIK qualification, medical license conversion",
+        "salary": "₩25M-35M annually"
+      },
+      "manufacturing": {
+        "companies": "Samsung, LG, Hyundai factories",
+        "roles": "Assembly, QC, maintenance"
+      }
+    },
+    "return_travel": {
+      "flights": ["Asiana Airlines", "Korean Air", "Garuda"],
+      "duration": "5-7 hours",
+      "cost": "₩800,000-1,500,000 round trip"
+    },
+    "cultural_notes": {
+      "language": "Korean language helpful; English spoken in expat circles",
+      "work_culture": "High intensity; long hours common",
+      "cost_of_living": "Moderate for developed country"
+    }
+  }
+]

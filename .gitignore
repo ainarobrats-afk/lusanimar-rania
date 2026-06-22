@@ -1,19 +1,27 @@
 # Dependencies
 node_modules/
+node_modules
 .pnpm-store/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Build output
 dist/
+build/
 tmp/
 out-tsc/
 *.tsbuildinfo
-.expo/
-.expo-shared/
+
+# Next.js build cache
+.next/
 
 # Environment — JANGAN push secrets ke GitHub
 .env
 .env.local
 .env.*.local
+.env.travelport
+**/.env.travelport
 **/.dev.vars
 **/wrangler.toml.local
 
@@ -48,7 +56,7 @@ yarn-error.log*
 # Kiro
 .kiro/
 
-# Large assets (bisa ditambah ke LFS nanti)
+# Large assets
 *.zip
 RANIA*.zip
 

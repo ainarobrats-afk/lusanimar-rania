@@ -1,0 +1,18 @@
+{
+  "passport_keywords": {
+    "id": "passport_keywords",
+    "name": "Passport keyword mappings",
+    "description": "Keywords that map to pasaporte-tl KB entry.",
+    "mappings": {
+      "pasaporte": "pasaporte-tl",
+      "passport": "pasaporte-tl",
+      "paspor": "pasaporte-tl",
+      "halo pasaporte": "pasaporte-tl",
+      "renovasaun pasaporte": "pasaporte-tl",
+      "passport renewal": "pasaporte-tl",
+      "cara buat paspor": "pasaporte-tl",
+      "how to get passport": "pasaporte-tl",
+      "how to get a timor-leste passport": "pasaporte-tl"
+    }
+  }
+}

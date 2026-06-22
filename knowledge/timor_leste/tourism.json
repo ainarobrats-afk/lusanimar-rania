@@ -1,0 +1,9 @@
+{
+  "top_attractions": [
+    {"name": "Baucau Beach", "city": "Baucau"},
+    {"name": "Jaco Island", "municipality": "Lautem"},
+    {"name": "Mount Ramelau", "municipality": "Ermera"},
+    {"name": "Tais weaving villages", "region": "Dili"}
+  ],
+  "notes": "Tourism focuses on beach destinations, cultural heritage, and border area travel between Timor-Leste and NTT."
+}

@@ -1,0 +1,42 @@
+{
+  "destination_country": "Malaysia",
+  "destination_iso": "MY",
+  "destination_name": {
+    "tet": "Malázia",
+    "id": "Malaysia",
+    "en": "Malaysia",
+    "pt": "Malásia"
+  },
+  "destination_keywords": {
+    "tet": ["malázia", "malaysia"],
+    "id": ["malaysia"],
+    "en": ["malaysia"],
+    "pt": ["malásia"]
+  },
+  "alt_names": ["malaysia", "malásia"],
+  "passport_keywords": ["malaysia", "malaysian", "malásia", "malaysian"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 30,
+      "notes": {
+        "tet": "Pasaporte TL bele ba Malaysia 30 loron la presiza visa.",
+        "id": "Paspor TL bisa ke Malaysia 30 hari tanpa visa.",
+        "en": "TL passport holders can enter Malaysia visa-free for 30 days.",
+        "pt": "Portadores de passaporte TL podem entrar na Malásia sem visto por 30 dias."
+      }
+    }
+  ]
+}

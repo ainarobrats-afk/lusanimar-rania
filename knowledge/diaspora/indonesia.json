@@ -1,0 +1,58 @@
+[
+  {
+    "id": "indonesia_overview",
+    "country": "Indonesia",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 80000,
+    "primary_cities": ["Jakarta", "Surabaya", "Medan", "Makassar"],
+    "population_centers": {
+      "Jakarta": { "estimate": 35000, "notes": "Largest Timorese diaspora in SE Asia" },
+      "Surabaya": { "estimate": 20000, "notes": "East Java hub" },
+      "Medan": { "estimate": 15000, "notes": "Sumatra gateway" }
+    },
+    "employment_sectors": ["domestic_workers", "hospital_staff", "education", "construction", "trade"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "Free 60-day visit visa on arrival (BVOA)",
+      "extension": "30 days extendable at immigration office",
+      "processing_time": "immediate_on_arrival",
+      "notes": "Timorese can visit Indonesia easily; check bilateral agreements"
+    },
+    "embassy_contact": {
+      "location": "Jakarta",
+      "address": "Jl. Gajah Mada No. 4, Central Jakarta",
+      "phone": "+62 21 345-2280",
+      "email": "info@timorembassy.id"
+    },
+    "community_organizations": [
+      { "name": "Persatuan Timor Leste Indonesia", "city": "Jakarta", "notes": "Main diaspora council" },
+      { "name": "Komunitas Timor Jakarta", "city": "Jakarta" },
+      { "name": "Buruh Migran Timor", "city": "Jakarta", "type": "workers_association" }
+    ],
+    "return_travel": {
+      "land_entry": "Overland from West Timor via Atapupu/Motaain border",
+      "sea_entry": "Ferries from Kupang to Dili (13 hours)",
+      "air_entry": "Garuda, Lion Air from Jakarta/Surabaya to Dili",
+      "duration_flight": "3-4 hours from Jakarta"
+    },
+    "practical_info": {
+      "language": "Indonesian widely understood by Timorese diaspora",
+      "money": "Indonesian Rupiah used; USD accepted in tourism areas",
+      "transportation": "Good bus network connecting diaspora hubs"
+    }
+  },
+  {
+    "id": "indonesia_migration_support",
+    "country": "Indonesia",
+    "type": "support_info",
+    "migrant_worker_resources": {
+      "agency": "BP3TKI (Indonesian overseas workers authority)",
+      "services": ["contract_verification", "dispute_resolution", "welfare_support"],
+      "contact": "+62 21 300-222-222"
+    },
+    "household_worker_support": {
+      "category": "TKI domestic workers",
+      "primary_origin": "East Timor rural areas",
+      "remittance_options": "Bank transfer, Western Union, informal networks"
+    }
+  }
+]

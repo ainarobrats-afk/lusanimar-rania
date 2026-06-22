@@ -1,0 +1,10 @@
+{
+  "top_attractions": [
+    {"name": "Komodo National Park", "city": "Labuan Bajo"},
+    {"name": "Kelimutu National Park", "city": "Ende"},
+    {"name": "Nembrala Beach", "city": "Rote"},
+    {"name": "Alor Diving", "city": "Alor"},
+    {"name": "Wai Oti Beach", "city": "Maumere"}
+  ],
+  "notes": "NTT tourism includes islands, diving, surfing, cultural villages, and mountain trekking."
+}

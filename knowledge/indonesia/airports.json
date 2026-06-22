@@ -1,0 +1,1225 @@
+{
+  "CGK": {
+    "iata": "CGK",
+    "icao": "WIII",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Soekarno-Hatta International Airport",
+      "id": "Soekarno-Hatta Bandara Internasional",
+      "tet": "Soekarno-Hatta Aeroportu Internasional",
+      "pt": "Soekarno-Hatta Aeroporto Internacional",
+      "zh": "Soekarno-Hatta International Airport"
+    },
+    "popular_routes": [
+      "DPS",
+      "SUB",
+      "KNO",
+      "SIN"
+    ],
+    "description": {
+      "en": "Soekarno-Hatta International Airport",
+      "id": "Soekarno-Hatta Bandara Internasional",
+      "tet": "Soekarno-Hatta Aeroportu Internasional",
+      "pt": "Soekarno-Hatta Aeroporto Internacional"
+    }
+  },
+  "HLP": {
+    "iata": "HLP",
+    "icao": "WIHH",
+    "country": "Indonesia",
+    "city": "Jakarta",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Halim Perdanakusuma International Airport",
+      "id": "Halim Perdanakusuma Bandara Internasional",
+      "tet": "Halim Perdanakusuma Aeroportu Internasional",
+      "pt": "Halim Perdanakusuma Aeroporto Internacional",
+      "zh": "Halim Perdanakusuma International Airport"
+    },
+    "popular_routes": [
+      "SUB",
+      "DPS",
+      "UPG"
+    ],
+    "description": {
+      "en": "Halim Perdanakusuma International Airport",
+      "id": "Halim Perdanakusuma Bandara Internasional",
+      "tet": "Halim Perdanakusuma Aeroportu Internasional",
+      "pt": "Halim Perdanakusuma Aeroporto Internacional"
+    }
+  },
+  "YIA": {
+    "iata": "YIA",
+    "icao": "WAHS",
+    "country": "Indonesia",
+    "city": "Yogyakarta",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Yogyakarta International Airport",
+      "id": "Yogyakarta Bandara Internasional",
+      "tet": "Yogyakarta Aeroportu Internasional",
+      "pt": "Yogyakarta Aeroporto Internacional",
+      "zh": "Yogyakarta International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS",
+      "SUB"
+    ],
+    "description": {
+      "en": "Yogyakarta International Airport",
+      "id": "Yogyakarta Bandara Internasional",
+      "tet": "Yogyakarta Aeroportu Internasional",
+      "pt": "Yogyakarta Aeroporto Internacional"
+    }
+  },
+  "JOG": {
+    "iata": "JOG",
+    "icao": "WAAH",
+    "country": "Indonesia",
+    "city": "Yogyakarta",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Adisucipto International Airport",
+      "id": "Adisucipto Bandara Internasional",
+      "tet": "Adisucipto Aeroportu Internasional",
+      "pt": "Adisucipto Aeroporto Internacional",
+      "zh": "Adisucipto International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Adisucipto International Airport",
+      "id": "Adisucipto Bandara Internasional",
+      "tet": "Adisucipto Aeroportu Internasional",
+      "pt": "Adisucipto Aeroporto Internacional"
+    }
+  },
+  "SOC": {
+    "iata": "SOC",
+    "icao": "WARS",
+    "country": "Indonesia",
+    "city": "Surakarta (Solo)",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Adisumarmo International Airport",
+      "id": "Adisumarmo Bandara Internasional",
+      "tet": "Adisumarmo Aeroportu Internasional",
+      "pt": "Adisumarmo Aeroporto Internacional",
+      "zh": "Adisumarmo International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Adisumarmo International Airport",
+      "id": "Adisumarmo Bandara Internasional",
+      "tet": "Adisumarmo Aeroportu Internasional",
+      "pt": "Adisumarmo Aeroporto Internacional"
+    }
+  },
+  "SUB": {
+    "iata": "SUB",
+    "icao": "WARR",
+    "country": "Indonesia",
+    "city": "Surabaya",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Juanda International Airport",
+      "id": "Juanda Bandara Internasional",
+      "tet": "Juanda Aeroportu Internasional",
+      "pt": "Juanda Aeroporto Internacional",
+      "zh": "Juanda International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS",
+      "KNO"
+    ],
+    "description": {
+      "en": "Juanda International Airport",
+      "id": "Juanda Bandara Internasional",
+      "tet": "Juanda Aeroportu Internasional",
+      "pt": "Juanda Aeroporto Internacional"
+    }
+  },
+  "SRG": {
+    "iata": "SRG",
+    "icao": "WARS",
+    "country": "Indonesia",
+    "city": "Semarang",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Ahmad Yani International Airport",
+      "id": "Ahmad Yani Bandara Internasional",
+      "tet": "Ahmad Yani Aeroportu Internasional",
+      "pt": "Ahmad Yani Aeroporto Internacional",
+      "zh": "Ahmad Yani International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Ahmad Yani International Airport",
+      "id": "Ahmad Yani Bandara Internasional",
+      "tet": "Ahmad Yani Aeroportu Internasional",
+      "pt": "Ahmad Yani Aeroporto Internacional"
+    }
+  },
+  "BDO": {
+    "iata": "BDO",
+    "icao": "WICC",
+    "country": "Indonesia",
+    "city": "Bandung",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Husein Sastranegara Airport",
+      "id": "Husein Sastranegara Bandara",
+      "tet": "Husein Sastranegara Aeroportu",
+      "pt": "Husein Sastranegara Aeroporto",
+      "zh": "Husein Sastranegara Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Husein Sastranegara Airport",
+      "id": "Husein Sastranegara Bandara",
+      "tet": "Husein Sastranegara Aeroportu",
+      "pt": "Husein Sastranegara Aeroporto"
+    }
+  },
+  "MLG": {
+    "iata": "MLG",
+    "icao": "WARA",
+    "country": "Indonesia",
+    "city": "Malang",
+    "region": "Java",
+    "type": "airport",
+    "name": {
+      "en": "Abdul Rachman Saleh Airport",
+      "id": "Abdul Rachman Saleh Bandara",
+      "tet": "Abdul Rachman Saleh Aeroportu",
+      "pt": "Abdul Rachman Saleh Aeroporto",
+      "zh": "Abdul Rachman Saleh Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Abdul Rachman Saleh Airport",
+      "id": "Abdul Rachman Saleh Bandara",
+      "tet": "Abdul Rachman Saleh Aeroportu",
+      "pt": "Abdul Rachman Saleh Aeroporto"
+    }
+  },
+  "TKG": {
+    "iata": "TKG",
+    "icao": "WIPL",
+    "country": "Indonesia",
+    "city": "Bandar Lampung",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Radin Inten II International Airport",
+      "id": "Radin Inten II Bandara Internasional",
+      "tet": "Radin Inten II Aeroportu Internasional",
+      "pt": "Radin Inten II Aeroporto Internacional",
+      "zh": "Radin Inten II International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Radin Inten II International Airport",
+      "id": "Radin Inten II Bandara Internasional",
+      "tet": "Radin Inten II Aeroportu Internasional",
+      "pt": "Radin Inten II Aeroporto Internacional"
+    }
+  },
+  "KNO": {
+    "iata": "KNO",
+    "icao": "WIMM",
+    "country": "Indonesia",
+    "city": "Medan",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Kualanamu International Airport",
+      "id": "Kualanamu Bandara Internasional",
+      "tet": "Kualanamu Aeroportu Internasional",
+      "pt": "Kualanamu Aeroporto Internacional",
+      "zh": "Kualanamu International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS"
+    ],
+    "description": {
+      "en": "Kualanamu International Airport",
+      "id": "Kualanamu Bandara Internasional",
+      "tet": "Kualanamu Aeroportu Internasional",
+      "pt": "Kualanamu Aeroporto Internacional"
+    }
+  },
+  "PDG": {
+    "iata": "PDG",
+    "icao": "WIMN",
+    "country": "Indonesia",
+    "city": "Padang",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Minangkabau International Airport",
+      "id": "Minangkabau Bandara Internasional",
+      "tet": "Minangkabau Aeroportu Internasional",
+      "pt": "Minangkabau Aeroporto Internacional",
+      "zh": "Minangkabau International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "KNO"
+    ],
+    "description": {
+      "en": "Minangkabau International Airport",
+      "id": "Minangkabau Bandara Internasional",
+      "tet": "Minangkabau Aeroportu Internasional",
+      "pt": "Minangkabau Aeroporto Internacional"
+    }
+  },
+  "PKU": {
+    "iata": "PKU",
+    "icao": "WIPL",
+    "country": "Indonesia",
+    "city": "Pekanbaru",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Syarif Kasim II Airport",
+      "id": "Sultan Syarif Kasim II Bandara",
+      "tet": "Sultan Syarif Kasim II Aeroportu",
+      "pt": "Sultan Syarif Kasim II Aeroporto",
+      "zh": "Sultan Syarif Kasim II Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS"
+    ],
+    "description": {
+      "en": "Sultan Syarif Kasim II Airport",
+      "id": "Sultan Syarif Kasim II Bandara",
+      "tet": "Sultan Syarif Kasim II Aeroportu",
+      "pt": "Sultan Syarif Kasim II Aeroporto"
+    }
+  },
+  "PLM": {
+    "iata": "PLM",
+    "icao": "WIPP",
+    "country": "Indonesia",
+    "city": "Palembang",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Mahmud Badaruddin II Airport",
+      "id": "Sultan Mahmud Badaruddin II Bandara",
+      "tet": "Sultan Mahmud Badaruddin II Aeroportu",
+      "pt": "Sultan Mahmud Badaruddin II Aeroporto",
+      "zh": "Sultan Mahmud Badaruddin II Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Sultan Mahmud Badaruddin II Airport",
+      "id": "Sultan Mahmud Badaruddin II Bandara",
+      "tet": "Sultan Mahmud Badaruddin II Aeroportu",
+      "pt": "Sultan Mahmud Badaruddin II Aeroporto"
+    }
+  },
+  "BTH": {
+    "iata": "BTH",
+    "icao": "WIDD",
+    "country": "Indonesia",
+    "city": "Batam",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Hang Nadim Airport",
+      "id": "Hang Nadim Bandara",
+      "tet": "Hang Nadim Aeroportu",
+      "pt": "Hang Nadim Aeroporto",
+      "zh": "Hang Nadim Airport"
+    },
+    "popular_routes": [
+      "SIN",
+      "CGK"
+    ],
+    "description": {
+      "en": "Hang Nadim Airport",
+      "id": "Hang Nadim Bandara",
+      "tet": "Hang Nadim Aeroportu",
+      "pt": "Hang Nadim Aeroporto"
+    }
+  },
+  "BTJ": {
+    "iata": "BTJ",
+    "icao": "WITT",
+    "country": "Indonesia",
+    "city": "Banda Aceh",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Iskandar Muda International Airport",
+      "id": "Sultan Iskandar Muda Bandara Internasional",
+      "tet": "Sultan Iskandar Muda Aeroportu Internasional",
+      "pt": "Sultan Iskandar Muda Aeroporto Internacional",
+      "zh": "Sultan Iskandar Muda International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "KNO"
+    ],
+    "description": {
+      "en": "Sultan Iskandar Muda International Airport",
+      "id": "Sultan Iskandar Muda Bandara Internasional",
+      "tet": "Sultan Iskandar Muda Aeroportu Internasional",
+      "pt": "Sultan Iskandar Muda Aeroporto Internacional"
+    }
+  },
+  "BKS": {
+    "iata": "BKS",
+    "icao": "WIBK",
+    "country": "Indonesia",
+    "city": "Bengkulu",
+    "region": "Sumatra",
+    "type": "airport",
+    "name": {
+      "en": "Fatmawati Soekarno Airport",
+      "id": "Fatmawati Soekarno Bandara",
+      "tet": "Fatmawati Soekarno Aeroportu",
+      "pt": "Fatmawati Soekarno Aeroporto",
+      "zh": "Fatmawati Soekarno Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Fatmawati Soekarno Airport",
+      "id": "Fatmawati Soekarno Bandara",
+      "tet": "Fatmawati Soekarno Aeroportu",
+      "pt": "Fatmawati Soekarno Aeroporto"
+    }
+  },
+  "PNK": {
+    "iata": "PNK",
+    "icao": "WIOO",
+    "country": "Indonesia",
+    "city": "Pontianak",
+    "region": "Kalimantan",
+    "type": "airport",
+    "name": {
+      "en": "Supadio Airport",
+      "id": "Supadio Bandara",
+      "tet": "Supadio Aeroportu",
+      "pt": "Supadio Aeroporto",
+      "zh": "Supadio Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "BPN"
+    ],
+    "description": {
+      "en": "Supadio Airport",
+      "id": "Supadio Bandara",
+      "tet": "Supadio Aeroportu",
+      "pt": "Supadio Aeroporto"
+    }
+  },
+  "BPN": {
+    "iata": "BPN",
+    "icao": "WALL",
+    "country": "Indonesia",
+    "city": "Balikpapan",
+    "region": "Kalimantan",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Aji Muhammad Sulaiman Sepinggan International Airport",
+      "id": "Sultan Aji Muhammad Sulaiman Sepinggan Bandara Internasional",
+      "tet": "Sultan Aji Muhammad Sulaiman Sepinggan Aeroportu Internasional",
+      "pt": "Sultan Aji Muhammad Sulaiman Sepinggan Aeroporto Internacional",
+      "zh": "Sultan Aji Muhammad Sulaiman Sepinggan International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS"
+    ],
+    "description": {
+      "en": "Sultan Aji Muhammad Sulaiman Sepinggan International Airport",
+      "id": "Sultan Aji Muhammad Sulaiman Sepinggan Bandara Internasional",
+      "tet": "Sultan Aji Muhammad Sulaiman Sepinggan Aeroportu Internasional",
+      "pt": "Sultan Aji Muhammad Sulaiman Sepinggan Aeroporto Internacional"
+    }
+  },
+  "BDJ": {
+    "iata": "BDJ",
+    "icao": "WAOO",
+    "country": "Indonesia",
+    "city": "Banjarmasin",
+    "region": "Kalimantan",
+    "type": "airport",
+    "name": {
+      "en": "Syamsudin Noor International Airport",
+      "id": "Syamsudin Noor Bandara Internasional",
+      "tet": "Syamsudin Noor Aeroportu Internasional",
+      "pt": "Syamsudin Noor Aeroporto Internacional",
+      "zh": "Syamsudin Noor International Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Syamsudin Noor International Airport",
+      "id": "Syamsudin Noor Bandara Internasional",
+      "tet": "Syamsudin Noor Aeroportu Internasional",
+      "pt": "Syamsudin Noor Aeroporto Internacional"
+    }
+  },
+  "TRK": {
+    "iata": "TRK",
+    "icao": "WALK",
+    "country": "Indonesia",
+    "city": "Tarakan",
+    "region": "Kalimantan",
+    "type": "airport",
+    "name": {
+      "en": "Juwata International Airport",
+      "id": "Juwata Bandara Internasional",
+      "tet": "Juwata Aeroportu Internasional",
+      "pt": "Juwata Aeroporto Internacional",
+      "zh": "Juwata International Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Juwata International Airport",
+      "id": "Juwata Bandara Internasional",
+      "tet": "Juwata Aeroportu Internasional",
+      "pt": "Juwata Aeroporto Internacional"
+    }
+  },
+  "BEJ": {
+    "iata": "BEJ",
+    "icao": "WALJ",
+    "country": "Indonesia",
+    "city": "Berau",
+    "region": "Kalimantan",
+    "type": "airport",
+    "name": {
+      "en": "Tanjung Redeb Airport",
+      "id": "Tanjung Redeb Bandara",
+      "tet": "Tanjung Redeb Aeroportu",
+      "pt": "Tanjung Redeb Aeroporto",
+      "zh": "Tanjung Redeb Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Tanjung Redeb Airport",
+      "id": "Tanjung Redeb Bandara",
+      "tet": "Tanjung Redeb Aeroportu",
+      "pt": "Tanjung Redeb Aeroporto"
+    }
+  },
+  "UPG": {
+    "iata": "UPG",
+    "icao": "WAAA",
+    "country": "Indonesia",
+    "city": "Makassar",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Hasanuddin International Airport",
+      "id": "Sultan Hasanuddin Bandara Internasional",
+      "tet": "Sultan Hasanuddin Aeroportu Internasional",
+      "pt": "Sultan Hasanuddin Aeroporto Internacional",
+      "zh": "Sultan Hasanuddin International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "DPS"
+    ],
+    "description": {
+      "en": "Sultan Hasanuddin International Airport",
+      "id": "Sultan Hasanuddin Bandara Internasional",
+      "tet": "Sultan Hasanuddin Aeroportu Internasional",
+      "pt": "Sultan Hasanuddin Aeroporto Internacional"
+    }
+  },
+  "MDC": {
+    "iata": "MDC",
+    "icao": "WAMM",
+    "country": "Indonesia",
+    "city": "Manado",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Sam Ratulangi International Airport",
+      "id": "Sam Ratulangi Bandara Internasional",
+      "tet": "Sam Ratulangi Aeroportu Internasional",
+      "pt": "Sam Ratulangi Aeroporto Internacional",
+      "zh": "Sam Ratulangi International Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Sam Ratulangi International Airport",
+      "id": "Sam Ratulangi Bandara Internasional",
+      "tet": "Sam Ratulangi Aeroportu Internasional",
+      "pt": "Sam Ratulangi Aeroporto Internacional"
+    }
+  },
+  "KDI": {
+    "iata": "KDI",
+    "icao": "WAWW",
+    "country": "Indonesia",
+    "city": "Kendari",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Haluoleo Airport",
+      "id": "Haluoleo Bandara",
+      "tet": "Haluoleo Aeroportu",
+      "pt": "Haluoleo Aeroporto",
+      "zh": "Haluoleo Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Haluoleo Airport",
+      "id": "Haluoleo Bandara",
+      "tet": "Haluoleo Aeroportu",
+      "pt": "Haluoleo Aeroporto"
+    }
+  },
+  "PLW": {
+    "iata": "PLW",
+    "icao": "WAMG",
+    "country": "Indonesia",
+    "city": "Palu",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Mutiara SIS Al-Jufrie Airport",
+      "id": "Mutiara SIS Al-Jufrie Bandara",
+      "tet": "Mutiara SIS Al-Jufrie Aeroportu",
+      "pt": "Mutiara SIS Al-Jufrie Aeroporto",
+      "zh": "Mutiara SIS Al-Jufrie Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Mutiara SIS Al-Jufrie Airport",
+      "id": "Mutiara SIS Al-Jufrie Bandara",
+      "tet": "Mutiara SIS Al-Jufrie Aeroportu",
+      "pt": "Mutiara SIS Al-Jufrie Aeroporto"
+    }
+  },
+  "GTO": {
+    "iata": "GTO",
+    "icao": "WAMG",
+    "country": "Indonesia",
+    "city": "Gorontalo",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Jalaluddin Airport",
+      "id": "Jalaluddin Bandara",
+      "tet": "Jalaluddin Aeroportu",
+      "pt": "Jalaluddin Aeroporto",
+      "zh": "Jalaluddin Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Jalaluddin Airport",
+      "id": "Jalaluddin Bandara",
+      "tet": "Jalaluddin Aeroportu",
+      "pt": "Jalaluddin Aeroporto"
+    }
+  },
+  "MJU": {
+    "iata": "MJU",
+    "icao": "WAMJ",
+    "country": "Indonesia",
+    "city": "Mamuju",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Hasanuddin Amir Airport",
+      "id": "Sultan Hasanuddin Amir Bandara",
+      "tet": "Sultan Hasanuddin Amir Aeroportu",
+      "pt": "Sultan Hasanuddin Amir Aeroporto",
+      "zh": "Sultan Hasanuddin Amir Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Sultan Hasanuddin Amir Airport",
+      "id": "Sultan Hasanuddin Amir Bandara",
+      "tet": "Sultan Hasanuddin Amir Aeroportu",
+      "pt": "Sultan Hasanuddin Amir Aeroporto"
+    }
+  },
+  "DPS": {
+    "iata": "DPS",
+    "icao": "WADD",
+    "country": "Indonesia",
+    "city": "Denpasar",
+    "region": "Bali & Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "I Gusti Ngurah Rai International Airport",
+      "id": "I Gusti Ngurah Rai Bandara Internasional",
+      "tet": "I Gusti Ngurah Rai Aeroportu Internasional",
+      "pt": "I Gusti Ngurah Rai Aeroporto Internacional",
+      "zh": "I Gusti Ngurah Rai International Airport"
+    },
+    "popular_routes": [
+      "CGK",
+      "KOE",
+      "LBJ",
+      "SIN"
+    ],
+    "description": {
+      "en": "I Gusti Ngurah Rai International Airport",
+      "id": "I Gusti Ngurah Rai Bandara Internasional",
+      "tet": "I Gusti Ngurah Rai Aeroportu Internasional",
+      "pt": "I Gusti Ngurah Rai Aeroporto Internacional"
+    }
+  },
+  "KOE": {
+    "iata": "KOE",
+    "icao": "WADL",
+    "country": "Indonesia",
+    "city": "Kupang",
+    "region": "Timor",
+    "type": "airport",
+    "name": {
+      "en": "El Tari International Airport",
+      "id": "El Tari Bandara Internasional",
+      "tet": "El Tari Aeroportu Internasional",
+      "pt": "El Tari Aeroporto Internacional",
+      "zh": "El Tari International Airport"
+    },
+    "popular_routes": [
+      "DPS",
+      "CGK",
+      "SUB",
+      "DIL"
+    ],
+    "description": {
+      "en": "El Tari International Airport",
+      "id": "El Tari Bandara Internasional",
+      "tet": "El Tari Aeroportu Internasional",
+      "pt": "El Tari Aeroporto Internacional"
+    }
+  },
+  "LBJ": {
+    "iata": "LBJ",
+    "icao": "WAEF",
+    "country": "Indonesia",
+    "city": "Labuan Bajo",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "Komodo Airport",
+      "id": "Komodo Bandara",
+      "tet": "Komodo Aeroportu",
+      "pt": "Komodo Aeroporto",
+      "zh": "Komodo Airport"
+    },
+    "popular_routes": [
+      "DPS",
+      "CGK",
+      "KOE"
+    ],
+    "description": {
+      "en": "Komodo Airport",
+      "id": "Komodo Bandara",
+      "tet": "Komodo Aeroportu",
+      "pt": "Komodo Aeroporto"
+    }
+  },
+  "MOF": {
+    "iata": "MOF",
+    "icao": "WATC",
+    "country": "Indonesia",
+    "city": "Maumere",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "Wai Oti Airport",
+      "id": "Wai Oti Bandara",
+      "tet": "Wai Oti Aeroportu",
+      "pt": "Wai Oti Aeroporto",
+      "zh": "Wai Oti Airport"
+    },
+    "popular_routes": [
+      "DPS",
+      "KOE"
+    ],
+    "description": {
+      "en": "Wai Oti Airport",
+      "id": "Wai Oti Bandara",
+      "tet": "Wai Oti Aeroportu",
+      "pt": "Wai Oti Aeroporto"
+    }
+  },
+  "ENE": {
+    "iata": "ENE",
+    "icao": "WATE",
+    "country": "Indonesia",
+    "city": "Ende",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "H. Hasan Aroeboesman Airport",
+      "id": "H. Hasan Aroeboesman Bandara",
+      "tet": "H. Hasan Aroeboesman Aeroportu",
+      "pt": "H. Hasan Aroeboesman Aeroporto",
+      "zh": "H. Hasan Aroeboesman Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "H. Hasan Aroeboesman Airport",
+      "id": "H. Hasan Aroeboesman Bandara",
+      "tet": "H. Hasan Aroeboesman Aeroportu",
+      "pt": "H. Hasan Aroeboesman Aeroporto"
+    }
+  },
+  "RTG": {
+    "iata": "RTG",
+    "icao": "WALJ",
+    "country": "Indonesia",
+    "city": "Ruteng",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "Frans Sales Lega Airport",
+      "id": "Frans Sales Lega Bandara",
+      "tet": "Frans Sales Lega Aeroportu",
+      "pt": "Frans Sales Lega Aeroporto",
+      "zh": "Frans Sales Lega Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Frans Sales Lega Airport",
+      "id": "Frans Sales Lega Bandara",
+      "tet": "Frans Sales Lega Aeroportu",
+      "pt": "Frans Sales Lega Aeroporto"
+    }
+  },
+  "BJW": {
+    "iata": "BJW",
+    "icao": "WATA",
+    "country": "Indonesia",
+    "city": "Bajawa",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "Gunung Inerie Airport",
+      "id": "Gunung Inerie Bandara",
+      "tet": "Gunung Inerie Aeroportu",
+      "pt": "Gunung Inerie Aeroporto",
+      "zh": "Gunung Inerie Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Gunung Inerie Airport",
+      "id": "Gunung Inerie Bandara",
+      "tet": "Gunung Inerie Aeroportu",
+      "pt": "Gunung Inerie Aeroporto"
+    }
+  },
+  "LKA": {
+    "iata": "LKA",
+    "icao": "WATO",
+    "country": "Indonesia",
+    "city": "Larantuka",
+    "region": "Flores",
+    "type": "airport",
+    "name": {
+      "en": "Mau Hau Airport",
+      "id": "Mau Hau Bandara",
+      "tet": "Mau Hau Aeroportu",
+      "pt": "Mau Hau Aeroporto",
+      "zh": "Mau Hau Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Mau Hau Airport",
+      "id": "Mau Hau Bandara",
+      "tet": "Mau Hau Aeroportu",
+      "pt": "Mau Hau Aeroporto"
+    }
+  },
+  "ABU": {
+    "iata": "ABU",
+    "icao": "WATA",
+    "country": "Indonesia",
+    "city": "Atambua",
+    "region": "Timor",
+    "type": "airport",
+    "name": {
+      "en": "A.A. Bere Tallo Airport",
+      "id": "A.A. Bere Tallo Bandara",
+      "tet": "A.A. Bere Tallo Aeroportu",
+      "pt": "A.A. Bere Tallo Aeroporto",
+      "zh": "A.A. Bere Tallo Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "A.A. Bere Tallo Airport",
+      "id": "A.A. Bere Tallo Bandara",
+      "tet": "A.A. Bere Tallo Aeroportu",
+      "pt": "A.A. Bere Tallo Aeroporto"
+    }
+  },
+  "RTI": {
+    "iata": "RTI",
+    "icao": "WATK",
+    "country": "Indonesia",
+    "city": "Rote",
+    "region": "Rote",
+    "type": "airport",
+    "name": {
+      "en": "Rote Airport",
+      "id": "Rote Bandara",
+      "tet": "Rote Aeroportu",
+      "pt": "Rote Aeroporto",
+      "zh": "Rote Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Rote Airport",
+      "id": "Rote Bandara",
+      "tet": "Rote Aeroportu",
+      "pt": "Rote Aeroporto"
+    }
+  },
+  "ALX": {
+    "iata": "ALX",
+    "icao": "WALR",
+    "country": "Indonesia",
+    "city": "Alor",
+    "region": "Alor",
+    "type": "airport",
+    "name": {
+      "en": "Alor Airport",
+      "id": "Alor Bandara",
+      "tet": "Alor Aeroportu",
+      "pt": "Alor Aeroporto",
+      "zh": "Alor Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Alor Airport",
+      "id": "Alor Bandara",
+      "tet": "Alor Aeroportu",
+      "pt": "Alor Aeroporto"
+    }
+  },
+  "BMU": {
+    "iata": "BMU",
+    "icao": "WADB",
+    "country": "Indonesia",
+    "city": "Bima",
+    "region": "Sumbawa",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Muhammad Salahuddin Airport",
+      "id": "Sultan Muhammad Salahuddin Bandara",
+      "tet": "Sultan Muhammad Salahuddin Aeroportu",
+      "pt": "Sultan Muhammad Salahuddin Aeroporto",
+      "zh": "Sultan Muhammad Salahuddin Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Sultan Muhammad Salahuddin Airport",
+      "id": "Sultan Muhammad Salahuddin Bandara",
+      "tet": "Sultan Muhammad Salahuddin Aeroportu",
+      "pt": "Sultan Muhammad Salahuddin Aeroporto"
+    }
+  },
+  "TMC": {
+    "iata": "TMC",
+    "icao": "WATO",
+    "country": "Indonesia",
+    "city": "Tambolaka",
+    "region": "Sumba",
+    "type": "airport",
+    "name": {
+      "en": "Tambolaka Airport",
+      "id": "Tambolaka Bandara",
+      "tet": "Tambolaka Aeroportu",
+      "pt": "Tambolaka Aeroporto",
+      "zh": "Tambolaka Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Tambolaka Airport",
+      "id": "Tambolaka Bandara",
+      "tet": "Tambolaka Aeroportu",
+      "pt": "Tambolaka Aeroporto"
+    }
+  },
+  "AMQ": {
+    "iata": "AMQ",
+    "icao": "WAPP",
+    "country": "Indonesia",
+    "city": "Ambon",
+    "region": "Maluku",
+    "type": "airport",
+    "name": {
+      "en": "Pattimura Airport",
+      "id": "Pattimura Bandara",
+      "tet": "Pattimura Aeroportu",
+      "pt": "Pattimura Aeroporto",
+      "zh": "Pattimura Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Pattimura Airport",
+      "id": "Pattimura Bandara",
+      "tet": "Pattimura Aeroportu",
+      "pt": "Pattimura Aeroporto"
+    }
+  },
+  "TTE": {
+    "iata": "TTE",
+    "icao": "WAMM",
+    "country": "Indonesia",
+    "city": "Ternate",
+    "region": "Maluku",
+    "type": "airport",
+    "name": {
+      "en": "Sultan Babullah Airport",
+      "id": "Sultan Babullah Bandara",
+      "tet": "Sultan Babullah Aeroportu",
+      "pt": "Sultan Babullah Aeroporto",
+      "zh": "Sultan Babullah Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Sultan Babullah Airport",
+      "id": "Sultan Babullah Bandara",
+      "tet": "Sultan Babullah Aeroportu",
+      "pt": "Sultan Babullah Aeroporto"
+    }
+  },
+  "LUV": {
+    "iata": "LUV",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Luwuk",
+    "region": "Sulawesi",
+    "type": "airport",
+    "name": {
+      "en": "Jalaluddin Airport",
+      "id": "Jalaluddin Bandara",
+      "tet": "Jalaluddin Aeroportu",
+      "pt": "Jalaluddin Aeroporto",
+      "zh": "Jalaluddin Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Jalaluddin Airport",
+      "id": "Jalaluddin Bandara",
+      "tet": "Jalaluddin Aeroportu",
+      "pt": "Jalaluddin Aeroporto"
+    }
+  },
+  "NAM": {
+    "iata": "NAM",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Namlea",
+    "region": "Maluku",
+    "type": "airport",
+    "name": {
+      "en": "Namlea Airport",
+      "id": "Namlea Bandara",
+      "tet": "Namlea Aeroportu",
+      "pt": "Namlea Aeroporto",
+      "zh": "Namlea Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Namlea Airport",
+      "id": "Namlea Bandara",
+      "tet": "Namlea Aeroportu",
+      "pt": "Namlea Aeroporto"
+    }
+  },
+  "DJJ": {
+    "iata": "DJJ",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Jayapura",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Sentani International Airport",
+      "id": "Sentani Bandara Internasional",
+      "tet": "Sentani Aeroportu Internasional",
+      "pt": "Sentani Aeroporto Internacional",
+      "zh": "Sentani International Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Sentani International Airport",
+      "id": "Sentani Bandara Internasional",
+      "tet": "Sentani Aeroportu Internasional",
+      "pt": "Sentani Aeroporto Internacional"
+    }
+  },
+  "TIM": {
+    "iata": "TIM",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Timika",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Moses Kilangin Airport",
+      "id": "Moses Kilangin Bandara",
+      "tet": "Moses Kilangin Aeroportu",
+      "pt": "Moses Kilangin Aeroporto",
+      "zh": "Moses Kilangin Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Moses Kilangin Airport",
+      "id": "Moses Kilangin Bandara",
+      "tet": "Moses Kilangin Aeroportu",
+      "pt": "Moses Kilangin Aeroporto"
+    }
+  },
+  "MKQ": {
+    "iata": "MKQ",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Biak",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Frans Kaisiepo Airport",
+      "id": "Frans Kaisiepo Bandara",
+      "tet": "Frans Kaisiepo Aeroportu",
+      "pt": "Frans Kaisiepo Aeroporto",
+      "zh": "Frans Kaisiepo Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Frans Kaisiepo Airport",
+      "id": "Frans Kaisiepo Bandara",
+      "tet": "Frans Kaisiepo Aeroportu",
+      "pt": "Frans Kaisiepo Aeroporto"
+    }
+  },
+  "BIK": {
+    "iata": "BIK",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Biak",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Raja Ampat Airport",
+      "id": "Raja Ampat Bandara",
+      "tet": "Raja Ampat Aeroportu",
+      "pt": "Raja Ampat Aeroporto",
+      "zh": "Raja Ampat Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Raja Ampat Airport",
+      "id": "Raja Ampat Bandara",
+      "tet": "Raja Ampat Aeroportu",
+      "pt": "Raja Ampat Aeroporto"
+    }
+  },
+  "SOQ": {
+    "iata": "SOQ",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Sorong",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Dominique Edward Osok Airport",
+      "id": "Dominique Edward Osok Bandara",
+      "tet": "Dominique Edward Osok Aeroportu",
+      "pt": "Dominique Edward Osok Aeroporto",
+      "zh": "Dominique Edward Osok Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Dominique Edward Osok Airport",
+      "id": "Dominique Edward Osok Bandara",
+      "tet": "Dominique Edward Osok Aeroportu",
+      "pt": "Dominique Edward Osok Aeroporto"
+    }
+  },
+  "OXB": {
+    "iata": "OXB",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Babo",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Mokmer Airport",
+      "id": "Mokmer Bandara",
+      "tet": "Mokmer Aeroportu",
+      "pt": "Mokmer Aeroporto",
+      "zh": "Mokmer Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Mokmer Airport",
+      "id": "Mokmer Bandara",
+      "tet": "Mokmer Aeroportu",
+      "pt": "Mokmer Aeroporto"
+    }
+  },
+  "WGP": {
+    "iata": "WGP",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Wamena",
+    "region": "Papua",
+    "type": "airport",
+    "name": {
+      "en": "Domine Eduard Osok Airport",
+      "id": "Domine Eduard Osok Bandara",
+      "tet": "Domine Eduard Osok Aeroportu",
+      "pt": "Domine Eduard Osok Aeroporto",
+      "zh": "Domine Eduard Osok Airport"
+    },
+    "popular_routes": [],
+    "description": {
+      "en": "Domine Eduard Osok Airport",
+      "id": "Domine Eduard Osok Bandara",
+      "tet": "Domine Eduard Osok Aeroportu",
+      "pt": "Domine Eduard Osok Aeroporto"
+    }
+  }
+}

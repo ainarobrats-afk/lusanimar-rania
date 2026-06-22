@@ -1,0 +1,65 @@
+{
+  "destination_country": "Singapore",
+  "destination_iso": "SG",
+  "destination_name": {
+    "tet": "Singapura",
+    "id": "Singapura",
+    "en": "Singapore",
+    "pt": "Singapura"
+  },
+  "destination_keywords": {
+    "tet": ["singapura", "singapore"],
+    "id": ["singapura", "singapore"],
+    "en": ["singapore"],
+    "pt": ["singapura"]
+  },
+  "alt_names": ["singapore", "singapura"],
+  "passport_keywords": ["singapore", "singaporean", "singapurense"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Tourist Visa",
+      "visa_on_arrival": false,
+      "e_visa_available": true,
+      "e_visa_url": "https://www.ica.gov.sg/e-visa",
+      "duration_days": 30,
+      "processing_days": "3-5",
+      "fee_usd": 30,
+      "documents_required": [
+        { "tet": "Pasaporte válidu liu tinan 6", "id": "Paspor berlaku minimum 6 bulan", "en": "Passport valid for at least 6 months", "pt": "Passaporte válido por pelo menos 6 meses" },
+        { "tet": "2 foto pasaporte", "id": "2 foto paspor", "en": "2 passport-sized photos", "pt": "2 fotos tamanho passaporte" }
+      ],
+      "notes": {
+        "tet": "Aplika online husi ICA. Konfirma kondisaun atu ba visa.",
+        "id": "Ajukan online melalui ICA. Konfirmasi syarat visa.",
+        "en": "Apply online through ICA. Confirm visa conditions.",
+        "pt": "Candidate online via ICA. Confirme as condições do visto."
+      }
+    },
+    {
+      "passport_country": "Indonesia",
+      "passport_iso": "ID",
+      "passport_keywords": ["indonesia", "indonesian", "wni"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 30,
+      "notes": {
+        "tet": "Waktos 30 loron, Indonesia la presiza visa Singapura.",
+        "id": "Masa tinggal 30 hari, Indonesia bebas visa Singapura.",
+        "en": "Stay 30 days, Indonesian citizens are visa-free to Singapore.",
+        "pt": "Permanência de 30 dias, indonésios isentos de visto para Singapura."
+      }
+    }
+  ]
+}

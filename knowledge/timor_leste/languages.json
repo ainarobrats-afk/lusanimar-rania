@@ -1,0 +1,7 @@
+{
+  "Tetun": {"type": "national", "notes": "Most widely spoken language in Timor-Leste and used across border communities in NTT."},
+  "Portuguese": {"type": "official", "notes": "Used in government, law, and formal education."},
+  "Indonesian": {"type": "regional", "notes": "Understood especially in border regions and by older generations."},
+  "English": {"type": "international", "notes": "Used in tourism and international services."},
+  "Bunak": {"type": "local", "notes": "Spoken in central and eastern regions."}
+}

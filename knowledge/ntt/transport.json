@@ -1,0 +1,5 @@
+{
+  "road_routes": ["Kupang-Atambua", "Kupang-Soe", "Labuan Bajo-Ruteng"],
+  "ferry_links": ["Labuan Bajo-Komodo", "Maumere-Flores Islands"],
+  "airports": ["KOE", "LBJ", "MOF", "ENE", "RTG", "BJW", "LKA", "WGP", "TMC", "RTI", "LWE", "ALK"]
+}

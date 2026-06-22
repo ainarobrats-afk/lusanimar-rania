@@ -1,0 +1,149 @@
+{
+  "greetings": [
+    {
+      "id": "greeting_hello_respectful",
+      "tet": "Halo! Ita diak?",
+      "en": "Hello! How are you/we?",
+      "id_lang": "Halo! Apa kabar?",
+      "context": "greeting_adult",
+      "politeness_note": "Use 'Ita' (inclusive) not 'Ó' (singular) with adults",
+      "safety_level": "safe_for_all"
+    },
+    {
+      "id": "greeting_hello_formal",
+      "tet": "Bem-vindo, Maun. Ita diak?",
+      "en": "Welcome, Sir. How are we/you?",
+      "id_lang": "Selamat datang, Pak. Apa kabar?",
+      "context": "greeting_adult_first_meeting",
+      "politeness_note": "Maun = respectful form for adult male",
+      "safety_level": "very_safe_respectful"
+    },
+    {
+      "id": "greeting_welcome",
+      "tet": "Bem-vindo ba Timor-Leste!",
+      "en": "Welcome to Timor-Leste!",
+      "id_lang": "Selamat datang di Timor-Leste!",
+      "context": "arrival",
+      "safety_level": "safe_universal"
+    },
+    {
+      "id": "greeting_good_morning",
+      "tet": "Bodia, Maun/Mana!",
+      "en": "Good morning, Sir/Miss!",
+      "id_lang": "Selamat pagi!",
+      "context": "greeting",
+      "politeness_note": "Maun for men, Mana for women",
+      "safety_level": "safe_respectful"
+    }
+  ],
+  "politeness": [
+    {
+      "id": "thank_you",
+      "tet": "Obrigadu",
+      "en": "Thank you",
+      "id_lang": "Terima kasih",
+      "category": "gratitude"
+    },
+    {
+      "id": "please",
+      "tet": "Ha midar",
+      "en": "Please",
+      "id_lang": "Silakan",
+      "category": "politeness"
+    },
+    {
+      "id": "sorry",
+      "tet": "Deskulpa",
+      "en": "Sorry",
+      "id_lang": "Maaf",
+      "category": "apology"
+    }
+  ],
+  "directions": [
+    {
+      "id": "where_is_respectful",
+      "tet": "Ita hala'ar, saida iha ne'e?",
+      "en": "Could you show us where is...?",
+      "id_lang": "Di mana...?",
+      "context": "navigation_respectful",
+      "politeness_note": "Hala'ar = respectful request (show us)",
+      "safety_level": "safe_respectful"
+    },
+    {
+      "id": "which_way",
+      "tet": "Dalan saida mak diak? Dalan ne'e ka dalan selu?",
+      "en": "Which way is better? This way or that way?",
+      "id_lang": "Jalan mana? Jalan ini atau jalan itu?",
+      "context": "navigation",
+      "safety_level": "safe"
+    },
+    {
+      "id": "turn_direction",
+      "tet": "Ita karik ba karuk / Ita karik ba karik",
+      "en": "We turn left / We turn right",
+      "id_lang": "Belok kiri / Belok kanan",
+      "context": "directions_inclusive",
+      "politeness_note": "Inclusive 'ita' form", 
+      "safety_level": "safe"
+    }
+  ],
+  "travel": [
+    {
+      "id": "i_need_taxi",
+      "tet": "Ha presisa taxi",
+      "en": "I need a taxi",
+      "id_lang": "Saya butuh taksi",
+      "context": "transportation"
+    },
+    {
+      "id": "flight_question",
+      "tet": "Voo ida ba Dili iha oras saida?",
+      "en": "What time is the flight to Dili?",
+      "id_lang": "Jam berapa pesawat ke Dili?",
+      "context": "flight"
+    },
+    {
+      "id": "how_much",
+      "tet": "Kbiit haat? Kbiit prasu?",
+      "en": "How much does it cost?",
+      "id_lang": "Berapa harganya?",
+      "context": "commerce"
+    }
+  ],
+  "emergency": [
+    {
+      "id": "emergency_help_urgent",
+      "tet": "Presiza ajuda! Kalamidade!",
+      "en": "Need help! Emergency!",
+      "id_lang": "Butuh bantuan! Darurat!",
+      "context": "emergency_critical",
+      "politeness_note": "In true emergency, directness acceptable",
+      "safety_level": "urgent_appropriate"
+    },
+    {
+      "id": "call_doctor",
+      "tet": "Presiza dotor loke!",
+      "en": "Need doctor immediately!",
+      "id_lang": "Butuh dokter segera!",
+      "context": "medical_urgent",
+      "safety_level": "urgent_appropriate"
+    },
+    {
+      "id": "lost_passport",
+      "tet": "Pasaporte ha nian hili iha ne'e",
+      "en": "I lost my passport here",
+      "id_lang": "Paspor saya hilang di sini",
+      "context": "emergency_documentation",
+      "politeness_note": "Direct but still respectful",
+      "safety_level": "safe_emergency"
+    },
+    {
+      "id": "seek_embassy_help",
+      "tet": "Presiza embaixada [country]",
+      "en": "Need [country] embassy",
+      "id_lang": "Butuh kedutaan [negara]",
+      "context": "emergency_diplomatic",
+      "safety_level": "safe_emergency"
+    }
+  ]
+}

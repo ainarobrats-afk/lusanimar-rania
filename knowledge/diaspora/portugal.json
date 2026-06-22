@@ -1,0 +1,46 @@
+[
+  {
+    "id": "portugal_overview",
+    "country": "Portugal",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 8000,
+    "primary_cities": ["Lisbon", "Porto", "Covilhã"],
+    "population_centers": {
+      "Lisbon": { "estimate": 5000, "notes": "Capital and main settlement" },
+      "Porto": { "estimate": 2000, "notes": "Secondary hub" }
+    },
+    "historical_context": "Former Portuguese colony; family ties and education migration",
+    "employment_sectors": ["education", "healthcare", "hospitality", "construction", "service_sector"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "D (long-stay) or Short-stay visa",
+      "processing_time": "10-30 days",
+      "requirements": ["valid_passport", "proof_of_funds", "accommodation"],
+      "notes": "Seek Portuguese consulate in Dili for processing"
+    },
+    "embassy_contact": {
+      "location": "Lisbon",
+      "address": "Avenida da República 21-1º, 1050-191 Lisbon",
+      "phone": "+351 21 792-6181",
+      "email": "info@timorembassy.pt"
+    },
+    "community_organizations": [
+      { "name": "Associação Timorense em Portugal", "city": "Lisbon" },
+      { "name": "Comunidade Timor", "city": "Porto" },
+      { "name": "Grupo de Amizade Portugal-Timor", "city": "Lisbon", "type": "friendship_association" }
+    ],
+    "education": {
+      "universities": ["University of Covilhã (Timorese students hub)", "University of Lisbon", "University of Porto"],
+      "scholarship_programs": "Check Portuguese Development Cooperation (APD)"
+    },
+    "return_travel": {
+      "flights": ["TAP Air Portugal via Lisbon", "connecting_flights_available"],
+      "duration": "15-20 hours via connecting flights",
+      "cost": "€800-1500 round trip"
+    },
+    "cultural_ties": {
+      "language_advantage": "Portuguese spoken; easier transition",
+      "religion": "Majority Catholic; churches important community centers",
+      "events": "Independence Day (May 20) celebrations"
+    }
+  }
+]

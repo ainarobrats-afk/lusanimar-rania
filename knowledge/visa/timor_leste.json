@@ -1,0 +1,68 @@
+{
+  "destination_country": "Timor-Leste",
+  "destination_iso": "TL",
+  "destination_name": {
+    "tet": "Timor-Leste",
+    "id": "Timor-Leste",
+    "en": "Timor-Leste",
+    "pt": "Timor-Leste"
+  },
+  "destination_keywords": {
+    "tet": ["timor-leste", "timor"],
+    "id": ["timor-leste", "timor"],
+    "en": ["timor-leste", "timor"],
+    "pt": ["timor-leste", "timor"]
+  },
+  "alt_names": ["timor", "timor-leste"],
+  "passport_keywords": ["timor-leste", "timor", "timorese"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha imigrasaun TL.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke imigrasi TL.",
+    "en": "Visa rules may change. Always confirm with Timor-Leste immigration.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a imigração de Timor-Leste."
+  },
+  "embassy_in_dili": {
+    "name": "Serviço de Migração e Fronteiras",
+    "address": "Rua Dom Aleixo, Dili",
+    "phone": "+670 333 9000",
+    "email": "info@migration.gov.tl",
+    "website": "https://migration.gov.tl"
+  },
+  "visa_on_arrival_countries": ["AU", "NZ", "US", "GB", "CA", "JP", "KR", "SG", "MY", "TH", "PH", "VN", "ID", "PT", "BR"],
+  "visa_free_countries": ["ID", "PT", "BR"],
+  "visa_rules": [
+    {
+      "passport_country": "DEFAULT",
+      "passport_iso": "DEFAULT",
+      "visa_required": true,
+      "visa_on_arrival": true,
+      "visa_type": "Visa on Arrival",
+      "duration_days": 30,
+      "fee_usd": 30,
+      "extendable": true,
+      "extension_days": 30,
+      "notes": {
+        "tet": "Visa on arrival 30 loron. Bele ekstende iha Imigrasaun Dili.",
+        "id": "Visa on arrival 30 hari. Dapat diperpanjang di imigrasi Dili.",
+        "en": "Visa on arrival 30 days. Extendable at Dili immigration.",
+        "pt": "Visto à chegada 30 dias. Renovável na imigração de Dili."
+      }
+    },
+    {
+      "passport_country": "Indonesia",
+      "passport_iso": "ID",
+      "passport_keywords": ["indonesia", "indonesian", "wni"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 30,
+      "notes": {
+        "tet": "WNI la presiza visa TL. Bebas visa 30 loron.",
+        "id": "WNI tidak perlu visa ke Timor-Leste. Bebas visa 30 hari.",
+        "en": "Indonesian citizens do not need a visa to Timor-Leste. Visa-free 30 days.",
+        "pt": "Cidadãos indonésios não precisam de visto para Timor-Leste. Isenção de visto 30 dias."
+      }
+    }
+  ]
+}

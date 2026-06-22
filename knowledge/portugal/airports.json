@@ -1,0 +1,204 @@
+{
+  "LIS": {
+    "iata": "LIS",
+    "icao": "LPPT",
+    "country": "Portugal",
+    "city": "Lisbon",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Humberto Delgado Airport",
+      "id": "Humberto Delgado Bandara",
+      "tet": "Humberto Delgado Aeroportu",
+      "pt": "Humberto Delgado Aeroporto",
+      "zh": "Humberto Delgado Airport"
+    },
+    "popular_routes": [
+      "DPS",
+      "AMS",
+      "MAD",
+      "LHR"
+    ],
+    "description": {
+      "en": "Humberto Delgado Airport",
+      "id": "Humberto Delgado Bandara",
+      "tet": "Humberto Delgado Aeroportu",
+      "pt": "Humberto Delgado Aeroporto"
+    }
+  },
+  "OPO": {
+    "iata": "OPO",
+    "icao": "LPPR",
+    "country": "Portugal",
+    "city": "Porto",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Francisco Sá Carneiro Airport",
+      "id": "Francisco Sá Carneiro Bandara",
+      "tet": "Francisco Sá Carneiro Aeroportu",
+      "pt": "Francisco Sá Carneiro Aeroporto",
+      "zh": "Francisco Sá Carneiro Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "AMS",
+      "DPS"
+    ],
+    "description": {
+      "en": "Francisco Sá Carneiro Airport",
+      "id": "Francisco Sá Carneiro Bandara",
+      "tet": "Francisco Sá Carneiro Aeroportu",
+      "pt": "Francisco Sá Carneiro Aeroporto"
+    }
+  },
+  "FAO": {
+    "iata": "FAO",
+    "icao": "LPFR",
+    "country": "Portugal",
+    "city": "Faro",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Faro Airport",
+      "id": "Faro Bandara",
+      "tet": "Faro Aeroportu",
+      "pt": "Faro Aeroporto",
+      "zh": "Faro Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "LHR"
+    ],
+    "description": {
+      "en": "Faro Airport",
+      "id": "Faro Bandara",
+      "tet": "Faro Aeroportu",
+      "pt": "Faro Aeroporto"
+    }
+  },
+  "FNC": {
+    "iata": "FNC",
+    "icao": "LPMA",
+    "country": "Portugal",
+    "city": "Funchal, Madeira",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Cristiano Ronaldo International Airport",
+      "id": "Cristiano Ronaldo Bandara Internasional",
+      "tet": "Cristiano Ronaldo Aeroportu Internasional",
+      "pt": "Cristiano Ronaldo Aeroporto Internacional",
+      "zh": "Cristiano Ronaldo International Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "LHR"
+    ],
+    "description": {
+      "en": "Cristiano Ronaldo International Airport",
+      "id": "Cristiano Ronaldo Bandara Internasional",
+      "tet": "Cristiano Ronaldo Aeroportu Internasional",
+      "pt": "Cristiano Ronaldo Aeroporto Internacional"
+    }
+  },
+  "PDL": {
+    "iata": "PDL",
+    "icao": "LPPD",
+    "country": "Portugal",
+    "city": "Ponta Delgada, Azores",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "João Paulo II Airport",
+      "id": "João Paulo II Bandara",
+      "tet": "João Paulo II Aeroportu",
+      "pt": "João Paulo II Aeroporto",
+      "zh": "João Paulo II Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "OPO"
+    ],
+    "description": {
+      "en": "João Paulo II Airport",
+      "id": "João Paulo II Bandara",
+      "tet": "João Paulo II Aeroportu",
+      "pt": "João Paulo II Aeroporto"
+    }
+  },
+  "TER": {
+    "iata": "TER",
+    "icao": "LPLA",
+    "country": "Portugal",
+    "city": "Terceira, Azores",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Lajes Airport",
+      "id": "Lajes Bandara",
+      "tet": "Lajes Aeroportu",
+      "pt": "Lajes Aeroporto",
+      "zh": "Lajes Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "PDL"
+    ],
+    "description": {
+      "en": "Lajes Airport",
+      "id": "Lajes Bandara",
+      "tet": "Lajes Aeroportu",
+      "pt": "Lajes Aeroporto"
+    }
+  },
+  "HOR": {
+    "iata": "HOR",
+    "icao": "LPHR",
+    "country": "Portugal",
+    "city": "Horta, Azores",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Horta Airport",
+      "id": "Horta Bandara",
+      "tet": "Horta Aeroportu",
+      "pt": "Horta Aeroporto",
+      "zh": "Horta Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "PDL"
+    ],
+    "description": {
+      "en": "Horta Airport",
+      "id": "Horta Bandara",
+      "tet": "Horta Aeroportu",
+      "pt": "Horta Aeroporto"
+    }
+  },
+  "PXO": {
+    "iata": "PXO",
+    "icao": "",
+    "country": "Portugal",
+    "city": "Ponta Delgada, Azores",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Ponta Delgada Airport",
+      "id": "Ponta Delgada Bandara",
+      "tet": "Ponta Delgada Aeroportu",
+      "pt": "Ponta Delgada Aeroporto",
+      "zh": "Ponta Delgada Airport"
+    },
+    "popular_routes": [
+      "LIS"
+    ],
+    "description": {
+      "en": "Ponta Delgada Airport",
+      "id": "Ponta Delgada Bandara",
+      "tet": "Ponta Delgada Aeroportu",
+      "pt": "Ponta Delgada Aeroporto"
+    }
+  }
+}

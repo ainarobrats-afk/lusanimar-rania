@@ -1,0 +1,473 @@
+{
+  "UGM": {
+    "id": "UGM",
+    "country": "Indonesia",
+    "region": "Special Region of Yogyakarta",
+    "type": "university",
+    "name": {
+      "en": "Gadjah Mada University",
+      "id": "Gadjah Mada Universitas",
+      "tet": "Gadjah Mada University",
+      "pt": "Gadjah Mada University",
+      "zh": "Gadjah Mada University"
+    },
+    "description": {
+      "en": "One of Indonesia's oldest and highest-ranked public universities, strong in medicine, engineering, and law.",
+      "id": "One of Indonesia's oldest and highest-ranked public universities, strong in medicine, engineering, and law.",
+      "tet": "One of Indonesia's oldest and highest-ranked public universities, strong in medicine, engineering, and law.",
+      "pt": "One of Indonesia's oldest and highest-ranked public universities, strong in medicine, engineering, and law."
+    },
+    "city": "Yogyakarta",
+    "website": "https://www.ugm.ac.id",
+    "keywords": [
+      "ugm",
+      "gadjah mada university",
+      "yogyakarta"
+    ],
+    "airport": "YIA",
+    "popular_for": [
+      "Medicine",
+      "Engineering",
+      "Law"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UI": {
+    "id": "UI",
+    "country": "Indonesia",
+    "region": "West Java",
+    "type": "university",
+    "name": {
+      "en": "University of Indonesia",
+      "id": "Universitas of Indonesia",
+      "tet": "University of Indonesia",
+      "pt": "University of Indonesia",
+      "zh": "University of Indonesia"
+    },
+    "description": {
+      "en": "Indonesia's leading public university near Jakarta, known for medicine, business, and psychology.",
+      "id": "Indonesia's leading public university near Jakarta, known for medicine, business, and psychology.",
+      "tet": "Indonesia's leading public university near Jakarta, known for medicine, business, and psychology.",
+      "pt": "Indonesia's leading public university near Jakarta, known for medicine, business, and psychology."
+    },
+    "city": "Depok",
+    "website": "https://www.ui.ac.id",
+    "keywords": [
+      "ui",
+      "university of indonesia",
+      "depok"
+    ],
+    "airport": "CGK",
+    "popular_for": [
+      "Medicine",
+      "Business",
+      "Psychology"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "ITB": {
+    "id": "ITB",
+    "country": "Indonesia",
+    "region": "West Java",
+    "type": "university",
+    "name": {
+      "en": "Bandung Institute of Technology",
+      "id": "Bandung Institut Teknologi",
+      "tet": "Bandung Institute of Technology",
+      "pt": "Bandung Institute of Technology",
+      "zh": "Bandung Institute of Technology"
+    },
+    "description": {
+      "en": "Top engineering and science university in Indonesia, based in Bandung.",
+      "id": "Top engineering and science university in Indonesia, based in Bandung.",
+      "tet": "Top engineering and science university in Indonesia, based in Bandung.",
+      "pt": "Top engineering and science university in Indonesia, based in Bandung."
+    },
+    "city": "Bandung",
+    "website": "https://www.itb.ac.id",
+    "keywords": [
+      "itb",
+      "bandung institute of technology",
+      "bandung"
+    ],
+    "airport": "BDO",
+    "popular_for": [
+      "Engineering",
+      "Computer Science",
+      "Architecture"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "ITS": {
+    "id": "ITS",
+    "country": "Indonesia",
+    "region": "East Java",
+    "type": "university",
+    "name": {
+      "en": "Sepuluh Nopember Institute of Technology",
+      "id": "Sepuluh Nopember Institut Teknologi",
+      "tet": "Sepuluh Nopember Institute of Technology",
+      "pt": "Sepuluh Nopember Institute of Technology",
+      "zh": "Sepuluh Nopember Institute of Technology"
+    },
+    "description": {
+      "en": "Leading technical university in eastern Indonesia known for engineering, maritime, and IT.",
+      "id": "Leading technical university in eastern Indonesia known for engineering, maritime, and IT.",
+      "tet": "Leading technical university in eastern Indonesia known for engineering, maritime, and IT.",
+      "pt": "Leading technical university in eastern Indonesia known for engineering, maritime, and IT."
+    },
+    "city": "Surabaya",
+    "website": "https://www.its.ac.id",
+    "keywords": [
+      "its",
+      "sepuluh nopember institute of technology",
+      "surabaya"
+    ],
+    "airport": "SUB",
+    "popular_for": [
+      "Engineering",
+      "Maritime",
+      "Information Technology"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UNAIR": {
+    "id": "UNAIR",
+    "country": "Indonesia",
+    "region": "East Java",
+    "type": "university",
+    "name": {
+      "en": "Airlangga University",
+      "id": "Airlangga Universitas",
+      "tet": "Airlangga University",
+      "pt": "Airlangga University",
+      "zh": "Airlangga University"
+    },
+    "description": {
+      "en": "One of Indonesia's top public universities, balanced strength in medicine, pharmacy, and economics.",
+      "id": "One of Indonesia's top public universities, balanced strength in medicine, pharmacy, and economics.",
+      "tet": "One of Indonesia's top public universities, balanced strength in medicine, pharmacy, and economics.",
+      "pt": "One of Indonesia's top public universities, balanced strength in medicine, pharmacy, and economics."
+    },
+    "city": "Surabaya",
+    "website": "https://www.unair.ac.id",
+    "keywords": [
+      "unair",
+      "airlangga university",
+      "surabaya"
+    ],
+    "airport": "SUB",
+    "popular_for": [
+      "Medicine",
+      "Pharmacy",
+      "Economics"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UB": {
+    "id": "UB",
+    "country": "Indonesia",
+    "region": "East Java",
+    "type": "university",
+    "name": {
+      "en": "Brawijaya University",
+      "id": "Brawijaya Universitas",
+      "tet": "Brawijaya University",
+      "pt": "Brawijaya University",
+      "zh": "Brawijaya University"
+    },
+    "description": {
+      "en": "Public university in Malang known for agriculture, economics, and engineering programs.",
+      "id": "Public university in Malang known for agriculture, economics, and engineering programs.",
+      "tet": "Public university in Malang known for agriculture, economics, and engineering programs.",
+      "pt": "Public university in Malang known for agriculture, economics, and engineering programs."
+    },
+    "city": "Malang",
+    "website": "https://www.ub.ac.id",
+    "keywords": [
+      "ub",
+      "brawijaya university",
+      "malang"
+    ],
+    "airport": "MLG",
+    "popular_for": [
+      "Agriculture",
+      "Economics",
+      "Engineering"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UNDIP": {
+    "id": "UNDIP",
+    "country": "Indonesia",
+    "region": "Central Java",
+    "type": "university",
+    "name": {
+      "en": "Diponegoro University",
+      "id": "Diponegoro Universitas",
+      "tet": "Diponegoro University",
+      "pt": "Diponegoro University",
+      "zh": "Diponegoro University"
+    },
+    "description": {
+      "en": "Well-regarded university in Central Java with strong engineering, law, and medical faculties.",
+      "id": "Well-regarded university in Central Java with strong engineering, law, and medical faculties.",
+      "tet": "Well-regarded university in Central Java with strong engineering, law, and medical faculties.",
+      "pt": "Well-regarded university in Central Java with strong engineering, law, and medical faculties."
+    },
+    "city": "Semarang",
+    "website": "https://www.undip.ac.id",
+    "keywords": [
+      "undip",
+      "diponegoro university",
+      "semarang"
+    ],
+    "airport": "SRG",
+    "popular_for": [
+      "Engineering",
+      "Law",
+      "Medicine"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UNS": {
+    "id": "UNS",
+    "country": "Indonesia",
+    "region": "Central Java",
+    "type": "university",
+    "name": {
+      "en": "Sebelas Maret University",
+      "id": "Sebelas Maret Universitas",
+      "tet": "Sebelas Maret University",
+      "pt": "Sebelas Maret University",
+      "zh": "Sebelas Maret University"
+    },
+    "description": {
+      "en": "Prominent university in Solo with strong engineering, education, and social science programs.",
+      "id": "Prominent university in Solo with strong engineering, education, and social science programs.",
+      "tet": "Prominent university in Solo with strong engineering, education, and social science programs.",
+      "pt": "Prominent university in Solo with strong engineering, education, and social science programs."
+    },
+    "city": "Surakarta (Solo)",
+    "website": "https://www.uns.ac.id",
+    "keywords": [
+      "uns",
+      "sebelas maret university",
+      "surakarta (solo)"
+    ],
+    "airport": "SOC",
+    "popular_for": [
+      "Engineering",
+      "Education",
+      "Social Sciences"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UNHAS": {
+    "id": "UNHAS",
+    "country": "Indonesia",
+    "region": "South Sulawesi",
+    "type": "university",
+    "name": {
+      "en": "Hasanuddin University",
+      "id": "Hasanuddin Universitas",
+      "tet": "Hasanuddin University",
+      "pt": "Hasanuddin University",
+      "zh": "Hasanuddin University"
+    },
+    "description": {
+      "en": "Major public university in eastern Indonesia, strong in medicine, marine science, and engineering.",
+      "id": "Major public university in eastern Indonesia, strong in medicine, marine science, and engineering.",
+      "tet": "Major public university in eastern Indonesia, strong in medicine, marine science, and engineering.",
+      "pt": "Major public university in eastern Indonesia, strong in medicine, marine science, and engineering."
+    },
+    "city": "Makassar",
+    "website": "https://www.unhas.ac.id",
+    "keywords": [
+      "unhas",
+      "hasanuddin university",
+      "makassar"
+    ],
+    "airport": "UPG",
+    "popular_for": [
+      "Medicine",
+      "Marine Science",
+      "Engineering"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UDAYANA": {
+    "id": "UDAYANA",
+    "country": "Indonesia",
+    "region": "Bali",
+    "type": "university",
+    "name": {
+      "en": "Udayana University",
+      "id": "Udayana Universitas",
+      "tet": "Udayana University",
+      "pt": "Udayana University",
+      "zh": "Udayana University"
+    },
+    "description": {
+      "en": "University in Bali known for tourism, medicine, and engineering programs.",
+      "id": "University in Bali known for tourism, medicine, and engineering programs.",
+      "tet": "University in Bali known for tourism, medicine, and engineering programs.",
+      "pt": "University in Bali known for tourism, medicine, and engineering programs."
+    },
+    "city": "Denpasar",
+    "website": "https://www.unud.ac.id",
+    "keywords": [
+      "udayana",
+      "udayana university",
+      "denpasar"
+    ],
+    "airport": "DPS",
+    "popular_for": [
+      "Tourism",
+      "Medicine",
+      "Engineering"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "UNRAM": {
+    "id": "UNRAM",
+    "country": "Indonesia",
+    "region": "West Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Mataram University",
+      "id": "Mataram Universitas",
+      "tet": "Mataram University",
+      "pt": "Mataram University",
+      "zh": "Mataram University"
+    },
+    "description": {
+      "en": "Public university in Lombok with programs in agriculture, engineering, and education.",
+      "id": "Public university in Lombok with programs in agriculture, engineering, and education.",
+      "tet": "Public university in Lombok with programs in agriculture, engineering, and education.",
+      "pt": "Public university in Lombok with programs in agriculture, engineering, and education."
+    },
+    "city": "Mataram",
+    "website": "https://www.unram.ac.id",
+    "keywords": [
+      "unram",
+      "mataram university",
+      "mataram"
+    ],
+    "airport": "LOP",
+    "popular_for": [
+      "Agriculture",
+      "Engineering",
+      "Education"
+    ],
+    "languages": [
+      "en",
+      "id"
+    ]
+  },
+  "POLTEKKES_KUPANG": {
+    "id": "POLTEKKES_KUPANG",
+    "country": "Indonesia",
+    "region": "East Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Kupang Health Polytechnic",
+      "id": "Kupang Health Polytechnic",
+      "tet": "Kupang Health Polytechnic",
+      "pt": "Kupang Health Polytechnic",
+      "zh": "Kupang Health Polytechnic"
+    },
+    "description": {
+      "en": "Health-focused polytechnic in Kupang with nursing and public health programs.",
+      "id": "Health-focused polytechnic in Kupang with nursing and public health programs.",
+      "tet": "Health-focused polytechnic in Kupang with nursing and public health programs.",
+      "pt": "Health-focused polytechnic in Kupang with nursing and public health programs."
+    },
+    "city": "Kupang",
+    "website": "https://www.poltekkes-kupang.ac.id",
+    "keywords": [
+      "poltekkes_kupang",
+      "kupang health polytechnic",
+      "kupang"
+    ],
+    "airport": "KOE",
+    "popular_for": [
+      "Nursing",
+      "Public Health",
+      "Pharmacy"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet"
+    ]
+  },
+  "UNDANA": {
+    "id": "UNDANA",
+    "country": "Indonesia",
+    "region": "East Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Nusa Cendana University",
+      "id": "Universitas Nusa Cendana",
+      "tet": "Universidade Nusa Cendana",
+      "pt": "Universidade Nusa Cendana",
+      "zh": "努沙森达纳大学"
+    },
+    "description": {
+      "en": "Largest public university in East Nusa Tenggara.",
+      "id": "Universitas negeri terbesar di NTT.",
+      "tet": "Universidade publiku boot liu iha NTT.",
+      "pt": "Maior universidade pública de NTT.",
+      "zh": "东努沙登加拉最大的公立大学。"
+    },
+    "city": "Kupang",
+    "website": "https://www.undana.ac.id",
+    "keywords": [
+      "undana",
+      "universitas kupang",
+      "kuliah ntt"
+    ],
+    "airport": "KOE",
+    "popular_for": [
+      "Education",
+      "Agriculture",
+      "Economics"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet"
+    ]
+  }
+}

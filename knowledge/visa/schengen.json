@@ -1,0 +1,60 @@
+{
+  "destination_country": "Schengen Area",
+  "destination_iso": "SCHENGEN",
+  "destination_name": {
+    "tet": "Área Schengen",
+    "id": "Wilayah Schengen",
+    "en": "Schengen Area",
+    "pt": "Área Schengen"
+  },
+  "destination_keywords": {
+    "tet": ["schengen", "eropa"],
+    "id": ["schengen", "eropa"],
+    "en": ["schengen", "europe"],
+    "pt": ["schengen", "europa"]
+  },
+  "alt_names": ["schengen", "area schengen", "zona schengen"],
+  "passport_keywords": ["schengen", "european", "europe", "europeu"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Schengen Short-Stay Visa (Type C)",
+      "duration_days": 90,
+      "validity_days": 180,
+      "processing_days": "15-30",
+      "fee_eur": 80,
+      "fee_usd": 87,
+      "apply_at": "Embassy of intended first entry country",
+      "documents_required": [
+        { "en": "Valid passport (min 3 months after intended stay)", "id": "Paspor valid minimal 3 bulan setelah masa tinggal", "tet": "Pasaporte válidu 3 fulan depois estiadu", "pt": "Passaporte válido mínimo 3 meses após a estadia" },
+        { "en": "Completed Schengen visa application form", "id": "Formulir permohonan visa Schengen lengkap", "tet": "Formuláriu visa Schengen kompletu", "pt": "Formulário de pedido de visto Schengen preenchido" },
+        { "en": "Travel insurance (min EUR 30,000 coverage)", "id": "Asuransi perjalanan (minimal EUR 30.000)", "tet": "Seguro viajen (min EUR 30,000)", "pt": "Seguro de viagem (mínimo EUR 30.000)" }
+      ],
+      "notes": {
+        "tet": "Embassy ne&#039;e halo avaliasaun ba nasaun entrada serbisu. Konfirma iha website.",
+        "id": "Kedutaan mengevaluasi negara tujuan utama. Konfirmasi di website resmi.",
+        "en": "The embassy evaluates your main destination entry country. Confirm on the official website.",
+        "pt": "A embaixada avalia o país de entrada principal. Confirme no site oficial."
+      }
+    },
+    {
+      "passport_country": "Portugal",
+      "passport_iso": "PT",
+      "passport_keywords": ["portugal", "portuguese", "português", "portugues"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 90
+    }
+  ]
+}

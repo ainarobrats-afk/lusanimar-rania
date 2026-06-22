@@ -2,7 +2,26 @@ name = "rania-hunter"
 main = "src/index.ts"
 compatibility_date = "2024-12-01"
 
-# All sensitive keys stored as secrets via:
-# wrangler secret put TRAVELPAYOUTS_TOKEN --name rania-hunter
-# wrangler secret put TRAVELPAYOUTS_MARKER --name rania-hunter
-# wrangler secret put AVIATIONSTACK_KEY --name rania-hunter
+# ── Secrets (set via wrangler secret put, JANGAN hardcode) ────────────────────
+#
+# Travelpayouts:
+#   wrangler secret put TRAVELPAYOUTS_TOKEN  --name rania-hunter
+#   wrangler secret put TRAVELPAYOUTS_MARKER --name rania-hunter
+#
+# Travelport (tambahkan setelah sandbox test berhasil):
+#   wrangler secret put TRAVELPORT_USERNAME      --name rania-hunter
+#   wrangler secret put TRAVELPORT_PASSWORD      --name rania-hunter
+#   wrangler secret put TRAVELPORT_CLIENT_ID     --name rania-hunter
+#   wrangler secret put TRAVELPORT_CLIENT_SECRET --name rania-hunter
+#   wrangler secret put TRAVELPORT_PCC           --name rania-hunter
+#   wrangler secret put TRAVELPORT_ACCESS_GROUP  --name rania-hunter
+#
+# AviationStack (backup):
+#   wrangler secret put AVIATIONSTACK_KEY --name rania-hunter
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# Provider priority (otomatis dalam kode):
+#   1. Travelport    → GDS fares, full itinerary detail
+#   2. Travelpayouts → affiliate price data
+#   3. AviationStack → schedule only (no pricing)
+# ─────────────────────────────────────────────────────────────────────────────

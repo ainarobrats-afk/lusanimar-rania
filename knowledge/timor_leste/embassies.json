@@ -1,0 +1,17 @@
+{
+  "Portugal": {
+    "name": "Embassy of Portugal",
+    "city": "Dili",
+    "services": ["Consular", "Visa assistance", "Cultural services"]
+  },
+  "Australia": {
+    "name": "Australian Embassy",
+    "city": "Dili",
+    "services": ["Visa", "Travel advice"]
+  },
+  "Indonesia": {
+    "name": "Indonesian Embassy",
+    "city": "Dili",
+    "services": ["Passport", "Travel permit", "Business services"]
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "Kupang": {"population": "~440,000", "notes": "Hub transport, education, and services."},
+  "Atambua": {"population": "~70,000", "notes": "Border town adjacent to Mota'ain."},
+  "Kefamenanu": {"population": "~65,000", "notes": "Regional market and transport hub."},
+  "Soe": {"population": "~50,000", "notes": "Gateway to southern Timor and agricultural areas."},
+  "Labuan Bajo": {"population": "~30,000", "notes": "Tourism gateway to Komodo National Park."},
+  "Maumere": {"population": "~90,000", "notes": "Port city with ferry access to nearby islands."},
+  "Ende": {"population": "~70,000", "notes": "Access to Kelimutu and Flores interior."},
+  "Ruteng": {"population": "~45,000", "notes": "Mountain town for trekking and culture."},
+  "Waingapu": {"population": "~90,000", "notes": "Center of eastern Sumba."},
+  "Tambolaka": {"population": "~35,000", "notes": "Southern Sumba transport hub."}
+}

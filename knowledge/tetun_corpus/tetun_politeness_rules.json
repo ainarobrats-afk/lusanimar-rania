@@ -1,0 +1,136 @@
+[
+  {
+    "rule_id": "pronoun_ita_01",
+    "pronoun": "Ita",
+    "english": "We/You (inclusive)",
+    "context": "general_adults",
+    "usage_rule": "DEFAULT pronoun for adult interaction in tourism, customer service, formal contexts",
+    "appropriate_for": ["tourists", "customers", "adults", "officials", "elders", "strangers"],
+    "inappropriate_for": ["children", "very_close_friends", "intimate_family"],
+    "example_correct": "Ita ba ne'ebé?",
+    "example_correct_translation": "Where are we going?",
+    "example_incorrect": "O ba ne'ebé?",
+    "example_incorrect_translation": "Where are you going? [sounds curt/impolite to adults]",
+    "politeness_score": 10,
+    "safety_level": "safe_for_all_contexts"
+  },
+  {
+    "rule_id": "pronoun_o_01",
+    "pronoun": "O",
+    "english": "You (singular, informal)",
+    "context": "intimate_informal",
+    "usage_rule": "Only for close friends, children, people you know very well, or when explicitly told it's okay",
+    "appropriate_for": ["children", "close_friends", "intimate_family", "after_relationship_established"],
+    "inappropriate_for": ["strangers", "adults_on_first_meeting", "customers", "officials", "elders"],
+    "danger": "May sound rude or dismissive if used with adults on first contact",
+    "politeness_score": 4,
+    "safety_level": "unsafe_default_use_ita_instead"
+  },
+  {
+    "rule_id": "respect_maun_01",
+    "word": "Maun",
+    "english": "Older brother / Mister [respectful address]",
+    "meaning_primary": "Respectful term for adult male",
+    "usage": "friendly_respectful_informal",
+    "example": "Maun, saida ó hakarak?",
+    "example_translation": "[Mister], what would you like?",
+    "appropriate_for": ["adult_men", "informal_but_respectful", "friendly_service"],
+    "tone": "warm, professional, respectful",
+    "politeness_score": 8
+  },
+  {
+    "rule_id": "respect_mana_01",
+    "word": "Mana",
+    "english": "Older sister / Miss [respectful address]",
+    "meaning_primary": "Respectful term for adult female",
+    "usage": "friendly_respectful_informal",
+    "example": "Mana, ita hala'ar kafe mak diak?",
+    "example_translation": "[Miss], which coffee would we recommend?",
+    "appropriate_for": ["adult_women", "informal_but_respectful", "friendly_service"],
+    "tone": "warm, professional, respectful",
+    "politeness_score": 8
+  },
+  {
+    "rule_id": "respect_ama_01",
+    "word": "Ama",
+    "english": "Father / Elder male [high respect]",
+    "meaning_primary": "Respectful term for elder or respected male",
+    "usage": "formal_respect_elder",
+    "example": "Ama, ita presiza ajuda?",
+    "example_translation": "[Sir/Elder], do we need help?",
+    "appropriate_for": ["elder_males", "respected_figures", "formal_contexts", "first_meeting_with_senior"],
+    "tone": "formal, very respectful, deferential",
+    "politeness_score": 10
+  },
+  {
+    "rule_id": "respect_inan_01",
+    "word": "Inan",
+    "english": "Mother / Elder female [high respect]",
+    "meaning_primary": "Respectful term for elder or respected female",
+    "usage": "formal_respect_elder",
+    "example": "Inan, ita presiza ajuda iha ne'e?",
+    "example_translation": "[Madam/Elder], can we help here?",
+    "appropriate_for": ["elder_females", "respected_figures", "formal_contexts", "first_meeting_with_senior"],
+    "tone": "formal, very respectful, deferential",
+    "politeness_score": 10
+  },
+  {
+    "rule_id": "address_formal_01",
+    "context": "formal_introduction",
+    "structure": "Name + Title",
+    "example": "Senhor José",
+    "example_english": "Mr. José",
+    "usage": "First formal introduction, official contexts",
+    "appropriateness": "Very safe, always correct",
+    "politeness_score": 10
+  },
+  {
+    "rule_id": "address_formal_02",
+    "context": "formal_introduction",
+    "structure": "Name + Title",
+    "example": "Senhora Maria",
+    "example_english": "Mrs./Ms. Maria",
+    "usage": "First formal introduction, official contexts",
+    "appropriateness": "Very safe, always correct",
+    "politeness_score": 10
+  },
+  {
+    "rule_id": "greeting_formal",
+    "incorrect_form": "Ó diak?",
+    "incorrect_meaning": "Are you good? [too casual for stranger]",
+    "correct_form": "Ita diak?",
+    "correct_meaning": "Are we/you doing well? [respectful]",
+    "context": "stranger_greeting",
+    "politeness_score_incorrect": 3,
+    "politeness_score_correct": 9,
+    "rania_recommendation": "ALWAYS use 'Ita diak?' with unknown adults"
+  },
+  {
+    "rule_id": "customer_service_rule",
+    "context": "RANIA as travel assistant / customer service",
+    "strict_rule": "Never use 'O' pronoun without understanding relationship context",
+    "default_assumption": "User is stranger + adult",
+    "default_pronoun": "Ita",
+    "fallback_pronoun": "Ita",
+    "reasoning": "Safer to be over-respectful than under-respectful. Over-respect = warmth. Under-respect = rudeness.",
+    "implementation": "Read the default pronoun from knowledge data, do not hardcode it in runtime logic. If user gender is unknown, use Ita."
+  },
+  {
+    "rule_id": "generation_guideline",
+    "context": "Tetun response generation",
+    "rule": "Prefer verified Tetun phrases from the knowledge corpus. If no verified phrase is available, generate Tetun using politeness rules, the Tetun corpus, and cultural guidelines.",
+    "reasoning": "Avoids becoming a template-only bot while still prioritizing safe language.",
+    "priority": "high"
+  },
+  {
+    "rule_id": "politeness_scale",
+    "scale": [
+      { "level": 10, "form": "Ama/Inan + Ita", "context": "Elder address with inclusive we" },
+      { "level": 9, "form": "Senhor/Senhora + Ita", "context": "Formal title + respectful pronoun" },
+      { "level": 8, "form": "Maun/Mana + Ita", "context": "Friendly informal respect" },
+      { "level": 7, "form": "Name + Ita", "context": "Established relationship, respectful" },
+      { "level": 4, "form": "O alone", "context": "Only with friends/intimates" },
+      { "level": 1, "form": "Direct command 2nd person", "context": "Rude, avoid entirely" }
+    ]
+  }
+]

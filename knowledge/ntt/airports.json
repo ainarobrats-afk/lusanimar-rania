@@ -1,0 +1,293 @@
+{
+  "KOE": {
+    "iata": "KOE",
+    "icao": "WADL",
+    "country": "Indonesia",
+    "city": "Kupang",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "El Tari International Airport",
+      "id": "Bandara Internasional El Tari",
+      "tet": "Aeroportu Internasionál El Tari",
+      "pt": "Aeroporto Internacional El Tari",
+      "zh": "埃尔塔里国际机场"
+    },
+    "popular_routes": [
+      "DPS",
+      "CGK",
+      "SUB"
+    ],
+    "description": {
+      "en": "Bandara utama Kupang dan hub terpenting NTT untuk penerbangan domestik.",
+      "id": "Bandara utama Kupang dan hub terpenting NTT untuk penerbangan domestik.",
+      "tet": "Bandara utama Kupang dan hub terpenting NTT untuk penerbangan domestik.",
+      "pt": "Bandara utama Kupang dan hub terpenting NTT untuk penerbangan domestik."
+    }
+  },
+  "LBJ": {
+    "iata": "LBJ",
+    "icao": "WAEF",
+    "country": "Indonesia",
+    "city": "Labuan Bajo",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Komodo Airport",
+      "id": "Bandara Komodo",
+      "tet": "Aeroportu Komodo",
+      "pt": "Aeroporto Komodo",
+      "zh": "科莫多机场"
+    },
+    "popular_routes": [
+      "DPS",
+      "CGK"
+    ],
+    "description": {
+      "en": "Pintu masuk utama ke Komodo National Park dan pariwisata Flores barat.",
+      "id": "Pintu masuk utama ke Komodo National Park dan pariwisata Flores barat.",
+      "tet": "Pintu masuk utama ke Komodo National Park dan pariwisata Flores barat.",
+      "pt": "Pintu masuk utama ke Komodo National Park dan pariwisata Flores barat."
+    }
+  },
+  "MOF": {
+    "iata": "MOF",
+    "icao": "WATC",
+    "country": "Indonesia",
+    "city": "Maumere",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Frans Seda Airport",
+      "id": "Bandara Frans Seda",
+      "tet": "Aeroportu Frans Seda",
+      "pt": "Aeroporto Frans Seda",
+      "zh": "弗朗斯塞达机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara regional di Flores timur yang melayani wisatawan dan komunitas lokal.",
+      "id": "Bandara regional di Flores timur yang melayani wisatawan dan komunitas lokal.",
+      "tet": "Bandara regional di Flores timur yang melayani wisatawan dan komunitas lokal.",
+      "pt": "Bandara regional di Flores timur yang melayani wisatawan dan komunitas lokal."
+    }
+  },
+  "ENE": {
+    "iata": "ENE",
+    "icao": "WATE",
+    "country": "Indonesia",
+    "city": "Ende",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "H. Hasan Aroeboesman Airport",
+      "id": "Bandara H. Hasan Aroeboesman",
+      "tet": "Aeroportu H. Hasan Aroeboesman",
+      "pt": "Aeroporto H. Hasan Aroeboesman",
+      "zh": "H·哈桑阿鲁布斯曼机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara di Flores barat, dekat akses ke Kelimutu dan wilayah budaya Lio.",
+      "id": "Bandara di Flores barat, dekat akses ke Kelimutu dan wilayah budaya Lio.",
+      "tet": "Bandara di Flores barat, dekat akses ke Kelimutu dan wilayah budaya Lio.",
+      "pt": "Bandara di Flores barat, dekat akses ke Kelimutu dan wilayah budaya Lio."
+    }
+  },
+  "RTG": {
+    "iata": "RTG",
+    "icao": "WALJ",
+    "country": "Indonesia",
+    "city": "Ruteng",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Frans Sales Lega Airport",
+      "id": "Bandara Frans Sales Lega",
+      "tet": "Aeroportu Frans Sales Lega",
+      "pt": "Aeroporto Frans Sales Lega",
+      "zh": "弗朗斯萨莱斯莱加机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara di dataran tinggi Flores, digunakan untuk trekking dan desa budaya.",
+      "id": "Bandara di dataran tinggi Flores, digunakan untuk trekking dan desa budaya.",
+      "tet": "Bandara di dataran tinggi Flores, digunakan untuk trekking dan desa budaya.",
+      "pt": "Bandara di dataran tinggi Flores, digunakan untuk trekking dan desa budaya."
+    }
+  },
+  "BJW": {
+    "iata": "BJW",
+    "icao": "WATA",
+    "country": "Indonesia",
+    "city": "Bajawa",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Soa Airport",
+      "id": "Bandara Soa",
+      "tet": "Aeroportu Soa",
+      "pt": "Aeroporto Soa",
+      "zh": "索亚机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara di Flores tengah, akses ke budaya Ngada dan organisasi komunitas.",
+      "id": "Bandara di Flores tengah, akses ke budaya Ngada dan organisasi komunitas.",
+      "tet": "Bandara di Flores tengah, akses ke budaya Ngada dan organisasi komunitas.",
+      "pt": "Bandara di Flores tengah, akses ke budaya Ngada dan organisasi komunitas."
+    }
+  },
+  "LKA": {
+    "iata": "LKA",
+    "icao": "WATO",
+    "country": "Indonesia",
+    "city": "Larantuka",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Gewayantana Airport",
+      "id": "Bandara Gewayantana",
+      "tet": "Aeroportu Gewayantana",
+      "pt": "Aeroporto Gewayantana",
+      "zh": "格威安塔纳机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara Flores timur dengan akses ke Larantuka dan pulau-pulau sekitarnya.",
+      "id": "Bandara Flores timur dengan akses ke Larantuka dan pulau-pulau sekitarnya.",
+      "tet": "Bandara Flores timur dengan akses ke Larantuka dan pulau-pulau sekitarnya.",
+      "pt": "Bandara Flores timur dengan akses ke Larantuka dan pulau-pulau sekitarnya."
+    }
+  },
+  "WGP": {
+    "iata": "WGP",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Waingapu",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Umbu Mehang Kunda Airport",
+      "id": "Bandara Umbu Mehang Kunda",
+      "tet": "Aeroportu Umbu Mehang Kunda",
+      "pt": "Aeroporto Umbu Mehang Kunda",
+      "zh": "翁布梅汉孔达机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara utama Sumba Timur dengan layanan regional.",
+      "id": "Bandara utama Sumba Timur dengan layanan regional.",
+      "tet": "Bandara utama Sumba Timur dengan layanan regional.",
+      "pt": "Bandara utama Sumba Timur dengan layanan regional."
+    }
+  },
+  "TMC": {
+    "iata": "TMC",
+    "icao": "WATO",
+    "country": "Indonesia",
+    "city": "Tambolaka",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Tambolaka Airport",
+      "id": "Bandara Tambolaka",
+      "tet": "Aeroportu Tambolaka",
+      "pt": "Aeroporto Tambolaka",
+      "zh": "坦博拉卡机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara utama Sumba Barat dengan koneksi antar pulau.",
+      "id": "Bandara utama Sumba Barat dengan koneksi antar pulau.",
+      "tet": "Bandara utama Sumba Barat dengan koneksi antar pulau.",
+      "pt": "Bandara utama Sumba Barat dengan koneksi antar pulau."
+    }
+  },
+  "RTI": {
+    "iata": "RTI",
+    "icao": "WATK",
+    "country": "Indonesia",
+    "city": "Rote",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "David Constantijn Saudale Airport",
+      "id": "Bandara David Constantijn Saudale",
+      "tet": "Aeroportu David Constantijn Saudale",
+      "pt": "Aeroporto David Constantijn Saudale",
+      "zh": "大卫·康斯坦丁·绍达莱机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara paling selatan NTT yang mendukung pariwisata surfing.",
+      "id": "Bandara paling selatan NTT yang mendukung pariwisata surfing.",
+      "tet": "Bandara paling selatan NTT yang mendukung pariwisata surfing.",
+      "pt": "Bandara paling selatan NTT yang mendukung pariwisata surfing."
+    }
+  },
+  "LWE": {
+    "iata": "LWE",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Lewoleba",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Lewoleba Airport",
+      "id": "Bandara Lewoleba",
+      "tet": "Aeroportu Lewoleba",
+      "pt": "Aeroporto Lewoleba",
+      "zh": "勒沃勒巴机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara entry point ke pulau Lembata dan Alor.",
+      "id": "Bandara entry point ke pulau Lembata dan Alor.",
+      "tet": "Bandara entry point ke pulau Lembata dan Alor.",
+      "pt": "Bandara entry point ke pulau Lembata dan Alor."
+    }
+  },
+  "ALK": {
+    "iata": "ALK",
+    "icao": "",
+    "country": "Indonesia",
+    "city": "Alor",
+    "region": "East Nusa Tenggara",
+    "type": "airport",
+    "name": {
+      "en": "Alor Airport",
+      "id": "Bandara Alor",
+      "tet": "Aeroportu Alor",
+      "pt": "Aeroporto Alor",
+      "zh": "阿洛尔机场"
+    },
+    "popular_routes": [
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara utama Alor dengan layanan ke Kupang dan Bali.",
+      "id": "Bandara utama Alor dengan layanan ke Kupang dan Bali.",
+      "tet": "Bandara utama Alor dengan layanan ke Kupang dan Bali.",
+      "pt": "Bandara utama Alor dengan layanan ke Kupang dan Bali."
+    }
+  }
+}

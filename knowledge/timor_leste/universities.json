@@ -1,0 +1,153 @@
+{
+  "UNTL": {
+    "id": "UNTL",
+    "country": "Timor-Leste",
+    "region": "Dili",
+    "type": "university",
+    "name": {
+      "en": "National University of Timor-Leste",
+      "id": "National Universitas of Timor-Leste",
+      "tet": "National University of Timor-Leste",
+      "pt": "National University of Timor-Leste",
+      "zh": "National University of Timor-Leste"
+    },
+    "description": {
+      "en": "Universitas negeri utama Timor-Leste yang menawarkan program hukum, pendidikan, dan ilmu sosial.",
+      "id": "Universitas negeri utama Timor-Leste yang menawarkan program hukum, pendidikan, dan ilmu sosial.",
+      "tet": "Universitas negeri utama Timor-Leste yang menawarkan program hukum, pendidikan, dan ilmu sosial.",
+      "pt": "Universitas negeri utama Timor-Leste yang menawarkan program hukum, pendidikan, dan ilmu sosial."
+    },
+    "city": "Dili",
+    "website": "https://www.untl.edu.tl",
+    "keywords": [
+      "untl",
+      "national university of timor-leste",
+      "dili"
+    ],
+    "airport": "DIL",
+    "popular_for": [
+      "Law",
+      "Education",
+      "Social Sciences"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet",
+      "pt"
+    ]
+  },
+  "UNTL-Science": {
+    "id": "UNTL-Science",
+    "country": "Timor-Leste",
+    "region": "Dili",
+    "type": "university",
+    "name": {
+      "en": "National University of Timor-Leste - Science Campus",
+      "id": "National Universitas of Timor-Leste - Science Campus",
+      "tet": "National University of Timor-Leste - Science Campus",
+      "pt": "National University of Timor-Leste - Science Campus",
+      "zh": "National University of Timor-Leste - Science Campus"
+    },
+    "description": {
+      "en": "Kampus khusus sains, teknik, dan kesehatan di universitas nasional Timor-Leste.",
+      "id": "Kampus khusus sains, teknik, dan kesehatan di universitas nasional Timor-Leste.",
+      "tet": "Kampus khusus sains, teknik, dan kesehatan di universitas nasional Timor-Leste.",
+      "pt": "Kampus khusus sains, teknik, dan kesehatan di universitas nasional Timor-Leste."
+    },
+    "city": "Dili",
+    "website": "https://www.untl.edu.tl",
+    "keywords": [
+      "untl-science",
+      "national university of timor-leste - science campus",
+      "dili"
+    ],
+    "airport": "DIL",
+    "popular_for": [
+      "Engineering",
+      "Health",
+      "Science"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet",
+      "pt"
+    ]
+  },
+  "Polytechnic-Dili": {
+    "id": "Polytechnic-Dili",
+    "country": "Timor-Leste",
+    "region": "Dili",
+    "type": "university",
+    "name": {
+      "en": "National Polytechnic of Timor-Leste",
+      "id": "National Polytechnic of Timor-Leste",
+      "tet": "National Polytechnic of Timor-Leste",
+      "pt": "National Polytechnic of Timor-Leste",
+      "zh": "National Polytechnic of Timor-Leste"
+    },
+    "description": {
+      "en": "Politeknik di Dili dengan program hospitality, bisnis, dan pariwisata.",
+      "id": "Politeknik di Dili dengan program hospitality, bisnis, dan pariwisata.",
+      "tet": "Politeknik di Dili dengan program hospitality, bisnis, dan pariwisata.",
+      "pt": "Politeknik di Dili dengan program hospitality, bisnis, dan pariwisata."
+    },
+    "city": "Dili",
+    "website": "https://www.pntl.tl",
+    "keywords": [
+      "polytechnic-dili",
+      "national polytechnic of timor-leste",
+      "dili"
+    ],
+    "airport": "DIL",
+    "popular_for": [
+      "Hospitality",
+      "Business",
+      "Tourism"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet",
+      "pt"
+    ]
+  },
+  "National-Teachers-College": {
+    "id": "National-Teachers-College",
+    "country": "Timor-Leste",
+    "region": "Dili",
+    "type": "university",
+    "name": {
+      "en": "National Teachers' College",
+      "id": "National Teachers' College",
+      "tet": "National Teachers' College",
+      "pt": "National Teachers' College",
+      "zh": "National Teachers' College"
+    },
+    "description": {
+      "en": "Lembaga pelatihan guru yang fokus pada pendidikan dasar dan menengah.",
+      "id": "Lembaga pelatihan guru yang fokus pada pendidikan dasar dan menengah.",
+      "tet": "Lembaga pelatihan guru yang fokus pada pendidikan dasar dan menengah.",
+      "pt": "Lembaga pelatihan guru yang fokus pada pendidikan dasar dan menengah."
+    },
+    "city": "Dili",
+    "website": "https://www.untl.edu.tl",
+    "keywords": [
+      "national-teachers-college",
+      "national teachers' college",
+      "dili"
+    ],
+    "airport": "DIL",
+    "popular_for": [
+      "Education",
+      "Teacher Training"
+    ],
+    "languages": [
+      "en",
+      "id",
+      "tet",
+      "pt"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "police": "112",
+  "ambulance": "110",
+  "fire": "115",
+  "timor_leste": {
+    "police": "112",
+    "ambulance": "110",
+    "fire": "115"
+  }
+}

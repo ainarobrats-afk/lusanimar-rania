@@ -1,0 +1,72 @@
+[
+  {
+    "id": "intent_greet",
+    "name": "Greeting",
+    "tetun_examples": ["Halo", "Bodia", "Bem-vindo"],
+    "expected_response_type": "friendly_greeting_in_tetun",
+    "category": "interaction"
+  },
+  {
+    "id": "intent_ask_location",
+    "name": "Ask for Location",
+    "tetun_examples": ["Saida iha ne'e?", "Nia ba saida?", "Iha ne'ebá?"],
+    "expected_response_type": "location_info_in_tetun",
+    "category": "navigation"
+  },
+  {
+    "id": "intent_ask_time",
+    "name": "Ask for Time/Schedule",
+    "tetun_examples": ["Oras saida?", "Loron saida?", "Oras iha ne'e"],
+    "expected_response_type": "time_schedule_in_tetun",
+    "category": "information"
+  },
+  {
+    "id": "intent_ask_price",
+    "name": "Ask for Price",
+    "tetun_examples": ["Kbiit prasu?", "Kbiit haat?", "Prasu saida?"],
+    "expected_response_type": "price_in_tetun",
+    "category": "commerce"
+  },
+  {
+    "id": "intent_order_food",
+    "name": "Order Food",
+    "tetun_examples": ["Ha hakarak katak", "Katak saida?", "Ai/foos/manas"],
+    "expected_response_type": "food_order_confirmation_in_tetun",
+    "category": "dining"
+  },
+  {
+    "id": "intent_request_help",
+    "name": "Request Help",
+    "tetun_examples": ["Ha presisa ajuda", "Ajuda ha midar", "Kaidah?"],
+    "expected_response_type": "assistance_in_tetun",
+    "category": "emergency"
+  },
+  {
+    "id": "intent_booking_flight",
+    "name": "Book Flight",
+    "tetun_examples": ["Ha hakarak voo ba Dili", "Voo ida iha loron saida?", "Ticket ba saida?"],
+    "expected_response_type": "flight_info_in_tetun",
+    "category": "travel"
+  },
+  {
+    "id": "intent_complaint",
+    "name": "Complaint",
+    "tetun_examples": ["Ida nee loos mai", "Problema iha ne'e", "La diak"],
+    "expected_response_type": "complaint_resolution_in_tetun",
+    "category": "support"
+  },
+  {
+    "id": "intent_lost_item",
+    "name": "Report Lost Item",
+    "tetun_examples": ["Pasaporte ha nian hili", "Mala ha nian hili", "Carteira ha nian hili"],
+    "expected_response_type": "lost_and_found_process_in_tetun",
+    "category": "emergency"
+  },
+  {
+    "id": "intent_medical_emergency",
+    "name": "Medical Emergency",
+    "tetun_examples": ["Ha moras", "Dotor presisa", "Setor ho'o"],
+    "expected_response_type": "medical_assistance_in_tetun",
+    "category": "emergency"
+  }
+]

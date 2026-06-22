@@ -1,157 +1,175 @@
 // ============================================================================
-// RANIA V2.1 — TravelPayouts Adapter
-// Master Plan: WAJIB Travelpayouts API untuk semua rute.
-// DILARANG hardcode harga atau ROUTE_PRICES.
-//
-// Note: Travelpayouts price data API requires a valid affiliate token
-// with Data API access. Token can be found at:
-// travelpayouts.com/developers/api → "Your API Token"
+// RANIA — Travelpayouts Provider (worker-hunter adapter)
 // ============================================================================
 
+import type { IFlightProvider, FlightQuery, UnifiedFlight, ProviderResult } from "./types";
+
 export interface TravelPayoutsConfig {
-  token: string;
+  token:  string;
   marker: string;
 }
 
-export interface TPFlight {
-  id: string;
-  airline: string;
-  airlineCode: string;
-  flightNumber: string;
-  from: string;
-  to: string;
-  departureTime: string;
-  arrivalTime: string;
-  duration: string;
-  price: number;
-  currency: string;
-  taxes: number;
-  fees: number;
-  totalPrice: number;
-  available: boolean;
-}
+export class TravelPayoutsAdapter implements IFlightProvider {
+  readonly name = "travelpayouts";
 
-export class TravelPayoutsAdapter {
-  private config: TravelPayoutsConfig;
+  constructor(private readonly config: TravelPayoutsConfig) {}
 
-  constructor(config: TravelPayoutsConfig) {
-    this.config = config;
+  isAvailable(): boolean {
+    return !!this.config.token;
   }
 
-  async searchFlights(origin: string, destination: string, departureDate: string): Promise<TPFlight[]> {
-    if (!this.config.token) return [];
+  async searchFlights(query: FlightQuery): Promise<ProviderResult> {
+    const start = Date.now();
+    if (!this.isAvailable()) {
+      return { flights: [], source: this.name, duration_ms: 0, error: "No token" };
+    }
 
-    // Try endpoints in order of reliability
-    // v1/cheap is most reliable (confirmed working with token 01c853bd...)
     try {
-      const results = await this.searchV1Cheap(origin, destination);
-      if (results.length > 0) return results;
-    } catch { /* fall through */ }
+      const { origin, destination, departureDate } = query;
+      const flights: UnifiedFlight[] = [];
 
-    // v1/calendar — date-specific
-    try {
-      const results = await this.searchV1Calendar(origin, destination, departureDate);
-      if (results.length > 0) return results;
-    } catch { /* fall through */ }
+      // Try endpoints in priority order
+      const v1cheap = await this.searchV1Cheap(origin, destination);
+      if (v1cheap.length > 0) {
+        flights.push(...v1cheap);
+      } else {
+        const v1cal = await this.searchV1Calendar(origin, destination, departureDate);
+        if (v1cal.length > 0) flights.push(...v1cal);
+        else {
+          const v2 = await this.searchV2Latest(origin, destination);
+          flights.push(...v2);
+        }
+      }
 
-    // v2/latest — less reliable
-    try {
-      const results = await this.searchV2Latest(origin, destination);
-      if (results.length > 0) return results;
-    } catch { /* fall through */ }
-
-    return [];
+      return { flights, source: this.name, duration_ms: Date.now() - start };
+    } catch (err) {
+      const msg = err instanceof Error ? err.message : String(err);
+      return { flights: [], source: this.name, duration_ms: Date.now() - start, error: msg };
+    }
   }
 
-  // v2/prices/latest — most commonly available
-  private async searchV2Latest(origin: string, destination: string): Promise<TPFlight[]> {
-    const url = `https://api.travelpayouts.com/v2/prices/latest?origin=${origin}&destination=${destination}&currency=usd&token=${this.config.token}&limit=5`;
+  // ─── v1/prices/cheap ───────────────────────────────────────────────────────
+
+  private async searchV1Cheap(origin: string, destination: string): Promise<UnifiedFlight[]> {
+    const url =
+      `https://api.travelpayouts.com/v1/prices/cheap` +
+      `?origin=${origin}&destination=${destination}&currency=USD&token=${this.config.token}`;
+
     const res = await fetch(url, {
       headers: { "Accept": "application/json", "X-Access-Token": this.config.token },
-      signal: AbortSignal.timeout(5000),
-    });
-    if (!res.ok) throw new Error(`v2/latest HTTP ${res.status}`);
-    const data = await res.json() as { data?: unknown[] };
-    if (!data.data || data.data.length === 0) throw new Error("no data");
-    return this.mapV2(data.data as Record<string, unknown>[], origin, destination);
-  }
-
-  // v1/prices/cheap — aggregated cheapest, format: { data: { "DEST": { "0": { airline, price, ... } } } }
-  private async searchV1Cheap(origin: string, destination: string): Promise<TPFlight[]> {
-    const url = `https://api.travelpayouts.com/v1/prices/cheap?origin=${origin}&destination=${destination}&currency=USD&token=${this.config.token}`;
-    const res = await fetch(url, {
-      headers: { "Accept": "application/json", "X-Access-Token": this.config.token },
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(8_000),
     });
     if (!res.ok) throw new Error(`v1/cheap HTTP ${res.status}`);
-    const data = await res.json() as { success?: boolean; data?: Record<string, Record<string, unknown>> };
-    if (!data.success || !data.data) throw new Error("no data");
+    const data = await res.json() as {
+      success?: boolean;
+      data?: Record<string, Record<string, unknown>>;
+    };
+    if (!data.success || !data.data) throw new Error("v1/cheap: no data");
 
-    const flights: TPFlight[] = [];
+    const flights: UnifiedFlight[] = [];
     let idx = 0;
-    // data structure: { "DEST_CODE": { "0": { airline, price, departure_at, ... }, "1": {...} } }
     for (const destEntries of Object.values(data.data)) {
       for (const item of Object.values(destEntries)) {
-        const f = item as Record<string, unknown>;
-        const price = Number(f.price) || 0;
+        const f      = item as Record<string, unknown>;
+        const price  = Number(f.price ?? 0);
         if (!price) continue;
-        const depTime = String(f.departure_at || "");
-        // duration is in minutes total, split to/back
-        const durationMin = Number(f.duration_to) || Number(f.duration) || 120;
-        const depDate = depTime ? new Date(depTime) : new Date();
-        const arrDate = new Date(depDate.getTime() + durationMin * 60000);
+        const depTime    = String(f.departure_at ?? "");
+        const durationMin = Number(f.duration_to ?? f.duration ?? 120);
+        const depDate    = depTime ? new Date(depTime) : new Date();
+        // Calculate arrival from departure + duration (not return_at which is return date)
+        const arrDate    = new Date(depDate.getTime() + durationMin * 60_000);
+        const taxes      = Math.round(price * 0.12);
+
         flights.push({
-          id: `tpay-cheap-${origin}${destination}-${idx}`,
-          airline: String(f.airline || ""),
-          airlineCode: String(f.airline || ""),
-          flightNumber: `${f.airline || ""}${f.flight_number || idx}`,
-          from: origin, to: destination,
+          id:            `tpay-cheap-${origin}${destination}-${idx}`,
+          source:        "travelpayouts",
+          airline:       String(f.airline ?? ""),
+          airlineCode:   String(f.airline ?? ""),
+          flightNumber:  `${f.airline ?? ""}${f.flight_number ?? idx}`,
+          from:          origin,
+          to:            destination,
           departureTime: depTime,
-          arrivalTime: arrDate.toISOString(),
-          duration: `${Math.floor(durationMin / 60)}h ${durationMin % 60}m`,
-          price, currency: "USD",
-          taxes: Math.round(price * 0.12), fees: 8,
-          totalPrice: price + Math.round(price * 0.12) + 8,
-          available: true,
+          arrivalTime:   arrDate.toISOString(),
+          duration:      `${Math.floor(durationMin / 60)}h ${durationMin % 60}m`,
+          price,
+          currency:      "USD",
+          taxes,
+          fees:          8,
+          totalPrice:    price + taxes + 8,
+          available:     true,
+          stops:         0,   // not provided by Travelpayouts v1
+          lastUpdated:   new Date().toISOString(),
         });
         idx++;
         if (flights.length >= 5) break;
       }
       if (flights.length >= 5) break;
     }
-    if (flights.length === 0) throw new Error("empty after parse");
+    if (flights.length === 0) throw new Error("v1/cheap: empty");
     return flights;
   }
 
-  // v1/prices/calendar — date-specific
-  private async searchV1Calendar(origin: string, destination: string, departureDate: string): Promise<TPFlight[]> {
-    const url = `https://api.travelpayouts.com/v1/prices/calendar?origin=${origin}&destination=${destination}&departure_at=${departureDate}&currency=USD&token=${this.config.token}&limit=5`;
+  // ─── v1/prices/calendar ────────────────────────────────────────────────────
+
+  private async searchV1Calendar(
+    origin: string, destination: string, departureDate: string
+  ): Promise<UnifiedFlight[]> {
+    const url =
+      `https://api.travelpayouts.com/v1/prices/calendar` +
+      `?origin=${origin}&destination=${destination}` +
+      `&departure_at=${departureDate}&currency=USD&token=${this.config.token}&limit=5`;
+
     const res = await fetch(url, {
       headers: { "Accept": "application/json", "X-Access-Token": this.config.token },
-      signal: AbortSignal.timeout(5000),
+      signal: AbortSignal.timeout(8_000),
     });
     if (!res.ok) throw new Error(`v1/calendar HTTP ${res.status}`);
     const data = await res.json() as { data?: unknown[] };
-    if (!data.data || data.data.length === 0) throw new Error("no data");
+    if (!data.data?.length) throw new Error("v1/calendar: no data");
     return this.mapV2(data.data as Record<string, unknown>[], origin, destination);
   }
 
-  private mapV2(items: Record<string, unknown>[], origin: string, destination: string): TPFlight[] {
+  // ─── v2/prices/latest ──────────────────────────────────────────────────────
+
+  private async searchV2Latest(origin: string, destination: string): Promise<UnifiedFlight[]> {
+    const url =
+      `https://api.travelpayouts.com/v2/prices/latest` +
+      `?origin=${origin}&destination=${destination}&currency=usd` +
+      `&token=${this.config.token}&limit=5`;
+
+    const res = await fetch(url, {
+      headers: { "Accept": "application/json", "X-Access-Token": this.config.token },
+      signal: AbortSignal.timeout(8_000),
+    });
+    if (!res.ok) throw new Error(`v2/latest HTTP ${res.status}`);
+    const data = await res.json() as { data?: unknown[] };
+    if (!data.data?.length) throw new Error("v2/latest: no data");
+    return this.mapV2(data.data as Record<string, unknown>[], origin, destination);
+  }
+
+  private mapV2(items: Record<string, unknown>[], origin: string, destination: string): UnifiedFlight[] {
     return items.map((item, idx) => {
-      const price = Number(item.value || item.price || 0);
+      const price  = Number(item.value ?? item.price ?? 0);
+      const taxes  = Math.round(price * 0.12);
       return {
-        id: `tpay-${origin}${destination}-${idx}`,
-        airline: String(item.airline || ""),
-        airlineCode: String(item.airline || ""),
-        flightNumber: `${item.airline || ""}${item.flight_number || idx}`,
-        from: origin, to: destination,
-        departureTime: String(item.departure_at || ""),
-        arrivalTime: String(item.return_at || ""),
-        duration: "N/A",
-        price, currency: "USD",
-        taxes: Math.round(price * 0.12), fees: 8,
-        totalPrice: price + Math.round(price * 0.12) + 8,
-        available: true,
+        id:            `tpay-${origin}${destination}-${idx}`,
+        source:        "travelpayouts" as const,
+        airline:       String(item.airline ?? ""),
+        airlineCode:   String(item.airline ?? ""),
+        flightNumber:  `${item.airline ?? ""}${item.flight_number ?? idx}`,
+        from:          origin,
+        to:            destination,
+        departureTime: String(item.departure_at ?? ""),
+        arrivalTime:   String(item.return_at ?? ""),   // acknowledged limitation
+        duration:      "N/A",
+        price,
+        currency:      "USD",
+        taxes,
+        fees:          8,
+        totalPrice:    price + taxes + 8,
+        available:     true,
+        stops:         0,
+        lastUpdated:   new Date().toISOString(),
       };
     });
   }

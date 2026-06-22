@@ -1,0 +1,42 @@
+[
+  {
+    "id": "malaysia_overview",
+    "country": "Malaysia",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 12000,
+    "primary_cities": ["Kuala Lumpur", "Penang", "Johor Bahru"],
+    "population_centers": {
+      "Kuala Lumpur": { "estimate": 7000, "notes": "Primary economic hub" },
+      "Penang": { "estimate": 3000, "notes": "Manufacturing sector" },
+      "Johor Bahru": { "estimate": 2000, "notes": "Southern gateway" }
+    },
+    "employment_sectors": ["domestic_workers", "manufacturing", "hospitality", "health_care"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "Social Visit or Work Permit",
+      "processing_time": "5-10 days",
+      "requirements": ["passport_6months", "employment_letter", "accommodation"],
+      "notes": "Work permits must be sponsored by employer"
+    },
+    "embassy_contact": {
+      "location": "Kuala Lumpur",
+      "address": "2B, Jalan Madge, 50450 Kuala Lumpur",
+      "phone": "+60 3 4101-4001",
+      "email": "timorembassy.kl@gmail.com"
+    },
+    "community_organizations": [
+      { "name": "Persatuan Timor Leste Malaysia", "city": "Kuala Lumpur" },
+      { "name": "Komunitas Timor KL", "city": "Kuala Lumpur", "type": "informal" }
+    ],
+    "return_travel": {
+      "flights": ["AirAsia to Dili", "Malaysian Airlines", "Garuda"],
+      "duration": "3-4 hours",
+      "cost": "RM 400-800 round trip",
+      "frequency": "Daily flights available"
+    },
+    "practical_info": {
+      "language": "Malay and English spoken; many Timorese multilingual",
+      "money": "Malaysian Ringgit (MYR); USD accepted",
+      "food": "Diverse cuisine; some Timorese restaurants in KL"
+    }
+  }
+]

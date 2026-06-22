@@ -1,0 +1,16 @@
+{
+  "pasaporte-tl": {
+    "id": "pasaporte-tl",
+    "name": "Pasaporte Timor-Leste",
+    "description": "Panduan lengkap cara membuat dan memperbarui paspor Timor-Leste (Tetun).",
+    "lang": "tet",
+    "body": "Atu halo pasaporte Timor-Leste, ita bele tuir pasu sira-ne'e:\n\n📌 1. Halo ajendamentu online uluk\n\nIta bele halo ajendamentu liuhusi sistema ofisial Ministériu Justisa:\nhttps://ajendamentu.mj.gov.tl/\n\nIha ne'e ita bele hili loron no oras atu ba aprezenta dokumentu.\n\n📌 2. Prepara dokumentu sira-ne'ebé presiza\n\nNormalmente presiza:\n• Bilhete Identidade (BI)\n• Sertidaun Moris (certidão de nascimento)\n• Kartão Eleitor (karik presiza)\n• Fotografia pasaporte (format biométriku)\n• Pasaporte antigu (se renovasaun)\n\n📌 3. Ba iha loron ne'ebé ajenda ona\n\nBainhira to'o iha fatin servisu, ofisial sira sei:\n• Verifika dokumentu\n• Taka fotografia biométrika\n• Rekolla fingerprint\n• Rekolla assinatura digital\n\n📌 4. Hein prosesamentu\n\nTempu prosesamentu bele varia tuir volume pedidu. Normalmente prosesu bele dura semana balu to'o pasaporte prontu.\n\n📌 5. Kolekta pasaporte\n\nBainhira pasaporte prontu, ita bele foti direktamente iha servisu relevante. Iha kazu balu, bele mós entrega liuhusi korreiu ho kustu adisionál.\n\n⚠️ Nota:\n\nRekizitu no prosedimentu bele muda tuir regulamentu governu. Antes aplika, favor konfirma informasaun atualizada iha Ministériu Justisa ka website ofisial.\n",
+    "sources": [
+      "https://ajendamentu.mj.gov.tl/",
+      "Labadain corpus",
+      "Ministériu Justisa (referensi publik)"
+    ],
+    "keywords": ["pasaporte","passport","paspor","halo pasaporte","renovasaun pasaporte","passport renewal","cara buat paspor"],
+    "country": "Timor-Leste"
+  }
+}

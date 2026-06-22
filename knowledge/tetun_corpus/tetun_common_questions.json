@@ -1,0 +1,82 @@
+[
+  {
+    "id": "q_greeting",
+    "question_tet": "Sé mak ó?",
+    "question_en": "How are you?",
+    "answer_tet": "Ha diak. Ikó sé mak ó?",
+    "answer_en": "I'm well. How are you?",
+    "category": "small_talk"
+  },
+  {
+    "id": "q_arrival",
+    "question_tet": "Ó mai hosi saida?",
+    "question_en": "Where are you coming from?",
+    "answer_tet": "Ha mai hosi [country]. Ha hakarak tiha Timor-Leste.",
+    "answer_en": "I'm coming from [country]. I want to visit Timor-Leste.",
+    "category": "travel"
+  },
+  {
+    "id": "q_flight_info",
+    "question_tet": "Voo ba Dili iha oras saida?",
+    "question_en": "What time is the flight to Dili?",
+    "answer_tet": "Voo klamar iha 14:30. Lokus iha 08:00.",
+    "answer_en": "Flight arrives at 14:30. Take-off at 08:00.",
+    "category": "flight"
+  },
+  {
+    "id": "q_hotel",
+    "question_tet": "Quartu iha ne'e kbiit haat?",
+    "question_en": "How much is a room here?",
+    "answer_tet": "Quartu ida haat $50 loron ida.",
+    "answer_en": "One room costs $50 per night.",
+    "category": "accommodation"
+  },
+  {
+    "id": "q_food_recommendation",
+    "question_tet": "Katak saida mak mos diak iha Dili?",
+    "question_en": "What food is good in Dili?",
+    "answer_tet": "Caldo, ikan, arroz. Labenta mak saboroso.",
+    "answer_en": "Soup, fish, rice. Pork is delicious.",
+    "category": "dining"
+  },
+  {
+    "id": "q_transportation",
+    "question_tet": "Oinsá ba Dili hosi koalia ida?",
+    "question_en": "How do I get to Dili from the airport?",
+    "answer_tet": "Taxi, minibus, ka renta carro ba Dili.",
+    "answer_en": "Taxi, minibus, or car rental to Dili.",
+    "category": "transportation"
+  },
+  {
+    "id": "q_emergency",
+    "question_tet": "Oinsá siik ajuda ba ha iha emergencia?",
+    "question_en": "How do I get help in an emergency?",
+    "answer_tet": "Usa celular: polisia 112, dotor 7823-5000, embaixada +670-3332-2351.",
+    "answer_en": "Use mobile: police 112, doctor 7823-5000, embassy +670-3332-2351.",
+    "category": "emergency"
+  },
+  {
+    "id": "q_visa",
+    "question_tet": "Ha presisa vizita ba Timor-Leste?",
+    "question_en": "Do I need a visa for Timor-Leste?",
+    "answer_tet": "Depende iha nasionalidade ó. Maioria presisa viza.",
+    "answer_en": "It depends on your nationality. Most need a visa.",
+    "category": "travel_documents"
+  },
+  {
+    "id": "q_language",
+    "question_tet": "Tetun difísil malae?",
+    "question_en": "Is Tetun difficult to learn?",
+    "answer_tet": "Tetun fasil tebes. Ita bele hanorin ó.",
+    "answer_en": "Tetun is very easy. We can teach you.",
+    "category": "cultural"
+  },
+  {
+    "id": "q_safety",
+    "question_tet": "Timor-Leste seguru ba turista?",
+    "question_en": "Is Timor-Leste safe for tourists?",
+    "answer_tet": "Sim, seguru malae. Turista bele tiha iha seguransa.",
+    "answer_en": "Yes, it's safe for foreigners. Tourists can visit safely.",
+    "category": "safety"
+  }
+]

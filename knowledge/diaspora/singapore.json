@@ -1,0 +1,38 @@
+[
+  {
+    "id": "singapore_overview",
+    "country": "Singapore",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 6000,
+    "primary_cities": ["Singapore City"],
+    "employment_sectors": ["domestic_workers", "healthcare", "financial_services", "technology", "hospitality"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "Employment Pass, S Pass, or Visit Pass",
+      "processing_time": "2-4 weeks",
+      "requirements": ["passport", "medical_exam", "employer_sponsorship"],
+      "notes": "High standards for employment; healthcare workers have good prospects"
+    },
+    "embassy_contact": {
+      "location": "Singapore",
+      "address": "14 Scotts Road, Far East Plaza #06-15, Singapore 228213",
+      "phone": "+65 6732-3342",
+      "email": "timorembassy@singnet.com.sg"
+    },
+    "return_travel": {
+      "flights": ["Singapore Airlines", "SilkAir", "Garuda"],
+      "duration": "2.5-3 hours",
+      "cost": "SGD 300-600 round trip",
+      "frequency": "Multiple daily flights"
+    },
+    "work_environment": {
+      "salaries": "Higher than regional average",
+      "cost_of_living": "Very high",
+      "work_culture": "Highly professional, English-speaking environment"
+    },
+    "practical_info": {
+      "currency": "Singapore Dollar (SGD)",
+      "language": "English official; Mandarin, Malay, Tamil spoken",
+      "healthcare": "World-class; affordable for residents"
+    }
+  }
+]

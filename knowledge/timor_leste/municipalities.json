@@ -1,0 +1,15 @@
+{
+  "Dili": { "name": "Dili", "region": "Municipality", "population": "~250,000" },
+  "Baucau": { "name": "Baucau", "region": "Municipality", "population": "~70,000" },
+  "Bobonaro": { "name": "Bobonaro", "region": "Municipality" },
+  "Covalima": { "name": "Covalima", "region": "Municipality" },
+  "Lautem": { "name": "Lautem", "region": "Municipality" },
+  "Liquica": { "name": "Liquiça", "region": "Municipality" },
+  "Manatuto": { "name": "Manatuto", "region": "Municipality" },
+  "Viqueque": { "name": "Viqueque", "region": "Municipality" },
+  "Oecusse": { "name": "Oecusse", "region": "Special Administrative Region" },
+  "Ainaro": { "name": "Ainaro", "region": "Municipality" },
+  "Ermera": { "name": "Ermera", "region": "Municipality" },
+  "Aileu": { "name": "Aileu", "region": "Municipality" },
+  "Manufahi": { "name": "Manufahi", "region": "Municipality" }
+}

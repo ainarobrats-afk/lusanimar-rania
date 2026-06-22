@@ -1,0 +1,112 @@
+{
+  "destination_country": "Australia",
+  "destination_iso": "AU",
+  "destination_name": {
+    "tet": "Austrália",
+    "id": "Australia",
+    "en": "Australia",
+    "pt": "Austrália"
+  },
+  "destination_keywords": {
+    "tet": ["austrália", "australia"],
+    "id": ["australia"],
+    "en": ["australia"],
+    "pt": ["austrália"]
+  },
+  "alt_names": ["australia"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "embassy_in_dili": {
+    "name": "Australian Embassy Dili",
+    "address": "Rua Praia dos Coqueiros, Dili",
+    "phone": "+670 332 2111",
+    "email": "austemb.dili@dfat.gov.au",
+    "website": "https://timorleste.embassy.gov.au"
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Tourist Visa / Subclass 600",
+      "visa_on_arrival": false,
+      "e_visa_available": true,
+      "e_visa_url": "https://immi.homeaffairs.gov.au",
+      "duration_days": 90,
+      "validity_days": 365,
+      "processing_days": "14-28",
+      "fee_usd": 145,
+      "documents_required": [
+        {
+          "tet": "Pasaporte válidu liu tinan 6",
+          "id": "Paspor berlaku minimal 6 bulan",
+          "en": "Passport valid for at least 6 months",
+          "pt": "Passaporte válido por pelo menos 6 meses"
+        },
+        {
+          "tet": "2 foto pasaporte",
+          "id": "2 foto paspor",
+          "en": "2 passport-sized photos",
+          "pt": "2 fotos tamanho passaporte"
+        },
+        {
+          "tet": "Prova finanseiru (extrato banku)",
+          "id": "Bukti keuangan (rekening bank)",
+          "en": "Proof of funds (bank statement)",
+          "pt": "Comprovativo de fundos (extrato bancário)"
+        },
+        {
+          "tet": "Tiket fila-fali",
+          "id": "Tiket pulang-pergi",
+          "en": "Return flight ticket",
+          "pt": "Bilhete de regresso"
+        },
+        {
+          "tet": "Seguro viagem",
+          "id": "Asuransi perjalanan",
+          "en": "Travel insurance",
+          "pt": "Seguro de viagem"
+        }
+      ],
+      "notes": {
+        "tet": "Aplika online liu husi ImmiAccount. Prosesu hein 14-28 loron.",
+        "id": "Ajukan online melalui ImmiAccount. Proses 14-28 hari kerja.",
+        "en": "Apply online via ImmiAccount. Processing takes 14-28 working days.",
+        "pt": "Candidate online via ImmiAccount. Processamento de 14-28 dias úteis."
+      }
+    },
+    {
+      "passport_country": "Indonesia",
+      "passport_iso": "ID",
+      "passport_keywords": ["indonesia", "indonesian", "wni"],
+      "visa_required": true,
+      "visa_type": "Tourist Visa / Subclass 600",
+      "visa_on_arrival": false,
+      "e_visa_available": true,
+      "duration_days": 90,
+      "processing_days": "14-28",
+      "fee_usd": 145
+    },
+    {
+      "passport_country": "Portugal",
+      "passport_iso": "PT",
+      "passport_keywords": ["portugal", "portuguese", "portuuguês", "português"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 90,
+      "notes": {
+        "tet": "Cidadãos Portugal la presiza visa Australia ba turizmu.",
+        "id": "Warga Portugal tidak perlu visa Australia untuk turis.",
+        "en": "Portuguese citizens do not need a tourist visa for Australia.",
+        "pt": "Cidadãos portugueses não precisam de visto de turista para a Austrália."
+      }
+    }
+  ]
+}

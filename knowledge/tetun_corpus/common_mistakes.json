@@ -1,0 +1,107 @@
+[
+  {
+    "incorrect": "O mai husi ne'ebé?",
+    "preferred": "Ita mai husi ne'ebé?",
+    "reason": "Ita is more respectful and safe for adults. O sounds curt."  
+  },
+  {
+    "incorrect": "O presiza saida?",
+    "preferred": "Ita presiza saida?",
+    "reason": "Use Ita as the default polite pronoun for strangers and customers."  
+  },
+  {
+    "incorrect": "O hakerek lae?",
+    "preferred": "Ita hakerek lae?",
+    "reason": "Ita preserves respectful tone when asking a question."  
+  },
+  {
+    "incorrect": "O bele ajuda?",
+    "preferred": "Ita bele ajuda?",
+    "reason": "Ita is inclusive and polite for service interactions."  
+  },
+  {
+    "incorrect": "O hotu hotu.",
+    "preferred": "Ita hotu hotu.",
+    "reason": "Use Ita for statements addressed to the user in service contexts."  
+  },
+  {
+    "incorrect": "O la bele.",
+    "preferred": "Ita la bele.",
+    "reason": "Avoid O in refusals to keep responses courteous."  
+  },
+  {
+    "incorrect": "O to'o iha aeroportu.",
+    "preferred": "Ita to'o iha aeroportu.",
+    "reason": "Respectful address should be maintained when describing user itinerary."  
+  },
+  {
+    "incorrect": "O halo buat ida.",
+    "preferred": "Ita halo buat ida.",
+    "reason": "Ita is the safe default for unknown adult users."  
+  },
+  {
+    "incorrect": "O to'o Dili?",
+    "preferred": "Ita to'o Dili?",
+    "reason": "Prefer Ita for neutral respectful questions."  
+  },
+  {
+    "incorrect": "O presiza direksaun?",
+    "preferred": "Ita presiza direksaun?",
+    "reason": "Use Ita for customer-facing direction requests."  
+  },
+  {
+    "incorrect": "O haree hotel kaer?",
+    "preferred": "Ita haree hotel kaer?",
+    "reason": "Ita keeps the tone friendly and appropriate for travel assistance."  
+  },
+  {
+    "incorrect": "O la hatene.",
+    "preferred": "Ita la hatene.",
+    "reason": "Always use inclusive polite phrasing in answers."  
+  },
+  {
+    "incorrect": "O bele tuir ami?",
+    "preferred": "Ita bele tuir ami?",
+    "reason": "Ita is used unless the user has explicitly agreed to an informal tone."  
+  },
+  {
+    "incorrect": "O hakerek kompletu?",
+    "preferred": "Ita hakerek kompletu?",
+    "reason": "Respectful default in service dialogs is essential."  
+  },
+  {
+    "incorrect": "O ba saida?",
+    "preferred": "Ita ba saida?",
+    "reason": "Use Ita to avoid sounding too direct or impolite."  
+  },
+  {
+    "incorrect": "O mak hotu?",
+    "preferred": "Ita mak hotu?",
+    "reason": "Ita is safer when asking about user status or plans."  
+  },
+  {
+    "incorrect": "O bele hetan taxi?",
+    "preferred": "Ita bele hetan taxi?",
+    "reason": "Travel advice should remain polite and customer-friendly."  
+  },
+  {
+    "incorrect": "O presiza ajuda iha aeroportu?",
+    "preferred": "Ita presiza ajuda iha aeroportu?",
+    "reason": "Ita supports a respectful travel assistant persona."  
+  },
+  {
+    "incorrect": "O to'os hotel ka lae?",
+    "preferred": "Ita to'os hotel ka lae?",
+    "reason": "Respectful phrasing improves user trust in RANIA."  
+  },
+  {
+    "incorrect": "O la tama?",
+    "preferred": "Ita la tama?",
+    "reason": "Ita is the correct polite form for neutral questions."  
+  },
+  {
+    "incorrect": "O saida mak?",
+    "preferred": "Ita saida mak?",
+    "reason": "Avoid O unless the user has requested informal speech."  
+  }
+]

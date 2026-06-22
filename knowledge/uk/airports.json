@@ -1,0 +1,403 @@
+{
+  "LHR": {
+    "iata": "LHR",
+    "icao": "EGLL",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Heathrow Airport",
+      "id": "Heathrow Bandara",
+      "tet": "Heathrow Aeroportu",
+      "pt": "Heathrow Aeroporto",
+      "zh": "Heathrow Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "AMS",
+      "DXB",
+      "SIN"
+    ],
+    "description": {
+      "en": "Heathrow Airport",
+      "id": "Heathrow Bandara",
+      "tet": "Heathrow Aeroportu",
+      "pt": "Heathrow Aeroporto"
+    }
+  },
+  "LGW": {
+    "iata": "LGW",
+    "icao": "EGKK",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Gatwick Airport",
+      "id": "Gatwick Bandara",
+      "tet": "Gatwick Aeroportu",
+      "pt": "Gatwick Aeroporto",
+      "zh": "Gatwick Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "AMS",
+      "DUB"
+    ],
+    "description": {
+      "en": "Gatwick Airport",
+      "id": "Gatwick Bandara",
+      "tet": "Gatwick Aeroportu",
+      "pt": "Gatwick Aeroporto"
+    }
+  },
+  "STN": {
+    "iata": "STN",
+    "icao": "EGSS",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Stansted Airport",
+      "id": "Stansted Bandara",
+      "tet": "Stansted Aeroportu",
+      "pt": "Stansted Aeroporto",
+      "zh": "Stansted Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "DUB"
+    ],
+    "description": {
+      "en": "Stansted Airport",
+      "id": "Stansted Bandara",
+      "tet": "Stansted Aeroportu",
+      "pt": "Stansted Aeroporto"
+    }
+  },
+  "LTN": {
+    "iata": "LTN",
+    "icao": "EGGW",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Luton Airport",
+      "id": "Luton Bandara",
+      "tet": "Luton Aeroportu",
+      "pt": "Luton Aeroporto",
+      "zh": "Luton Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "DUB"
+    ],
+    "description": {
+      "en": "Luton Airport",
+      "id": "Luton Bandara",
+      "tet": "Luton Aeroportu",
+      "pt": "Luton Aeroporto"
+    }
+  },
+  "LCY": {
+    "iata": "LCY",
+    "icao": "EGLC",
+    "country": "United Kingdom",
+    "city": "London",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "London City Airport",
+      "id": "London City Bandara",
+      "tet": "London City Aeroportu",
+      "pt": "London City Aeroporto",
+      "zh": "London City Airport"
+    },
+    "popular_routes": [
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "London City Airport",
+      "id": "London City Bandara",
+      "tet": "London City Aeroportu",
+      "pt": "London City Aeroporto"
+    }
+  },
+  "MAN": {
+    "iata": "MAN",
+    "icao": "EGCC",
+    "country": "United Kingdom",
+    "city": "Manchester",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Manchester Airport",
+      "id": "Manchester Bandara",
+      "tet": "Manchester Aeroportu",
+      "pt": "Manchester Aeroporto",
+      "zh": "Manchester Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "Manchester Airport",
+      "id": "Manchester Bandara",
+      "tet": "Manchester Aeroportu",
+      "pt": "Manchester Aeroporto"
+    }
+  },
+  "BHX": {
+    "iata": "BHX",
+    "icao": "EGBB",
+    "country": "United Kingdom",
+    "city": "Birmingham",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Birmingham Airport",
+      "id": "Birmingham Bandara",
+      "tet": "Birmingham Aeroportu",
+      "pt": "Birmingham Aeroporto",
+      "zh": "Birmingham Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "DUB"
+    ],
+    "description": {
+      "en": "Birmingham Airport",
+      "id": "Birmingham Bandara",
+      "tet": "Birmingham Aeroportu",
+      "pt": "Birmingham Aeroporto"
+    }
+  },
+  "EDI": {
+    "iata": "EDI",
+    "icao": "EGPH",
+    "country": "United Kingdom",
+    "city": "Edinburgh",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Edinburgh Airport",
+      "id": "Edinburgh Bandara",
+      "tet": "Edinburgh Aeroportu",
+      "pt": "Edinburgh Aeroporto",
+      "zh": "Edinburgh Airport"
+    },
+    "popular_routes": [
+      "LIS",
+      "DUB"
+    ],
+    "description": {
+      "en": "Edinburgh Airport",
+      "id": "Edinburgh Bandara",
+      "tet": "Edinburgh Aeroportu",
+      "pt": "Edinburgh Aeroporto"
+    }
+  },
+  "GLA": {
+    "iata": "GLA",
+    "icao": "EGPD",
+    "country": "United Kingdom",
+    "city": "Glasgow",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Glasgow Airport",
+      "id": "Glasgow Bandara",
+      "tet": "Glasgow Aeroportu",
+      "pt": "Glasgow Aeroporto",
+      "zh": "Glasgow Airport"
+    },
+    "popular_routes": [
+      "LHR",
+      "AMS"
+    ],
+    "description": {
+      "en": "Glasgow Airport",
+      "id": "Glasgow Bandara",
+      "tet": "Glasgow Aeroportu",
+      "pt": "Glasgow Aeroporto"
+    }
+  },
+  "BRS": {
+    "iata": "BRS",
+    "icao": "EGGD",
+    "country": "United Kingdom",
+    "city": "Bristol",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Bristol Airport",
+      "id": "Bristol Bandara",
+      "tet": "Bristol Aeroportu",
+      "pt": "Bristol Aeroporto",
+      "zh": "Bristol Airport"
+    },
+    "popular_routes": [
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "Bristol Airport",
+      "id": "Bristol Bandara",
+      "tet": "Bristol Aeroportu",
+      "pt": "Bristol Aeroporto"
+    }
+  },
+  "NCL": {
+    "iata": "NCL",
+    "icao": "EGNT",
+    "country": "United Kingdom",
+    "city": "Newcastle",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Newcastle Airport",
+      "id": "Newcastle Bandara",
+      "tet": "Newcastle Aeroportu",
+      "pt": "Newcastle Aeroporto",
+      "zh": "Newcastle Airport"
+    },
+    "popular_routes": [
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "Newcastle Airport",
+      "id": "Newcastle Bandara",
+      "tet": "Newcastle Aeroportu",
+      "pt": "Newcastle Aeroporto"
+    }
+  },
+  "LPL": {
+    "iata": "LPL",
+    "icao": "EGGP",
+    "country": "United Kingdom",
+    "city": "Liverpool",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Liverpool John Lennon Airport",
+      "id": "Liverpool John Lennon Bandara",
+      "tet": "Liverpool John Lennon Aeroportu",
+      "pt": "Liverpool John Lennon Aeroporto",
+      "zh": "Liverpool John Lennon Airport"
+    },
+    "popular_routes": [
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "Liverpool John Lennon Airport",
+      "id": "Liverpool John Lennon Bandara",
+      "tet": "Liverpool John Lennon Aeroportu",
+      "pt": "Liverpool John Lennon Aeroporto"
+    }
+  },
+  "BFS": {
+    "iata": "BFS",
+    "icao": "EGAA",
+    "country": "United Kingdom",
+    "city": "Belfast",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Belfast International Airport",
+      "id": "Belfast Bandara Internasional",
+      "tet": "Belfast Aeroportu Internasional",
+      "pt": "Belfast Aeroporto Internacional",
+      "zh": "Belfast International Airport"
+    },
+    "popular_routes": [
+      "DUB",
+      "AMS"
+    ],
+    "description": {
+      "en": "Belfast International Airport",
+      "id": "Belfast Bandara Internasional",
+      "tet": "Belfast Aeroportu Internasional",
+      "pt": "Belfast Aeroporto Internacional"
+    }
+  },
+  "ABZ": {
+    "iata": "ABZ",
+    "icao": "EGPD",
+    "country": "United Kingdom",
+    "city": "Aberdeen",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Aberdeen Airport",
+      "id": "Aberdeen Bandara",
+      "tet": "Aberdeen Aeroportu",
+      "pt": "Aberdeen Aeroporto",
+      "zh": "Aberdeen Airport"
+    },
+    "popular_routes": [
+      "DUB"
+    ],
+    "description": {
+      "en": "Aberdeen Airport",
+      "id": "Aberdeen Bandara",
+      "tet": "Aberdeen Aeroportu",
+      "pt": "Aberdeen Aeroporto"
+    }
+  },
+  "SOU": {
+    "iata": "SOU",
+    "icao": "EGHI",
+    "country": "United Kingdom",
+    "city": "Southampton",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Southampton Airport",
+      "id": "Southampton Bandara",
+      "tet": "Southampton Aeroportu",
+      "pt": "Southampton Aeroporto",
+      "zh": "Southampton Airport"
+    },
+    "popular_routes": [
+      "DUB"
+    ],
+    "description": {
+      "en": "Southampton Airport",
+      "id": "Southampton Bandara",
+      "tet": "Southampton Aeroportu",
+      "pt": "Southampton Aeroporto"
+    }
+  },
+  "EMA": {
+    "iata": "EMA",
+    "icao": "EGNX",
+    "country": "United Kingdom",
+    "city": "East Midlands",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "East Midlands Airport",
+      "id": "East Midlands Bandara",
+      "tet": "East Midlands Aeroportu",
+      "pt": "East Midlands Aeroporto",
+      "zh": "East Midlands Airport"
+    },
+    "popular_routes": [
+      "DUB"
+    ],
+    "description": {
+      "en": "East Midlands Airport",
+      "id": "East Midlands Bandara",
+      "tet": "East Midlands Aeroportu",
+      "pt": "East Midlands Aeroporto"
+    }
+  }
+}

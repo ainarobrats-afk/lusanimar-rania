@@ -1,0 +1,48 @@
+{
+  "destination_country": "Japan",
+  "destination_iso": "JP",
+  "destination_name": {
+    "tet": "Japão",
+    "id": "Jepang",
+    "en": "Japan",
+    "pt": "Japão"
+  },
+  "destination_keywords": {
+    "tet": ["japaun", "japao", "japan"],
+    "id": ["jepang"],
+    "en": ["japan"],
+    "pt": ["japão"]
+  },
+  "alt_names": ["japan", "jepang", "japão"],
+  "passport_keywords": ["japan", "japanese", "japonês", "japonesa"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada Japão.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan Jepang.",
+    "en": "Visa rules may change. Always confirm with the Japanese embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada do Japão."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Temporary Visitor Visa",
+      "duration_days": 90,
+      "processing_days": "5-7",
+      "fee_usd": 0,
+      "documents_required": [
+        { "tet": "Pasaporte válidu", "id": "Paspor berlaku", "en": "Valid passport", "pt": "Passaporte válido" },
+        { "tet": "Formuláriu aplikasaun visa Japão", "id": "Formulir permohonan visa Jepang", "en": "Japan visa application form", "pt": "Formulário de pedido de visto do Japão" }
+      ],
+      "notes": {
+        "tet": "Aplika ba embaixada Japão iha Jakarta ka Canberra. Konfirma kondisaun.",
+        "id": "Ajukan ke kedutaan Jepang di Jakarta atau Canberra. Konfirmasi syarat.",
+        "en": "Apply at the Japanese embassy in Jakarta or Canberra. Confirm requirements.",
+        "pt": "Candidate na embaixada do Japão em Jacarta ou Canberra. Confirme os requisitos."
+      }
+    }
+  ]
+}

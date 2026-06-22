@@ -1,0 +1,13 @@
+{
+  "default_pronoun": { "value": "Ita", "confidence": 1.0 },
+  "adult_male": [ { "value": "Maun", "confidence": 0.7 } ],
+  "adult_female": [
+    { "value": "Mana", "confidence": 0.7 },
+    { "value": "Biin", "confidence": 0.6 }
+  ],
+  "elder_male": [ { "value": "Ama", "confidence": 0.8 } ],
+  "elder_female": [ { "value": "Inan", "confidence": 0.8 } ],
+  "formal": [ { "value": "Ita-boot", "confidence": 0.9 } ],
+  "avoid_default": ["O"],
+  "notes": "Always prefer Ita when gender or age is unknown. Use Maun/Mana only when there is strong evidence of adult gender context. Ita is safe for all adults."
+}

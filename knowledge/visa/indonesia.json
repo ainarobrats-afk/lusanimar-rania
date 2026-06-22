@@ -1,0 +1,57 @@
+{
+  "destination_country": "Indonesia",
+  "destination_iso": "ID",
+  "destination_name": {
+    "tet": "Indonesia",
+    "id": "Indonesia",
+    "en": "Indonesia",
+    "pt": "Indonésia"
+  },
+  "destination_keywords": {
+    "tet": ["indonézia", "indonesia"],
+    "id": ["indonesia"],
+    "en": ["indonesia"],
+    "pt": ["indonésia"]
+  },
+  "alt_names": ["indonesia", "indonesia"],
+  "passport_keywords": ["indonesia", "indonesian", "wni"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "embassy_in_dili": {
+    "name": "Embassy of Indonesia Dili",
+    "address": "Rua de Bali, Dili",
+    "phone": "+670 332 1234",
+    "email": "indonesia@embassy.tl",
+    "website": "https://kemlu.go.id"
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 30,
+      "notes": {
+        "tet": "Waktu: 30 loron, la presiza visa, visa-free ba WNI no TL.",
+        "id": "Masa tinggal 30 hari, bebas visa untuk WNI dan TL.",
+        "en": "Stay up to 30 days, visa-free for WNI and TL passports.",
+        "pt": "Permanência de 30 dias, isento de visto para WNI e TL."
+      }
+    },
+    {
+      "passport_country": "Portugal",
+      "passport_iso": "PT",
+      "passport_keywords": ["portugal", "portuguese", "português", "portugues"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 30
+    }
+  ]
+}

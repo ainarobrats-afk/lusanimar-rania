@@ -1,0 +1,62 @@
+{
+  "destination_country": "United Kingdom",
+  "destination_iso": "GB",
+  "destination_name": {
+    "tet": "United Kingdom",
+    "id": "Inggris / United Kingdom",
+    "en": "United Kingdom",
+    "pt": "Reino Unido"
+  },
+  "destination_keywords": {
+    "tet": ["uk", "united kingdom", "inglaterra", "britain"],
+    "id": ["uk", "inggris", "inglaterra"],
+    "en": ["uk", "united kingdom", "england", "britain"],
+    "pt": ["uk", "reino unido", "inglaterra"]
+  },
+  "alt_names": ["uk", "england", "britain", "reino unido"],
+  "passport_keywords": ["uk", "british", "britânico", "britânica", "inglês", "inglesa"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha imigrasaun UK.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke imigrasi UK.",
+    "en": "Visa rules may change. Always confirm with UK immigration.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a imigração do Reino Unido."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Standard Visitor Visa",
+      "duration_days": 180,
+      "processing_days": "3-8 weeks",
+      "fee_gbp": 115,
+      "fee_usd": 140,
+      "documents_required": [
+        { "tet": "Pasaporte válidu", "id": "Paspor valid", "en": "Valid passport", "pt": "Passaporte válido" },
+        { "tet": "Extratu banku 3 fulan", "id": "Rekening bank 3 bulan", "en": "Bank statement 3 months", "pt": "Extrato bancário 3 meses" }
+      ],
+      "notes": {
+        "tet": "Aplika online ba gov.uk. Prova sponsorship se aplikasaun work.",
+        "id": "Ajukan online ke gov.uk. Bukti sponsorship jika kerja.",
+        "en": "Apply online at gov.uk. Provide sponsorship evidence for work visas.",
+        "pt": "Candidate online em gov.uk. Forneça evidências de patrocínio para vistos de trabalho."
+      }
+    },
+    {
+      "passport_country": "Portugal",
+      "passport_iso": "PT",
+      "passport_keywords": ["portugal", "portuguese", "português", "portugues"],
+      "visa_required": false,
+      "visa_free": true,
+      "notes": {
+        "tet": "Cidadãos Portugal la presiza visa UK ba turizmu kurta.",
+        "id": "Warga Portugal tidak perlu visa UK untuk wisata singkat.",
+        "en": "Portuguese citizens do not need a short-term UK visa for tourism.",
+        "pt": "Cidadãos portugueses não precisam de visto de curta duração para o Reino Unido."
+      }
+    }
+  ]
+}

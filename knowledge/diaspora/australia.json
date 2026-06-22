@@ -1,0 +1,62 @@
+[
+  {
+    "id": "australia_overview",
+    "country": "Australia",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 50000,
+    "primary_cities": ["Melbourne", "Sydney", "Brisbane", "Canberra"],
+    "population_centers": {
+      "Melbourne": { "estimate": 15000, "notes": "Largest Timorese community" },
+      "Sydney": { "estimate": 12000, "notes": "Historic settlement" },
+      "Brisbane": { "estimate": 8000, "notes": "Growing community" }
+    },
+    "employment_sectors": ["healthcare", "education", "government", "hospitality", "logistics"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "Skilled Migration, Student, Temporary/Permanent Residence",
+      "processing_time": "4-12 months",
+      "points_system": "true",
+      "contact": "Department of Home Affairs"
+    },
+    "embassy_contact": {
+      "location": "Canberra",
+      "address": "2 Darwin Avenue, Yarralumla ACT 2600",
+      "phone": "+61 2 6259 5111",
+      "email": "information@timorlorosae.org"
+    },
+    "community_organizations": [
+      { "name": "East Timor Australia Network", "city": "Melbourne" },
+      { "name": "Timorese Australian Association Sydney", "city": "Sydney" },
+      { "name": "Laminak Timor", "city": "Melbourne", "type": "cultural" }
+    ],
+    "return_travel": {
+      "flights_available": ["Qantas to Dili", "Garuda to Dili", "Timorese carriers"],
+      "duration": "5-8 hours",
+      "peak_season": "December-January (Australian summer)"
+    },
+    "cultural_events": [
+      { "event": "Timorese Independence Day", "date": "May 20", "location": "Multiple cities" },
+      { "event": "Diwali", "date": "October-November", "notes": "Celebrated by Indian diaspora" }
+    ],
+    "practical_info": {
+      "travel_insurance": "Recommended for travel to Timor-Leste",
+      "driving": "Left-hand traffic, Australian license accepted",
+      "language": "English widely spoken; Tetun used in diaspora communities"
+    }
+  },
+  {
+    "id": "australia_travel_tips",
+    "country": "Australia",
+    "type": "travel_advice",
+    "visiting_timor_from_au": {
+      "best_time": "April-November (dry season)",
+      "estimated_stay": "7-21 days",
+      "accommodation": "Budget: AUD $30-50/night, Mid: AUD $80-120/night",
+      "health": "Vaccinations recommended: Hepatitis A, Typhoid, Japanese Encephalitis"
+    },
+    "cultural_tips": {
+      "language": "Learn basic Tetun greetings to connect with family",
+      "customs": "Respect for elders and church/spiritual practices",
+      "food": "Try local dishes: caldo, tei, labenta, cassava"
+    }
+  }
+]

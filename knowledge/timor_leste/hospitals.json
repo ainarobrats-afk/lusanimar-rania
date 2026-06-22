@@ -1,0 +1,6 @@
+{
+  "Dr-Antonio-Mau-Hospital": {"name": "Hospital Nacional Guido Valadares", "city": "Dili", "type": "referral"},
+  "BCH-Health-Center": {"name": "Baucau Community Hospital", "city": "Baucau", "type": "regional"},
+  "Suai-Health-Center": {"name": "Suai Health Center", "city": "Suai", "type": "regional"},
+  "Oecusse-Regional-Hospital": {"name": "Oecusse Regional Hospital", "city": "Oecusse", "type": "regional"}
+}

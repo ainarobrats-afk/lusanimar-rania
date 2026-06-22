@@ -1,0 +1,44 @@
+[
+  {
+    "id": "uk_overview",
+    "country": "United Kingdom",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 5000,
+    "primary_cities": ["London", "Manchester", "Birmingham", "Edinburgh"],
+    "population_centers": {
+      "London": { "estimate": 3500, "notes": "Professional diaspora hub" },
+      "Manchester": { "estimate": 800, "notes": "Growing community" }
+    },
+    "employment_sectors": ["healthcare_nhs", "education", "professional_services", "technology", "hospitality"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "Standard Visitor Visa (short-stay) or Work Visa",
+      "processing_time": "3-8 weeks",
+      "requirements": ["passport_6months_validity", "proof_of_funds", "accommodation_proof"],
+      "notes": "Apply at UK Visa Application Centre in Dili or Jakarta"
+    },
+    "embassy_contact": {
+      "type": "British Embassy in Timor-Leste",
+      "location": "Dili",
+      "address": "Jl. Presidente Nicolau Lobato, Dili",
+      "phone": "+670 3331-2007"
+    },
+    "community_organizations": [
+      { "name": "Timorese Community Associ ciation UK", "city": "London" },
+      { "name": "East Timor Society", "city": "London", "focus": "advocacy_education" }
+    ],
+    "nhs_employment": {
+      "healthcare_opportunities": ["Nurses", "Healthcare Assistants", "Allied Health Professionals"],
+      "recruitment_pathway": "IELTS qualification, NMC registration, visa sponsorship"
+    },
+    "return_travel": {
+      "flights": ["Multiple carriers", "London-Singapore-Dili route common"],
+      "duration": "18-24 hours",
+      "cost": "£800-1400 round trip"
+    },
+    "cultural_integration": {
+      "language": "English fluency essential; support circles available",
+      "climate": "Very different from Timor; prepare for UK weather",
+      "religion": "Christian churches (Catholic/Protestant) serve diaspora"
+    }
+  }
+]

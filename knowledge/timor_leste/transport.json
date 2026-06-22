@@ -1,0 +1,23 @@
+{
+  "airports": [
+    {"id": "DIL", "name": "Presidente Nicolau Lobato International Airport", "type": "international"},
+    {"id": "BCH", "name": "Baucau Airport", "type": "domestic"},
+    {"id": "SWJ", "name": "Suai Airport", "type": "domestic"},
+    {"id": "OEC", "name": "Oecusse Airport", "type": "domestic"},
+    {"id": "LSP", "name": "Los Palos Airport", "type": "domestic"},
+    {"id": "VIQ", "name": "Viqueque Airport", "type": "domestic"}
+  ],
+  "roads": [
+    {"id": "dili-baucau", "name": "Dili-Baucau Road", "description": "Jalan utama timur yang menghubungkan Dili dan Baucau."},
+    {"id": "dili-viqueque", "name": "Dili-Viqueque Road", "description": "Rute ke sudut tenggara Timor-Leste."},
+    {"id": "dili-liquica", "name": "Dili-Liquica Road", "description": "Jalan barat ke daerah Liquica."}
+  ],
+  "ferries": [
+    {"id": "dili-atauro", "name": "Dili to Atauro Ferry", "description": "Rute laut utama dari Dili ke pulau Atauro."}
+  ],
+  "border_routes": [
+    {"id": "motaain", "name": "Mota'ain Border Route", "description": "Jalur darat utama antara Timor-Leste dan Indonesia melalui Belu/Atambua."},
+    {"id": "motamasin", "name": "Motamasin Border Route", "description": "Jalur perbatasan selatan antara Malaka dan Cova Lima."},
+    {"id": "wini", "name": "Wini Border Route", "description": "Jalur lokal di dekat Oecusse dan TTU."}
+  ]
+}

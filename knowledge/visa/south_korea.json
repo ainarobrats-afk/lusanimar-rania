@@ -1,0 +1,48 @@
+{
+  "destination_country": "South Korea",
+  "destination_iso": "KR",
+  "destination_name": {
+    "tet": "Korea Sul",
+    "id": "Korea Selatan",
+    "en": "South Korea",
+    "pt": "Coreia do Sul"
+  },
+  "destination_keywords": {
+    "tet": ["korea sul", "korea"],
+    "id": ["korea selatan", "korea"],
+    "en": ["south korea", "korea"],
+    "pt": ["coreia do sul", "coreia"]
+  },
+  "alt_names": ["south korea", "korea"],
+  "passport_keywords": ["korea", "korean", "coreia"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada Korea.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan Korea.",
+    "en": "Visa rules may change. Always confirm with the South Korean embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada da Coreia do Sul."
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "C-3 Tourist Visa",
+      "duration_days": 30,
+      "processing_days": "5-10",
+      "fee_usd": 40,
+      "documents_required": [
+        { "tet": "Pasaporte válidu 6 fulan", "id": "Paspor berlaku 6 bulan", "en": "Passport valid 6 months", "pt": "Passaporte válido 6 meses" },
+        { "tet": "Formuláriu C-3", "id": "Formulir C-3", "en": "C-3 application form", "pt": "Formulário C-3" }
+      ],
+      "notes": {
+        "tet": "Aplika ho Embaixada Korea iha Jakarta. Konfirma iha website.",
+        "id": "Ajukan dengan Kedutaan Korea di Jakarta. Konfirmasi di situs resmi.",
+        "en": "Apply at the Korean embassy in Jakarta. Confirm on the official website.",
+        "pt": "Candidate na embaixada da Coreia na Jacarta. Confirme no site oficial."
+      }
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+[
+  {
+    "id": "usa_overview",
+    "country": "United States",
+    "region_type": "diaspora_destination",
+    "timorese_population_estimate": 3500,
+    "primary_cities": ["Los Angeles", "New York", "Washington DC", "San Francisco"],
+    "population_centers": {
+      "Los Angeles": { "estimate": 1500, "notes": "Largest Timorese community" },
+      "Washington DC": { "estimate": 1000, "notes": "NGO and policy sector" },
+      "New York": { "estimate": 600, "notes": "Professional diaspora" }
+    },
+    "employment_sectors": ["non_profits", "education", "healthcare", "government", "technology"],
+    "visa_requirements_for_timorese": {
+      "visa_type": "B-1/B-2 (visitor) or H-1B (skilled worker)",
+      "processing_time": "3-6 months",
+      "requirements": ["passport", "DS-160_form", "interview_at_embassy"],
+      "notes": "Apply at US Embassy in Dili; interview required"
+    },
+    "embassy_contact": {
+      "type": "US Embassy in Timor-Leste",
+      "location": "Dili",
+      "address": "Jl. Aitarak, Dili",
+      "phone": "+670 3321-2570"
+    },
+    "community_organizations": [
+      { "name": "Timorese American Association", "city": "Los Angeles" },
+      { "name": "East Timor Institute USA", "city": "Washington DC", "type": "advocacy" }
+    ],
+    "return_travel": {
+      "flights": ["United Airlines", "American Airlines", "Cathay Pacific"],
+      "duration": "20-24 hours including layovers",
+      "cost": "USD 1200-2200 round trip"
+    },
+    "professional_opportunities": {
+      "fields": ["international_development", "policy", "advocacy", "humanitarian_work"],
+      "organizations": ["USAID", "World Bank", "NGO sector"]
+    }
+  }
+]

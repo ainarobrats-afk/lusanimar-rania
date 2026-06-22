@@ -1,0 +1,67 @@
+{
+  "destination_country": "Portugal",
+  "destination_iso": "PT",
+  "destination_name": {
+    "tet": "Portugal",
+    "id": "Portugal",
+    "en": "Portugal",
+    "pt": "Portugal"
+  },
+  "destination_keywords": {
+    "tet": ["portugal"],
+    "id": ["portugal"],
+    "en": ["portugal"],
+    "pt": ["portugal"]
+  },
+  "alt_names": ["portugal"],
+  "passport_keywords": ["portugal", "portuguese", "português", "portugues"],
+  "last_updated": "2026-06",
+  "source": "official",
+  "disclaimer": {
+    "tet": "Regra visa bele muda. Konfirma uluk iha embaixada.",
+    "id": "Aturan visa dapat berubah. Selalu konfirmasi ke kedutaan.",
+    "en": "Visa rules may change. Always confirm with the embassy.",
+    "pt": "Regras de visto podem mudar. Sempre confirme com a embaixada."
+  },
+  "embassy_in_dili": {
+    "name": "Embassy of Portugal to Timor-Leste",
+    "address": "Serviços Consulares indireto via Consulate Honorário, Dili",
+    "phone": "+670 332 5678",
+    "email": "porto@embassy.tl",
+    "website": "https://www.portugal.gov.pt"
+  },
+  "visa_rules": [
+    {
+      "passport_country": "Timor-Leste",
+      "passport_iso": "TL",
+      "passport_keywords": ["timor-leste", "timor", "timorese"],
+      "visa_required": true,
+      "visa_type": "Schengen Visa (Type C)",
+      "e_visa_available": false,
+      "duration_days": 90,
+      "validity_days": 180,
+      "processing_days": "15-30",
+      "fee_eur": 80,
+      "fee_usd": 87,
+      "documents_required": [
+        { "tet": "Pasaporte válidu 3 fulan depois sai", "id": "Paspor berlaku 3 bulan setelah pulang", "en": "Passport valid 3 months after return", "pt": "Passaporte válido 3 meses após o retorno" },
+        { "tet": "Formuláriu visa Schengen", "id": "Formulir visa Schengen", "en": "Schengen visa application form", "pt": "Formulário de pedido de visto Schengen" },
+        { "tet": "Seguro viajen (€30,000 min)", "id": "Asuransi perjalanan (€30.000 min)", "en": "Travel insurance (€30,000 min)", "pt": "Seguro de viagem (€30.000 min)" }
+      ],
+      "notes": {
+        "tet": "Aplika ba Embassy Portugal ka Consulate ne&#039;e. Konfirma online.",
+        "id": "Ajukan ke kedutaan Portugal atau konsulat terdekat. Konfirmasi online.",
+        "en": "Apply at the Portugal embassy or nearest consulate. Confirm online.",
+        "pt": "Candidate na embaixada de Portugal ou consulado mais próximo. Confirme online."
+      }
+    },
+    {
+      "passport_country": "Portugal",
+      "passport_iso": "PT",
+      "passport_keywords": ["portugal", "portuguese", "português", "portugues"],
+      "visa_required": false,
+      "visa_free": true,
+      "duration_days": 90
+    }
+  ]
+}

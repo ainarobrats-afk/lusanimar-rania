@@ -1,0 +1,148 @@
+{
+  "DIL": {
+    "iata": "DIL",
+    "icao": "WPDL",
+    "country": "Timor-Leste",
+    "city": "Dili",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Presidente Nicolau Lobato International Airport",
+      "id": "Bandara Internasional Presidente Nicolau Lobato",
+      "tet": "Aeroportu Internasionál Presidente Nicolau Lobato",
+      "pt": "Aeroporto Internacional Presidente Nicolau Lobato",
+      "zh": "尼古劳·洛巴托国际机场"
+    },
+    "popular_routes": [
+      "SIN",
+      "CGK",
+      "DPS"
+    ],
+    "description": {
+      "en": "Bandara utama Dili dan pintu masuk internasional ke Timor-Leste.",
+      "id": "Bandara utama Dili dan pintu masuk internasional ke Timor-Leste.",
+      "tet": "Bandara utama Dili dan pintu masuk internasional ke Timor-Leste.",
+      "pt": "Bandara utama Dili dan pintu masuk internasional ke Timor-Leste."
+    }
+  },
+  "BCH": {
+    "iata": "BCH",
+    "icao": "WAEB",
+    "country": "Timor-Leste",
+    "city": "Baucau",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Baucau Airport",
+      "id": "Bandara Baucau",
+      "tet": "Aeroportu Baucau",
+      "pt": "Aeroporto de Baucau",
+      "zh": "包考机场"
+    },
+    "popular_routes": [
+      "DIL"
+    ],
+    "description": {
+      "en": "Bandara regional di Baucau, membantu akses timur dan utara Timor-Leste.",
+      "id": "Bandara regional di Baucau, membantu akses timur dan utara Timor-Leste.",
+      "tet": "Bandara regional di Baucau, membantu akses timur dan utara Timor-Leste.",
+      "pt": "Bandara regional di Baucau, membantu akses timur dan utara Timor-Leste."
+    }
+  },
+  "SWJ": {
+    "iata": "SWJ",
+    "icao": "WPDJ",
+    "country": "Timor-Leste",
+    "city": "Suai",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Suai Airport",
+      "id": "Bandara Suai",
+      "tet": "Aeroportu Suai",
+      "pt": "Aeroporto de Suai",
+      "zh": "苏艾机场"
+    },
+    "popular_routes": [
+      "DIL"
+    ],
+    "description": {
+      "en": "Bandara di Suai yang melayani wilayah barat daya Timor-Leste.",
+      "id": "Bandara di Suai yang melayani wilayah barat daya Timor-Leste.",
+      "tet": "Bandara di Suai yang melayani wilayah barat daya Timor-Leste.",
+      "pt": "Bandara di Suai yang melayani wilayah barat daya Timor-Leste."
+    }
+  },
+  "OEC": {
+    "iata": "OEC",
+    "icao": "WPOC",
+    "country": "Timor-Leste",
+    "city": "Oecusse",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Oecusse Airport",
+      "id": "Bandara Oecusse",
+      "tet": "Aeroportu Oecusse",
+      "pt": "Aeroporto de Oecusse",
+      "zh": "欧克西机场"
+    },
+    "popular_routes": [
+      "DIL"
+    ],
+    "description": {
+      "en": "Bandara di wilayah khusus administratif Oecusse, dekat kawasan perbatasan Indonesia.",
+      "id": "Bandara di wilayah khusus administratif Oecusse, dekat kawasan perbatasan Indonesia.",
+      "tet": "Bandara di wilayah khusus administratif Oecusse, dekat kawasan perbatasan Indonesia.",
+      "pt": "Bandara di wilayah khusus administratif Oecusse, dekat kawasan perbatasan Indonesia."
+    }
+  },
+  "LSP": {
+    "iata": "LSP",
+    "icao": "WPLA",
+    "country": "Timor-Leste",
+    "city": "Lautem",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Los Palos Airport",
+      "id": "Bandara Los Palos",
+      "tet": "Aeroportu Los Palos",
+      "pt": "Aeroporto de Los Palos",
+      "zh": "洛斯帕洛斯机场"
+    },
+    "popular_routes": [
+      "DIL"
+    ],
+    "description": {
+      "en": "Bandara kecil di Lautem yang melayani penerbangan lokal dan regional.",
+      "id": "Bandara kecil di Lautem yang melayani penerbangan lokal dan regional.",
+      "tet": "Bandara kecil di Lautem yang melayani penerbangan lokal dan regional.",
+      "pt": "Bandara kecil di Lautem yang melayani penerbangan lokal dan regional."
+    }
+  },
+  "VIQ": {
+    "iata": "VIQ",
+    "icao": "WPDQ",
+    "country": "Timor-Leste",
+    "city": "Viqueque",
+    "region": "",
+    "type": "airport",
+    "name": {
+      "en": "Viqueque Airport",
+      "id": "Bandara Viqueque",
+      "tet": "Aeroportu Viqueque",
+      "pt": "Aeroporto de Viqueque",
+      "zh": "维克机场"
+    },
+    "popular_routes": [
+      "DIL"
+    ],
+    "description": {
+      "en": "Bandara regional di Viqueque, melayani wilayah tenggara Timor-Leste.",
+      "id": "Bandara regional di Viqueque, melayani wilayah tenggara Timor-Leste.",
+      "tet": "Bandara regional di Viqueque, melayani wilayah tenggara Timor-Leste.",
+      "pt": "Bandara regional di Viqueque, melayani wilayah tenggara Timor-Leste."
+    }
+  }
+}

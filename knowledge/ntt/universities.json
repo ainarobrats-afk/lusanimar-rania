@@ -1,0 +1,100 @@
+{
+  "UNDANA": {
+    "id": "UNDANA",
+    "country": "Indonesia",
+    "region": "East Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Nusa Cendana University",
+      "id": "Universitas Nusa Cendana",
+      "tet": "Universidade Nusa Cendana",
+      "pt": "Universidade Nusa Cendana",
+      "zh": "努沙森达纳大学"
+    },
+    "description": {
+      "en": "Largest public university in East Nusa Tenggara.",
+      "id": "Universitas negeri terbesar di NTT.",
+      "tet": "Universidade publiku boot liu iha NTT.",
+      "pt": "Maior universidade pública de NTT.",
+      "zh": "东努沙登加拉最大的公立大学。"
+    },
+    "city": "Kupang",
+    "website": "",
+    "keywords": [
+      "undana",
+      "universitas kupang",
+      "kuliah ntt"
+    ],
+    "airport": "KOE",
+    "popular_for": [
+      "Education",
+      "Agriculture"
+    ],
+    "languages": []
+  },
+  "Poltek-Kupang": {
+    "id": "Poltek-Kupang",
+    "country": "Indonesia",
+    "region": "East Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Kupang Health Polytechnic",
+      "id": "Politeknik Kesehatan Kupang",
+      "tet": "Politéknik Kesehatan Kupang",
+      "pt": "Politécnico de Saúde de Kupang",
+      "zh": "库潘健康理工学院"
+    },
+    "description": {
+      "en": "Health-focused polytechnic in Kupang with nursing and public health programs.",
+      "id": "Politeknik kesehatan di Kupang dengan program keperawatan dan kesehatan masyarakat.",
+      "tet": "Politéknik fokus ba sasán saúde iha Kupang ho programa enfermagem no saúde publiku.",
+      "pt": "Politécnico focado em saúde em Kupang com programas de enfermagem e saúde pública.",
+      "zh": "库潘的健康理工学院，专注于护理和公共卫生课程。"
+    },
+    "city": "Kupang",
+    "website": "",
+    "keywords": [
+      "poltekkes kupang",
+      "kuliah kesehatan",
+      "nursing kupang"
+    ],
+    "airport": "KOE",
+    "popular_for": [
+      "Health",
+      "Nursing"
+    ],
+    "languages": []
+  },
+  "Unipa-Flores": {
+    "id": "Unipa-Flores",
+    "country": "Indonesia",
+    "region": "East Nusa Tenggara",
+    "type": "university",
+    "name": {
+      "en": "Universitas Flores",
+      "id": "Universitas Flores",
+      "tet": "Universitas Flores",
+      "pt": "Universitas Flores",
+      "zh": "Universitas Flores"
+    },
+    "description": {
+      "en": "Universitas Flores is a university in Ende.",
+      "id": "Universitas Flores is a university in Ende.",
+      "tet": "Universitas Flores is a university in Ende.",
+      "pt": "Universitas Flores is a university in Ende."
+    },
+    "city": "Ende",
+    "website": "",
+    "keywords": [
+      "unipa-flores",
+      "universitas flores",
+      "ende"
+    ],
+    "airport": "ENE",
+    "popular_for": [
+      "Teaching",
+      "Agriculture"
+    ],
+    "languages": []
+  }
+}

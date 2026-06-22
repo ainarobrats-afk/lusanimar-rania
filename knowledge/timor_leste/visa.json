@@ -1,0 +1,44 @@
+{
+  "tourist": {
+    "id": "tourist",
+    "name": {
+      "en": "Tourist Visa",
+      "id": "Visa Turis",
+      "tet": "Visa Turista",
+      "pt": "Visto de Turismo",
+      "zh": "旅游签证"
+    },
+    "duration": "30 days",
+    "description": "Visa kunjungan singkat untuk turis dan keluarga yang datang ke Timor-Leste.",
+    "requirements": ["Passport 6+ months", "Proof of accommodation", "Return ticket"],
+    "languages": ["en", "id", "tet", "pt"]
+  },
+  "business": {
+    "id": "business",
+    "name": {
+      "en": "Business Visa",
+      "id": "Visa Bisnis",
+      "tet": "Visa Negósiu",
+      "pt": "Visto de Negócios",
+      "zh": "商务签证"
+    },
+    "duration": "30 days",
+    "description": "Visa untuk kunjungan usaha, pertemuan bisnis, atau pekerjaan sementara.",
+    "requirements": ["Invitation letter", "Passport 6+ months", "Company details"],
+    "languages": ["en", "id", "tet", "pt"]
+  },
+  "student": {
+    "id": "student",
+    "name": {
+      "en": "Student Visa",
+      "id": "Visa Pelajar",
+      "tet": "Visa Estudante",
+      "pt": "Visto de Estudante",
+      "zh": "学生签证"
+    },
+    "duration": "variable",
+    "description": "Visa studi untuk mahasiswa asing yang belajar di institusi pendidikan Timor-Leste.",
+    "requirements": ["University acceptance", "Passport 6+ months", "Proof of funds"],
+    "languages": ["en", "id", "tet", "pt"]
+  }
+}

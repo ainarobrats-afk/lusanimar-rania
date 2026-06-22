@@ -1,0 +1,10 @@
+{
+  "PEK": { "name": "Beijing Capital International Airport", "city": "Beijing", "country": "China" },
+  "PKX": { "name": "Beijing Daxing International Airport", "city": "Beijing", "country": "China" },
+  "PVG": { "name": "Shanghai Pudong International Airport", "city": "Shanghai", "country": "China" },
+  "SHA": { "name": "Shanghai Hongqiao International Airport", "city": "Shanghai", "country": "China" },
+  "CAN": { "name": "Guangzhou Baiyun International Airport", "city": "Guangzhou", "country": "China" },
+  "SZX": { "name": "Shenzhen Bao'an International Airport", "city": "Shenzhen", "country": "China" },
+  "XMN": { "name": "Xiamen Gaoqi International Airport", "city": "Xiamen", "country": "China" },
+  "HKG": { "name": "Hong Kong International Airport", "city": "Hong Kong", "country": "China" }
+}
